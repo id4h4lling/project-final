@@ -23,12 +23,12 @@ const StartPage = () => {
 
   useEffect(() => {
     window
-      .fetch(`https://graphql.contentful.com/content/v1/spaces/jr0jxguam2zu`, {
+      .fetch(`https://graphql.contentful.com/content/v1/spaces/###`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           // Authenticate the request
-          Authorization: "Bearer 1L0ItEipUTZIrkd5xqFQZc-cvQWiG3OODISyJdqFLmA",
+          Authorization: "Bearer #####",
         },
         // send the GraphQL query
         body: JSON.stringify({ query }),

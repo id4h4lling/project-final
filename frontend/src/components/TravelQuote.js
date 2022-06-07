@@ -5,23 +5,23 @@ const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #7b2020;
+  background-color: #e3b921;
   width: 100%;
   height: 726px;
 
   p {
     font-family: "WremenaRegular";
-    color: #edbe44;
+    color: #24384a;
     letter-spacing: 3px;
     font-size: 48px;
     width: 80%;
   }
 `;
 
-export const HistoryQuote = ({ quoteHistory }) => {
+export const TravelQuote = ({ quoteTravel }) => {
   return (
     <Background>
-      <p>{quoteHistory.quote}</p>
+      <p>{quoteTravel.quote}</p>
     </Background>
   );
 };

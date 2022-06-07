@@ -1,5 +1,26 @@
-body {
+@font-face {
+  font-family: "WremenaRegular";
+  font-style: "regular";
+  src: local("Wremena"), url(./fonts/WremenaRegular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "WremenaBold";
+  font-style: bold;
+  src: local("Wremena"), url(./fonts/WremenaBold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "WremenaLight";
+  src: local("Wremena"), url(./fonts/WremenaLight.woff) format("woff");
+}
+
+* {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

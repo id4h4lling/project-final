@@ -18,43 +18,20 @@ const HeroSection = styled.div`
     height: 200px;
   }
 
-  h1 {
-    color: #edbe44;
-    font-family: "WremenaLight";
-    font-size: 50px;
-    letter-spacing: 4px;
-    margin: 0px 0px 10px 0px;
-  }
-
-  h3 {
+  h2 {
     font-family: "WremenaRegular";
     color: #edbe44;
     font-size: 20px;
     letter-spacing: 3px;
   }
-
-  h4 {
-    font-family: "WremenaLight";
-    color: #edbe44;
-    margin: 30px 0px 0px 0px;
-  }
 `;
 
 export const HeroPage = ({ hero }) => {
   return (
-    <HeroSection>
-      <div
-        className="background"
-        style={{
-          backgroundImage: ` url(${hero.heroimage.url})`,
-        }}
-      >
-        <div className="title-section">
-          <h4>{hero.topheading}</h4>
-          <h1>{hero.mainHeader}</h1>
-          <h3>{hero.subheading}</h3>
-        </div>
+    <Background>
+      <div className="title-section">
+        <h2>{hero.topheading}</h2>
       </div>
-    </HeroSection>
+    </Background>
   );
 };

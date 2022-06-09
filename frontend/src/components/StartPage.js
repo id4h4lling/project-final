@@ -7,14 +7,79 @@ import { JewelleryGallery } from "./JewelleryGallery";
 import { TravelPage } from "./TravelPage";
 import { TravelQuote } from "./TravelQuote";
 import { TechniqueGallery } from "./TechniqueGallery";
-
 import { FinanceQuote } from "./FinanceQuote";
+import { Video } from "./Video";
+import { Policy } from "./Policy";
+import { AboutAuthor } from "./AboutAuthor";
+import { Footer } from "./Footer";
 
 const ID = process.env.REACT_APP_SPACE_ID;
 const TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
 
 const query = `
-{heroCollection{items{headline, mainHeader, topheading, subheading, heroimage {
+{  
+  heroCollection {
+  items {
+    headline
+    mainHeader
+    topheading
+    subheading
+    heroimage {
+      title
+      description
+      contentType
+      fileName
+      size
+      url
+      width
+      height
+    }
+  }
+}
+quoteCollection {
+  items {
+    quote
+  }
+}
+  jewelleryGalleryCollection {
+    items {
+      title
+      pictureCollection(limit: 20) {
+        items {
+          title
+          url
+        }
+      }
+    }
+  }
+  travelPageCollection {
+    items {
+      picture {
+        title
+        description
+        contentType
+        fileName
+        size
+        url
+        width
+        height
+      }
+      title
+      travelText
+    }
+  }
+  techniqueGalleryCollection {
+    items {
+      title
+      pictureCollection(limit: 20) {
+        items {
+          title
+          url
+        }
+      }
+    }
+  }
+  aboutAuthorCollection{items{title, authorPicture {
     title
     description
     contentType
@@ -23,13 +88,10 @@ const query = `
     url
     width
     height
-  }}}
-    quoteCollection{items{quote}}
-    jewelleryGalleryCollection{items{title pictureCollection (limit: 7) {items {
-      title
-      url} 
-    }}}
-    travelPageCollection{items{picture {
+  }, authorBio{json}}}
+
+  lifestoryCollection {
+    items {picture {
       title
       description
       contentType
@@ -38,23 +100,12 @@ const query = `
       url
       width
       height
-    }, title, travelText }}
+    }, title
+      text{json}
+    }
+  }
 
-    techniqueGalleryCollection{items{title pictureCollection (limit: 4){items {
-      title url
-      } 
-    }}}
-
-    aboutAuthorCollection{items{title, authorPicture {
-      title
-      description
-      contentType
-      fileName
-      size
-      url
-      width
-      height
-    } }}
+  footerCollection{items{grants, madeBy, contact, copyright}}
 
   }
 
@@ -69,6 +120,8 @@ const StartPage = () => {
   const [travelPage, setTravelPage] = useState(null);
   const [quoteFinance, setQuoteFinance] = useState(null);
   const [techniqueGallery, setTechniqueGallery] = useState(null);
+  const [aboutAuthor, setAboutAuthor] = useState(null);
+  const [footer, setFooter] = useState(null);
 
   useEffect(() => {
     window
@@ -85,7 +138,6 @@ const StartPage = () => {
       .then((response) => response.json())
       .then(({ data, errors }) => {
         if (errors) {
-          console.log(process.env);
           console.error(errors);
         }
 
@@ -98,6 +150,8 @@ const StartPage = () => {
         setTravelPage(data.travelPageCollection.items[0]);
         setQuoteFinance(data.quoteCollection.items[2]);
         setTechniqueGallery(data.techniqueGalleryCollection.items[0]);
+        setAboutAuthor(data.aboutAuthorCollection.items[0]);
+        setFooter(data.footerCollection.items[0]);
       });
   }, []);
 
@@ -114,6 +168,9 @@ const StartPage = () => {
         <TravelPage travelPage={travelPage} />
         <FinanceQuote quoteFinance={quoteFinance} />
         <TechniqueGallery techniqueGallery={techniqueGallery} />
+        <AboutAuthor aboutAuthor={aboutAuthor} />
+        <Video />
+        <Footer footer={footer} />
       </header>
     </div>
   );

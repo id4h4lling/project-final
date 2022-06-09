@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 const HeroSection = styled.div`
   .background {
     width: 100%;
@@ -53,6 +53,9 @@ export const HeroPage = ({ hero }) => {
           <h4>{hero.topheading}</h4>
           <h1>{hero.mainHeader}</h1>
           <h3>{hero.subheading}</h3>
+          <Link to={`/Policy`}>
+            <h3>LÄNK</h3>
+          </Link>
         </div>
       </div>
     </HeroSection>

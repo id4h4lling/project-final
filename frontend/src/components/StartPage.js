@@ -4,7 +4,9 @@ import { Route, NavLink, HashRouter } from "react-router-dom";
 import { HeroPage } from "./HeroPage";
 import { HistoryQuote } from "./HistoryQuote";
 import { JewelleryGallery } from "./JewelleryGallery";
+import { TravelPage } from "./TravelPage";
 import { TravelQuote } from "./TravelQuote";
+import { TechniqueGallery } from "./TechniqueGallery";
 
 import { FinanceQuote } from "./FinanceQuote";
 
@@ -23,11 +25,40 @@ const query = `
     height
   }}}
     quoteCollection{items{quote}}
-    jewelleryGalleryCollection{items{pictureCollection{items {
+    jewelleryGalleryCollection{items{title pictureCollection (limit: 7) {items {
       title
       url} 
     }}}
+    travelPageCollection{items{picture {
+      title
+      description
+      contentType
+      fileName
+      size
+      url
+      width
+      height
+    }, title, travelText }}
+
+    techniqueGalleryCollection{items{title pictureCollection (limit: 4){items {
+      title url
+      } 
+    }}}
+
+    aboutAuthorCollection{items{title, authorPicture {
+      title
+      description
+      contentType
+      fileName
+      size
+      url
+      width
+      height
+    } }}
+
   }
+
+  
 `;
 
 const StartPage = () => {
@@ -35,7 +66,9 @@ const StartPage = () => {
   const [quoteHistory, setQuoteHistory] = useState(null);
   const [jewelleryGallery, setJewelleryGallery] = useState(null);
   const [quoteTravel, setQuoteTravel] = useState(null);
+  const [travelPage, setTravelPage] = useState(null);
   const [quoteFinance, setQuoteFinance] = useState(null);
+  const [techniqueGallery, setTechniqueGallery] = useState(null);
 
   useEffect(() => {
     window
@@ -62,8 +95,9 @@ const StartPage = () => {
         setQuoteHistory(data.quoteCollection.items[0]);
         setJewelleryGallery(data.jewelleryGalleryCollection.items[0]);
         setQuoteTravel(data.quoteCollection.items[1]);
-
+        setTravelPage(data.travelPageCollection.items[0]);
         setQuoteFinance(data.quoteCollection.items[2]);
+        setTechniqueGallery(data.techniqueGalleryCollection.items[0]);
       });
   }, []);
 
@@ -77,7 +111,9 @@ const StartPage = () => {
         <HistoryQuote quoteHistory={quoteHistory} />
         <JewelleryGallery jewelleryGallery={jewelleryGallery} />
         <TravelQuote quoteTravel={quoteTravel} />
+        <TravelPage travelPage={travelPage} />
         <FinanceQuote quoteFinance={quoteFinance} />
+        <TechniqueGallery techniqueGallery={techniqueGallery} />
       </header>
     </div>
   );

@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 const Background = styled.div`
   background-color: #24384a;
-  width: 100%;
-  height: auto;
 
   h2 {
     font-family: "WremenaRegular";
@@ -18,25 +16,27 @@ const Background = styled.div`
   p {
     font-family: "WremenaRegular";
     color: #edbe44;
-    padding: 30px 0px;
-    width: 600px;
     font-size: 20px;
+    width: 500px;
   }
 `;
 
 const Content = styled.div`
-  padding: 80px 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 1200px;
+  padding: 70px;
 `;
 
-export const TravelPage = ({ travelPage }) => {
+export const LifeStory = ({ lifeStory }) => {
+  console.log(lifeStory.url);
   return (
     <Background>
-      <h2 className="title">{travelPage.title}</h2>
+      <h2>{lifeStory.title}</h2>
       <Content>
-        <p className="text">{travelPage.travelText}</p>
-        <div className="picture">
-          <img src={travelPage.picture.url + "?w=1000"} alt="picture" />
-        </div>
+        <p>{lifeStory.text.json.content[0].content[0].value}</p>
+        <img src={lifeStory.picture.url + "?w=500"} alt="picture" />
       </Content>
     </Background>
   );

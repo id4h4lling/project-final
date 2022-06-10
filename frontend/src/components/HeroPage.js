@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { SignUp } from "./SignUp";
 const HeroSection = styled.div`
   .background {
     width: 100%;
@@ -42,22 +43,22 @@ const HeroSection = styled.div`
 
 export const HeroPage = ({ hero }) => {
   return (
-    <HeroSection>
-      <div
-        className="background"
-        style={{
-          backgroundImage: ` url(${hero.heroimage.url})`,
-        }}
-      >
-        <div className="title-section">
-          <h4>{hero.topheading}</h4>
-          <h1>{hero.mainHeader}</h1>
-          <h3>{hero.subheading}</h3>
-          <Link to={`/Policy`}>
-            <h3>LÄNK</h3>
-          </Link>
+    <>
+      <HeroSection>
+        <div
+          className="background"
+          style={{
+            backgroundImage: ` url(${hero.heroimage.url})`,
+          }}
+        >
+          <div className="title-section">
+            <h4>{hero.topheading}</h4>
+            <h1>{hero.mainHeader}</h1>
+            <h3>{hero.subheading}</h3>
+          </div>
         </div>
-      </div>
-    </HeroSection>
+      </HeroSection>
+      <SignUp />
+    </>
   );
 };

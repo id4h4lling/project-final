@@ -10,6 +10,8 @@ import { TechniqueGallery } from "./TechniqueGallery";
 import { FinanceQuote } from "./FinanceQuote";
 import { Video } from "./Video";
 import { Policy } from "./Policy";
+import { Cta } from "./Cta";
+import { LifeStory } from "./LifeStory";
 import { AboutAuthor } from "./AboutAuthor";
 import { Footer } from "./Footer";
 
@@ -79,16 +81,6 @@ quoteCollection {
       }
     }
   }
-  aboutAuthorCollection{items{title, authorPicture {
-    title
-    description
-    contentType
-    fileName
-    size
-    url
-    width
-    height
-  }, authorBio{json}}}
 
   lifestoryCollection {
     items {picture {
@@ -105,8 +97,41 @@ quoteCollection {
     }
   }
 
-  footerCollection{items{grants, madeBy, contact, copyright}}
+  ctaCollection {
+    items {
+      cta
+      picture {
+        title
+        description
+        contentType
+        fileName
+        size
+        url
+        width
+        height
+      }
+    }
+  }
 
+  aboutAuthorCollection{items{title, authorPicture {
+    title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height
+  }, authorBio{json}}}
+
+  footerCollection{
+    items{
+      grants, 
+      madeBy, 
+      contact, 
+      copyright
+     }
+    }
   }
 
   
@@ -120,6 +145,8 @@ const StartPage = () => {
   const [travelPage, setTravelPage] = useState(null);
   const [quoteFinance, setQuoteFinance] = useState(null);
   const [techniqueGallery, setTechniqueGallery] = useState(null);
+  const [lifeStory, setLifeStory] = useState(null);
+  const [cta, setCta] = useState(null);
   const [aboutAuthor, setAboutAuthor] = useState(null);
   const [footer, setFooter] = useState(null);
 
@@ -150,6 +177,8 @@ const StartPage = () => {
         setTravelPage(data.travelPageCollection.items[0]);
         setQuoteFinance(data.quoteCollection.items[2]);
         setTechniqueGallery(data.techniqueGalleryCollection.items[0]);
+        setLifeStory(data.lifestoryCollection.items[0]);
+        setCta(data.ctaCollection.items[0]);
         setAboutAuthor(data.aboutAuthorCollection.items[0]);
         setFooter(data.footerCollection.items[0]);
       });
@@ -168,8 +197,10 @@ const StartPage = () => {
         <TravelPage travelPage={travelPage} />
         <FinanceQuote quoteFinance={quoteFinance} />
         <TechniqueGallery techniqueGallery={techniqueGallery} />
-        <AboutAuthor aboutAuthor={aboutAuthor} />
+        <LifeStory lifeStory={lifeStory} />
         <Video />
+        <Cta cta={cta} />
+        <AboutAuthor aboutAuthor={aboutAuthor} />
         <Footer footer={footer} />
       </header>
     </div>

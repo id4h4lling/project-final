@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Route, NavLink, HashRouter } from "react-router-dom";
+import { SignUp } from "./SignUp";
 import { HeroPage } from "./HeroPage";
 import { HistoryQuote } from "./HistoryQuote";
 import { JewelleryGallery } from "./JewelleryGallery";
@@ -190,6 +191,7 @@ const StartPage = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <SignUp />
         <HeroPage hero={hero} />
         <HistoryQuote quoteHistory={quoteHistory} />
         <JewelleryGallery jewelleryGallery={jewelleryGallery} />

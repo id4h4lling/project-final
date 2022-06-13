@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { SignUp } from "./SignUp";
 const HeroSection = styled.div`
   .background {
     width: 100%;
@@ -9,6 +8,7 @@ const HeroSection = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
   }
 
   .title-section {
@@ -58,7 +58,6 @@ export const HeroPage = ({ hero }) => {
           </div>
         </div>
       </HeroSection>
-      <SignUp />
     </>
   );
 };

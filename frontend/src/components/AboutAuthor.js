@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+// import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const Background = styled.div`
   background-color: #24384a;
@@ -22,9 +25,6 @@ const Background = styled.div`
 `;
 
 const Content = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   width: 1200px;
   padding: 70px;
 `;
@@ -39,7 +39,8 @@ export const AboutAuthor = ({ aboutAuthor }) => {
       <h2>{aboutAuthor.title}</h2>
       <Content>
         <img src={aboutAuthor.authorPicture.url + "?w=200"} alt="picture" />
-        <p>{aboutAuthor.authorBio.json.content[0].content[0].value}</p>
+        {documentToReactComponents(aboutAuthor.authorBio.json)}
+        {/* <p>{aboutAuthor.authorBio.json.content[0].content[0].value}</p> */}
       </Content>
     </Background>
   );

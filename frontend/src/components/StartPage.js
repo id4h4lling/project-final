@@ -15,6 +15,9 @@ import { Cta } from "./Cta";
 import { LifeStory } from "./LifeStory";
 import { AboutAuthor } from "./AboutAuthor";
 import { Footer } from "./Footer";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { HashLink as Link } from "react-router-hash-link";
+// import { NavBar } from "./NavBar";
 
 const ID = process.env.REACT_APP_SPACE_ID;
 const TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
@@ -114,16 +117,37 @@ quoteCollection {
     }
   }
 
-  aboutAuthorCollection{items{title, authorPicture {
-    title
-    description
-    contentType
-    fileName
-    size
-    url
-    width
-    height
-  }, authorBio{json}}}
+ 
+
+  aboutAuthorCollection(limit: 5) {
+    items {title,authorPicture {
+      title
+      description
+      contentType
+      fileName
+      size
+      url
+      width
+      height
+    },
+      authorBio {
+        json
+        links {
+          entries {
+            inline {
+              sys {
+                id
+              }
+              __typename
+              ... on AboutAuthor {
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   footerCollection{
     items{
@@ -163,6 +187,7 @@ const StartPage = () => {
         // send the GraphQL query
         body: JSON.stringify({ query }),
       })
+
       .then((response) => response.json())
       .then(({ data, errors }) => {
         if (errors) {
@@ -191,6 +216,7 @@ const StartPage = () => {
   return (
     <div className="App">
       <header className="App-header">
+        {/* <NavBar /> */}
         <SignUp />
         <HeroPage hero={hero} />
         <HistoryQuote quoteHistory={quoteHistory} />

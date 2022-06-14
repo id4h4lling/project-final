@@ -7,14 +7,6 @@ export const SignUp = () => {
 
   const [useremail, setUserEmail] = useState("");
 
-  const backGroundLayerOn = () => {
-    document.body.style.opacity = "0.8";
-    document.getElementsByClassName("sidebar.active").style.opacity = "1";
-  };
-  const backGroundLayerOff = () => {
-    document.body.style.opacity = "1";
-  };
-
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -29,11 +21,10 @@ export const SignUp = () => {
       .then((res) => res.json())
       .then(() => setUserEmail(""))
       .finally(() => setSidebar(!sidebar));
-    backGroundLayerOff();
   };
   const showSidebar = () => {
     setSidebar(!sidebar);
-    backGroundLayerOn();
+    document.getElementById("overlay").style.display = "block";
   };
 
   useEffect(() => {
@@ -42,7 +33,7 @@ export const SignUp = () => {
       // then close the menu
       if (sidebar && ref.current && !ref.current.contains(e.target)) {
         setSidebar(false);
-        backGroundLayerOff();
+        document.getElementById("overlay").style.display = "none";
       }
     };
     document.addEventListener("mousedown", checkIfClickedOutside);
@@ -54,31 +45,37 @@ export const SignUp = () => {
   }, [sidebar]);
 
   return (
-    <Form ref={ref}>
-      <div className={sidebar ? "sidebar active" : "sidebar"}>
-        <h3>Sign up for news about the bookrelease!</h3>
-        <form onSubmit={onFormSubmit}>
-          <div className="input">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              value={useremail}
-              onChange={(e) => setUserEmail(e.target.value)}
-            />
-          </div>
+    <>
+      <Form ref={ref}>
+        <div
+          style={{ zIndex: "101" }}
+          className={sidebar ? "sidebar active" : "sidebar"}
+        >
+          <h3>Sign up for news about the bookrelease!</h3>
+          <form onSubmit={onFormSubmit}>
+            <div className="input">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                value={useremail}
+                onChange={(e) => setUserEmail(e.target.value)}
+              />
+            </div>
 
-          <button className="button-25" type="submit">
-            Submit
+            <button className="button-25" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="circle medium">
+          <button className="cta-button" type="button" onClick={showSidebar}>
+            <h2>Signup!</h2>
           </button>
-        </form>
-      </div>
-      <div class="circle medium">
-        <button className="cta-button" type="button" onClick={showSidebar}>
-          <h2>Signup!</h2>
-        </button>
-      </div>
-    </Form>
+        </div>
+      </Form>
+      <div id="overlay" className="overlay" style={{ display: "none" }}></div>
+    </>
   );
 };
 

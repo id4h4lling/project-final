@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SignUp } from "./SignUp";
 
 const Background = styled.div`
   .background {
@@ -46,7 +47,7 @@ export const Cta = ({ cta }) => {
         }}
       >
         <Button>
-          <button>
+          <button type="button">
             <h1>{cta.cta}</h1>
           </button>
         </Button>

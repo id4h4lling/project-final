@@ -156,6 +156,9 @@ quoteCollection {
       copyright
      }
     }
+
+
+
   }
 
   
@@ -243,7 +246,7 @@ const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
 
-  /* .heroPage {
+  .heroPage {
     scroll-snap-align: center;
     height: 100vh;
   }
@@ -256,15 +259,5 @@ const Wrapper = styled.div`
     scroll-snap-align: center;
     height: 100vh;
     scroll-snap-stop: always;
-  } */
+  }
 `;
-
-// const Hero = styled.div`
-//   scroll-snap-align: center;
-//   height: 100vh;
-// `;
-
-// const History = styled.div`
-//   scroll-snap-align: center;
-//   height: 100vh;
-// `;

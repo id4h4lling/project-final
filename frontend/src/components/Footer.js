@@ -2,6 +2,8 @@ import React from "react";
 import { Policy } from "./Policy";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const Background = styled.div`
   background-color: #7b2020;
@@ -10,12 +12,12 @@ const Background = styled.div`
   justify-content: space-evenly;
   padding: 100px;
 
-  h3 {
+  /* h3 {
     font-family: "WremenaRegular";
     color: #edbe44;
     font-size: 20px;
     letter-spacing: 3px;
-  }
+  } */
 `;
 
 const Grants = styled.div`
@@ -37,13 +39,20 @@ const Contact = styled.div`
 `;
 
 export const Footer = ({ footer }) => {
+  // const Grants = ({ children }) => <h3 className="grants">{children}</h3>;
+  // const options = {
+  //   renderMark: { [MARKS.BOLD]: (text) => `<custom-bold>${text}<custom-bold>` },
+  //   renderNode: {
+  //     [BLOCKS.PARAGRAPH]: (node, next) => <Grants>{children}</Grants>,
+  //   },
+  // };
+
   return (
     <Background>
       <Grants>
-        <h3>{footer.grants}</h3>
+        {/* <div>{documentToReactComponents(footer.grants, options)}</div> */}
       </Grants>
       <Copy>
-        <h3>{footer.madeBy}</h3>
         <h3>{footer.copyright}</h3>
         <Link to={"/Policy"}>
           <h3>Intigretetspolicy</h3>

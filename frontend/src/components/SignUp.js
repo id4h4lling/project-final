@@ -17,7 +17,7 @@ export const SignUp = () => {
         useremail: useremail,
       }),
     };
-    fetch("http://localhost:8080/signup", options)
+    fetch(" https://bookreales-hair.herokuapp.com/signup", options)
       .then((res) => res.json())
       .then(() => setUserEmail(""))
       .finally(() => setSidebar(!sidebar));

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Background = styled.div`
+  scroll-snap-align: center;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;

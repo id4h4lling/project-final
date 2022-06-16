@@ -2,6 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 const HeroSection = styled.div`
+  scroll-snap-type: y mandatory;
+  max-height: 100vh;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100vw;
+
   .background {
     width: 100%;
     height: 972px;

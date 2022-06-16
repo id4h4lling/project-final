@@ -16,8 +16,7 @@ import { LifeStory } from "./LifeStory";
 import { AboutAuthor } from "./AboutAuthor";
 import { Footer } from "./Footer";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { HashLink as Link } from "react-router-hash-link";
-// import { NavBar } from "./NavBar";
+import styled from "styled-components";
 
 const ID = process.env.REACT_APP_SPACE_ID;
 const TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
@@ -214,25 +213,58 @@ const StartPage = () => {
     return "Loading...";
   }
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <NavBar /> */}
-        <SignUp />
-        <HeroPage hero={hero} />
-        <HistoryQuote quoteHistory={quoteHistory} />
-        <JewelleryGallery jewelleryGallery={jewelleryGallery} />
-        <TravelQuote quoteTravel={quoteTravel} />
-        <TravelPage travelPage={travelPage} />
-        <FinanceQuote quoteFinance={quoteFinance} />
-        <TechniqueGallery techniqueGallery={techniqueGallery} />
-        <LifeStory lifeStory={lifeStory} />
-        <Video />
-        <Cta cta={cta} />
-        <AboutAuthor aboutAuthor={aboutAuthor} />
-        <Footer footer={footer} />
-      </header>
-    </div>
+    <Wrapper>
+      <SignUp />
+      <HeroPage className="heroPage" hero={hero} />
+      <HistoryQuote className="historyQoute" quoteHistory={quoteHistory} />
+      <JewelleryGallery
+        className="jewelleryGallery"
+        jewelleryGallery={jewelleryGallery}
+      />
+      <TravelQuote className="travelQuote" quoteTravel={quoteTravel} />
+      <TravelPage travelPage={travelPage} />
+      <FinanceQuote quoteFinance={quoteFinance} />
+      <TechniqueGallery techniqueGallery={techniqueGallery} />
+      <LifeStory lifeStory={lifeStory} />
+      <Video />
+      <Cta cta={cta} />
+      <AboutAuthor aboutAuthor={aboutAuthor} />
+      <Footer footer={footer} />
+    </Wrapper>
   );
 };
 
 export default StartPage;
+
+const Wrapper = styled.div`
+  scroll-snap-type: y mandatory;
+  max-height: 100vh;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100vw;
+
+  /* .heroPage {
+    scroll-snap-align: center;
+    height: 100vh;
+  }
+  .historyQoute {
+    scroll-snap-align: center;
+    height: 100vh;
+  }
+
+  .jewelleryGallery {
+    scroll-snap-align: center;
+    height: 100vh;
+    scroll-snap-stop: always;
+  } */
+`;
+
+// const Hero = styled.div`
+//   scroll-snap-align: center;
+//   height: 100vh;
+// `;
+
+// const History = styled.div`
+//   scroll-snap-align: center;
+//   height: 100vh;
+// `;

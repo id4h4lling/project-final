@@ -17,17 +17,19 @@ export const Video = () => {
   // const myRef = useRef();
   // useEffect(() =>)
   return (
-    <Background>
-      <iframe
-        // ref={myRef}
-        className="video"
-        src="https://player.vimeo.com/video/718679479?h=3cd134db19?autoplay=1&loop=1&autoplay=1"
-        width="840"
-        height="564"
-        frameBorder="0"
-        allow="autoplay allow='autoplay'"
-        allowFullScreen
-      ></iframe>
-    </Background>
+    <div className="scroll">
+      <Background>
+        <iframe
+          // ref={myRef}
+          className="video"
+          src="https://player.vimeo.com/video/718679479?h=3cd134db19?autoplay=1&loop=1&autoplay=1"
+          width="840"
+          height="564"
+          frameBorder="0"
+          allow="autoplay allow='autoplay'"
+          allowFullScreen
+        ></iframe>
+      </Background>
+    </div>
   );
 };

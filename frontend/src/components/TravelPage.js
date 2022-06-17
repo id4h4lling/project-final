@@ -30,14 +30,16 @@ const Content = styled.div`
 
 export const TravelPage = ({ travelPage }) => {
   return (
-    <Background>
-      <h2 className="title">{travelPage.title}</h2>
-      <Content>
-        <p className="text">{travelPage.travelText}</p>
-        <div className="picture">
-          <img src={travelPage.picture.url + "?w=1000"} alt="picture" />
-        </div>
-      </Content>
-    </Background>
+    <div className="scroll">
+      <Background>
+        <h2 className="title">{travelPage.title}</h2>
+        <Content>
+          <p className="text">{travelPage.travelText}</p>
+          <div className="picture">
+            <img src={travelPage.picture.url + "?w=1000"} alt="picture" />
+          </div>
+        </Content>
+      </Background>
+    </div>
   );
 };

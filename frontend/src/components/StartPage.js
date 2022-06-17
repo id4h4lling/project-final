@@ -216,15 +216,12 @@ const StartPage = () => {
     return "Loading...";
   }
   return (
-    <Wrapper>
+    <div className="wrapper-scroll">
       <SignUp />
-      <HeroPage className="heroPage" hero={hero} />
-      <HistoryQuote className="historyQoute" quoteHistory={quoteHistory} />
-      <JewelleryGallery
-        className="jewelleryGallery"
-        jewelleryGallery={jewelleryGallery}
-      />
-      <TravelQuote className="travelQuote" quoteTravel={quoteTravel} />
+      <HeroPage hero={hero} />
+      <HistoryQuote quoteHistory={quoteHistory} />
+      <JewelleryGallery jewelleryGallery={jewelleryGallery} />
+      <TravelQuote quoteTravel={quoteTravel} />
       <TravelPage travelPage={travelPage} />
       <FinanceQuote quoteFinance={quoteFinance} />
       <TechniqueGallery techniqueGallery={techniqueGallery} />
@@ -233,31 +230,8 @@ const StartPage = () => {
       <Cta cta={cta} />
       <AboutAuthor aboutAuthor={aboutAuthor} />
       <Footer footer={footer} />
-    </Wrapper>
+    </div>
   );
 };
 
 export default StartPage;
-
-const Wrapper = styled.div`
-  scroll-snap-type: y mandatory;
-  max-height: 100vh;
-  overflow-y: scroll;
-  height: 100vh;
-  width: 100vw;
-
-  .heroPage {
-    scroll-snap-align: center;
-    height: 100vh;
-  }
-  .historyQoute {
-    scroll-snap-align: center;
-    height: 100vh;
-  }
-
-  .jewelleryGallery {
-    scroll-snap-align: center;
-    height: 100vh;
-    scroll-snap-stop: always;
-  }
-`;

@@ -7,7 +7,7 @@ const Background = styled.div`
   justify-content: center;
   background-color: #e3b921;
   width: 100%;
-  height: 726px;
+  min-height: 726px;
 
   p {
     font-family: "WremenaRegular";
@@ -20,8 +20,10 @@ const Background = styled.div`
 
 export const TravelQuote = ({ quoteTravel }) => {
   return (
-    <Background>
-      <p>{quoteTravel.quote}</p>
-    </Background>
+    <div className="scroll">
+      <Background>
+        <p>{quoteTravel.quote}</p>
+      </Background>
+    </div>
   );
 };

@@ -74,30 +74,14 @@ code {
   z-index: 100;
 }
 
-/* .Wrapper {
-  scroll-snap-type: y mandatory;
+.wrapper-scroll {
+  scroll-snap-type: y proximity;
   max-height: 100vh;
   overflow-y: scroll;
   height: 100vh;
   width: 100vw;
 }
 
-h1 {
-  color: red;
-}
-
-.hero-page {
-  scroll-snap-align: start;
-
-  height: 100vh;
-}
-.history-qoute {
+.scroll {
   scroll-snap-align: center;
-  height: 100vh;
-  scroll-snap-stop: always;
 }
-
-.travel-quote {
-  scroll-snap-align: center;
-  height: 100vh;
-} */

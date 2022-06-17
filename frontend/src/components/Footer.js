@@ -12,12 +12,12 @@ const Background = styled.div`
   justify-content: space-evenly;
   padding: 100px;
 
-  /* h3 {
+  h3 {
     font-family: "WremenaRegular";
     color: #edbe44;
     font-size: 20px;
     letter-spacing: 3px;
-  } */
+  }
 `;
 
 const Grants = styled.div`

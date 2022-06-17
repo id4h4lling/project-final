@@ -43,7 +43,7 @@ const HeroSection = styled.div`
 
 export const HeroPage = ({ hero }) => {
   return (
-    <>
+    <div className="scroll">
       <HeroSection>
         <div
           className="background"
@@ -58,6 +58,6 @@ export const HeroPage = ({ hero }) => {
           </div>
         </div>
       </HeroSection>
-    </>
+    </div>
   );
 };

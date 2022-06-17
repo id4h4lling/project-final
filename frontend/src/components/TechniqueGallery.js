@@ -27,17 +27,19 @@ const Title = styled.div`
 
 export const TechniqueGallery = ({ techniqueGallery }) => {
   return (
-    <Background>
-      <Title>
-        <h2>{techniqueGallery.title}</h2>
-      </Title>
-      <PictureBox>
-        {techniqueGallery.pictureCollection.items.map((picture) => (
-          <div className="picture">
-            <img src={picture.url + "?w=500"} alt="picture" />
-          </div>
-        ))}
-      </PictureBox>
-    </Background>
+    <div className="scroll">
+      <Background>
+        <Title>
+          <h2>{techniqueGallery.title}</h2>
+        </Title>
+        <PictureBox>
+          {techniqueGallery.pictureCollection.items.map((picture) => (
+            <div className="picture">
+              <img src={picture.url + "?w=500"} alt="picture" />
+            </div>
+          ))}
+        </PictureBox>
+      </Background>
+    </div>
   );
 };

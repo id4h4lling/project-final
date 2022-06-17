@@ -61,16 +61,18 @@ export const AboutAuthor = ({ aboutAuthor }) => {
   };
 
   return (
-    <Background>
-      <h2>{aboutAuthor.title}</h2>
-      <Content>
-        <img src={aboutAuthor.authorPicture.url + "?w=200"} alt="picture" />
-        <div>
-          {documentToReactComponents(aboutAuthor.authorBio.json, options)}
-        </div>
-        {/* {documentToReactComponents(aboutAuthor.authorBio.json)} */}
-        {/* <p>{aboutAuthor.authorBio.json.content[0].content[0].value}</p> */}
-      </Content>
-    </Background>
+    <div className="scroll">
+      <Background>
+        <h2>{aboutAuthor.title}</h2>
+        <Content>
+          <img src={aboutAuthor.authorPicture.url + "?w=200"} alt="picture" />
+          <div>
+            {documentToReactComponents(aboutAuthor.authorBio.json, options)}
+          </div>
+          {/* {documentToReactComponents(aboutAuthor.authorBio.json)} */}
+          {/* <p>{aboutAuthor.authorBio.json.content[0].content[0].value}</p> */}
+        </Content>
+      </Background>
+    </div>
   );
 };

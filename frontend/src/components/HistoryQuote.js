@@ -20,8 +20,10 @@ const Background = styled.div`
 
 export const HistoryQuote = ({ quoteHistory }) => {
   return (
-    <Background>
-      <p>{quoteHistory.quote}</p>
-    </Background>
+    <div className="scroll">
+      <Background>
+        <p>{quoteHistory.quote}</p>
+      </Background>
+    </div>
   );
 };

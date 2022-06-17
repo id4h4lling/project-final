@@ -32,12 +32,14 @@ const Content = styled.div`
 export const LifeStory = ({ lifeStory }) => {
   console.log(lifeStory.url);
   return (
-    <Background>
-      <h2>{lifeStory.title}</h2>
-      <Content>
-        <p>{lifeStory.text.json.content[0].content[0].value}</p>
-        <img src={lifeStory.picture.url + "?w=500"} alt="picture" />
-      </Content>
-    </Background>
+    <div className="scroll">
+      <Background>
+        <h2>{lifeStory.title}</h2>
+        <Content>
+          <p>{lifeStory.text.json.content[0].content[0].value}</p>
+          <img src={lifeStory.picture.url + "?w=500"} alt="picture" />
+        </Content>
+      </Background>
+    </div>
   );
 };

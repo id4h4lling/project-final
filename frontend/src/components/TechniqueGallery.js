@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 const Background = styled.div`
   background-color: #9f9f9f;
+  min-height: 100vh;
+  padding: 90px;
 `;
 
 const PictureBox = styled.div`
@@ -22,6 +24,9 @@ const Title = styled.div`
     letter-spacing: 3px;
     text-transform: uppercase;
     padding: 30px;
+    background-color: #7b2020;
+    padding: 30px 40px;
+    display: inline;
   }
 `;
 

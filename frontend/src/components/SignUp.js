@@ -1,30 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { Form } from "./Form";
 
-export const SignUp = () => {
+export const SignUp = ({
+  sidebar,
+  showSidebar,
+  hideSidebar,
+  showThankYou,
+  setShowThankYou,
+}) => {
   const ref = useRef();
-  const [sidebar, setSidebar] = useState(false);
-
-  const [useremail, setUserEmail] = useState("");
-
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-
-    const options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        useremail: useremail,
-      }),
-    };
-    fetch(" https://bookreales-hair.herokuapp.com/signup", options)
-      .then((res) => res.json())
-      .then(() => setUserEmail(""))
-      .finally(() => setSidebar(!sidebar));
-  };
-  const showSidebar = () => {
-    setSidebar(!sidebar);
-    document.getElementById("overlay").style.display = "block";
+  const resetSidebarContent = () => {
+    () => setShowThankYou(false);
   };
 
   useEffect(() => {
@@ -33,6 +20,7 @@ export const SignUp = () => {
       // then close the menu
       if (sidebar && ref.current && !ref.current.contains(e.target)) {
         setSidebar(false);
+
         document.getElementById("overlay").style.display = "none";
       }
     };
@@ -46,49 +34,56 @@ export const SignUp = () => {
 
   return (
     <>
-      <Form ref={ref}>
+      <StyledForm ref={ref}>
         <div
           style={{ zIndex: "101" }}
           className={sidebar ? "sidebar active" : "sidebar"}
         >
-          <h3>Sign up for news about the bookrelease!</h3>
-          <form onSubmit={onFormSubmit}>
-            <div className="input">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                value={useremail}
-                onChange={(e) => setUserEmail(e.target.value)}
-              />
-            </div>
-
-            <button className="button-25" type="submit">
-              Submit
-            </button>
-          </form>
+          <DeleteButton onClick={hideSidebar}>
+            {" "}
+            <span role="img" aria-label="delete">
+              ❌
+            </span>
+          </DeleteButton>
+          <Form
+            showThankYou={showThankYou}
+            setShowThankYou={setShowThankYou}
+            resetSidebarContent={resetSidebarContent}
+          />
         </div>
-        <div class="circle medium">
-          <button className="cta-button" type="button" onClick={showSidebar}>
-            <h2>Signup!</h2>
+        <div>
+          <button className="button circle" type="button" onClick={showSidebar}>
+            <h3>Info!</h3>
           </button>
         </div>
-      </Form>
-      <div id="overlay" className="overlay" style={{ display: "none" }}></div>
+      </StyledForm>
+      <StyledOverlay>
+        <div
+          id="overlay"
+          className="overlay"
+          onClick={hideSidebar}
+          style={{ display: "none" }}
+        ></div>
+      </StyledOverlay>
     </>
   );
 };
 
-const Form = styled.div`
+const StyledForm = styled.div`
   .sidebar {
     position: fixed;
     top: 100px;
-    left: -500px;
+    left: -700px;
     width: 500px;
     height: 60%;
     background-color: #24384a;
     transition: left 700ms ease-out;
     border: solid 2px #e3b921;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
   }
   .sidebar.active {
     left: 0;
@@ -110,5 +105,40 @@ const Form = styled.div`
     font-family: "WremenaLight";
     color: #edbe44;
     padding: 20px;
+  }
+  .overlay {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 36, 36, 0.7);
+    z-index: 100;
+  }
+`;
+
+const DeleteButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
+const StyledOverlay = styled.div`
+  .overlay {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 36, 36, 0.7);
+    z-index: 100;
   }
 `;

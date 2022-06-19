@@ -7,7 +7,7 @@ const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  min-height: 100vh;
   .video {
     margin: 200px 0;
   }

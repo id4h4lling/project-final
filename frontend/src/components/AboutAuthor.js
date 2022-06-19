@@ -7,15 +7,18 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const Background = styled.div`
   background-color: #24384a;
-  /* min-height: 100vh; */
+  min-height: 100vh;
+  padding: 90px;
 
   h2 {
     font-family: "WremenaRegular";
-    color: #edbe44;
+    color: #24384a;
     font-size: 30px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    padding: 30px;
+    background-color: #edbe44;
+    padding: 30px 40px;
+    display: inline;
   }
 
   p {
@@ -30,6 +33,7 @@ const Background = styled.div`
   }
   .citat {
     color: yellow;
+
     margin-left: 70px;
   }
 `;
@@ -55,7 +59,7 @@ export const AboutAuthor = ({ aboutAuthor }) => {
       // [MARKS.ITALIC]: (text) => <div style={{fontSize:"22px", color:"blue", width:"50%"}}>{text}</div>
     },
     renderNode: {
-      [BLOCKS.HEADING_3]: (_node, children) => <Text>{children}</Text>,
+      [BLOCKS.PARAGRAPH]: (_node, children) => <Text>{children}</Text>,
       [BLOCKS.HEADING_1]: (_node, children) => <Bla>{children}</Bla>,
     },
   };
@@ -65,7 +69,7 @@ export const AboutAuthor = ({ aboutAuthor }) => {
       <Background>
         <h2>{aboutAuthor.title}</h2>
         <Content>
-          <img src={aboutAuthor.authorPicture.url + "?w=200"} alt="picture" />
+          <img src={aboutAuthor.authorPicture.url + "?w=400"} alt="picture" />
           <div>
             {documentToReactComponents(aboutAuthor.authorBio.json, options)}
           </div>

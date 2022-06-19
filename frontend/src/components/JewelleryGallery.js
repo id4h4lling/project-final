@@ -3,16 +3,8 @@ import styled from "styled-components";
 
 const Background = styled.div`
   background-color: #9f9f9f;
-`;
-
-const PictureBox = styled.div`
-  display: flex;
-  justify-content: row;
-
-  .picture {
-    margin: 100px 15px;
-    padding: 30px;
-  }
+  min-height: 100vh;
+  padding: 90px;
 `;
 const Title = styled.div`
   h2 {
@@ -21,6 +13,18 @@ const Title = styled.div`
     font-size: 30px;
     letter-spacing: 3px;
     text-transform: uppercase;
+    background-color: #7b2020;
+    padding: 30px 40px;
+    display: inline;
+  }
+`;
+
+const PictureBox = styled.div`
+  display: flex;
+  justify-content: row;
+
+  .picture {
+    margin: 100px 15px;
     padding: 30px;
   }
 `;

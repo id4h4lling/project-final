@@ -14,7 +14,7 @@ import { Policy } from "./Policy";
 import { Cta } from "./Cta";
 import { LifeStory } from "./LifeStory";
 import { AboutAuthor } from "./AboutAuthor";
-import { Footer } from "./Footer";
+// import { Footer } from "./Footer";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import styled from "styled-components";
 
@@ -100,7 +100,7 @@ quoteCollection {
     }
   }
 
-  ctaCollection {
+  ctaCollection(limit: 5) {
     items {
       cta
       picture {
@@ -148,15 +148,28 @@ quoteCollection {
     }
   }
 
-  footerCollection{
-    items{
-      grants, 
-      madeBy, 
-      contact, 
-      copyright
-     }
-    }
 
+  footerContactCollection(limit: 1) {
+    items {
+      title
+      footer {
+        json
+        links {
+          entries {
+            inline {
+              sys {
+                id
+              }
+              __typename
+              ... on FooterContact {
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
 
   }
@@ -165,6 +178,19 @@ quoteCollection {
 `;
 
 const StartPage = () => {
+  const [sidebar, setSidebar] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
+
+  const showSidebar = () => {
+    setSidebar(true);
+    document.getElementById("overlay").style.display = "block";
+  };
+  const hideSidebar = () => {
+    setSidebar(false);
+    document.getElementById("overlay").style.display = "none";
+    setShowThankYou(false);
+  };
+
   const [hero, setHero] = useState(null);
   const [quoteHistory, setQuoteHistory] = useState(null);
   const [jewelleryGallery, setJewelleryGallery] = useState(null);
@@ -175,7 +201,7 @@ const StartPage = () => {
   const [lifeStory, setLifeStory] = useState(null);
   const [cta, setCta] = useState(null);
   const [aboutAuthor, setAboutAuthor] = useState(null);
-  const [footer, setFooter] = useState(null);
+  // const [footer, setFooter] = useState(null);
 
   useEffect(() => {
     window
@@ -208,7 +234,7 @@ const StartPage = () => {
         setLifeStory(data.lifestoryCollection.items[0]);
         setCta(data.ctaCollection.items[0]);
         setAboutAuthor(data.aboutAuthorCollection.items[0]);
-        setFooter(data.footerCollection.items[0]);
+        // setFooter(data.footerCollection.items[0]);
       });
   }, []);
 
@@ -217,7 +243,13 @@ const StartPage = () => {
   }
   return (
     <div className="wrapper-scroll">
-      <SignUp />
+      <SignUp
+        sidebar={sidebar}
+        showSidebar={showSidebar}
+        hideSidebar={hideSidebar}
+        setShowThankYou={setShowThankYou}
+        showThankYou={showThankYou}
+      />
       <HeroPage hero={hero} />
       <HistoryQuote quoteHistory={quoteHistory} />
       <JewelleryGallery jewelleryGallery={jewelleryGallery} />
@@ -227,9 +259,14 @@ const StartPage = () => {
       <TechniqueGallery techniqueGallery={techniqueGallery} />
       <LifeStory lifeStory={lifeStory} />
       <Video />
-      <Cta cta={cta} />
+      <Cta
+        cta={cta}
+        sidebar={sidebar}
+        showSidebar={showSidebar}
+        hideSidebar={hideSidebar}
+      />
       <AboutAuthor aboutAuthor={aboutAuthor} />
-      <Footer footer={footer} />
+      {/* <Footer footer={footer} /> */}
     </div>
   );
 };

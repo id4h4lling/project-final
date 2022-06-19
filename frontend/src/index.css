@@ -74,14 +74,67 @@ code {
   z-index: 100;
 }
 
+.button {
+  font-family: "WremenaLight";
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: ripple 15s infinite;
+  z-index: 2;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.circle {
+  border: none;
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  right: 30px;
+  bottom: 10%;
+  background-color: #edbe44;
+  color: #24384a;
+  font-size: 12px;
+}
 .wrapper-scroll {
-  scroll-snap-type: y proximity;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+
+  scroll-snap-type: y mandatory;
+
+  /* scroll-snap-type: y proximity;
   max-height: 100vh;
   overflow-y: scroll;
   height: 100vh;
-  width: 100vw;
+  width: 100vw; */
 }
 
 .scroll {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
+  min-height: 100vh;
+  /* scroll-snap-align: center; */
+}
+
+@media screen and (min-width: 1025px) {
+  .circle {
+    width: 90px;
+    height: 90px;
+    padding: 20px;
+    right: 65px;
+    bottom: 30%;
+    font-size: 15px;
+  }
 }

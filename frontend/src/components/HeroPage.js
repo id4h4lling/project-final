@@ -1,10 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
+
 const HeroSection = styled.div`
   .background {
     width: 100%;
-    height: 972px;
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,27 +24,46 @@ const HeroSection = styled.div`
     align-items: center;
     /* justify-content: space-evenly; */
     height: 200px;
+    width: 70%;
+    margin: auto;
+    padding-top: 70px;
+
+    @media ${devices.desktop} {
+      margin-left: 0;
+    }
   }
 
   h1 {
     color: #edbe44;
     font-family: "WremenaLight";
-    font-size: 50px;
+    font-size: 30px;
     letter-spacing: 4px;
     margin: 0px 0px 10px 0px;
+
+    @media ${devices.desktop} {
+      font-size: 50px;
+    }
   }
 
   h3 {
     font-family: "WremenaRegular";
     color: #edbe44;
-    font-size: 20px;
+    font-size: 10px;
     letter-spacing: 3px;
+    text-align: center;
+
+    @media ${devices.desktop} {
+      font-size: 20px;
+    }
   }
 
   h4 {
     font-family: "WremenaLight";
     color: #edbe44;
-    margin: 30px 0px 0px 0px;
+
+    @media ${devices.desktop} {
+      font-size: 20px;
+    }
   }
 `;
 

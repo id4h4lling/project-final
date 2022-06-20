@@ -15,11 +15,10 @@ const Background = styled.div`
 
 const Button = styled.div`
   display: flex;
-
+  position: absolute;
+  top: 40%;
+  left: 20%;
   button {
-    position: absolute;
-    top: 50%;
-
     background: none;
     color: inherit;
     border: none;
@@ -39,7 +38,7 @@ const Button = styled.div`
   }
 `;
 
-export const Cta = ({ cta }) => {
+export const Cta = ({ cta, sidebar, showSidebar, hideSidebar }) => {
   console.log(cta.cta);
   return (
     <div className="scroll">
@@ -50,7 +49,7 @@ export const Cta = ({ cta }) => {
             backgroundImage: ` url(${cta.picture.url})`,
           }}
         >
-          <Button>
+          <Button onClick={showSidebar}>
             <button type="button">
               <h1>{cta.cta}</h1>
             </button>

@@ -5,11 +5,17 @@ const Background = styled.div`
   background-color: #9f9f9f;
   min-height: 100vh;
   padding: 90px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 50%;
 `;
 
 const PictureBox = styled.div`
   display: flex;
   justify-content: row;
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: center;
+  overflow-x: auto;
 
   .picture {
     margin: 100px 15px;

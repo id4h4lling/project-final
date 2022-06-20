@@ -2,6 +2,7 @@ import React from "react";
 import { Footer } from "./Footer";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Policy = () => {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export const Policy = () => {
       <GoBackButton type="button" onClick={onBackButtonClick}>
         <h2>Tillbaka</h2>
       </GoBackButton>
+
       <Text>
         <p>
           Sedan den 25 maj 2018 gäller den nya dataskyddsförordningen GDPR för
@@ -540,7 +542,7 @@ const GoBackButton = styled.button`
 `;
 
 const Text = styled.div`
-  color: #7b2020;
+  color: #24384a;
   width: 60%;
   font-family: wremena;
   padding: 20px;

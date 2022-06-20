@@ -27,13 +27,13 @@ const Background = styled.div`
     width: 500px;
   }
   .intro {
-    color: aqua;
+    color: #edbe44;
     margin-bottom: 40px;
     margin-left: 70px;
   }
   .citat {
-    color: yellow;
-
+    color: #edbe44;
+    white-space: pre-wrap;
     margin-left: 70px;
   }
 `;
@@ -49,7 +49,7 @@ export const AboutAuthor = ({ aboutAuthor }) => {
     aboutAuthor.authorBio.json.content[0].content[0].value
   );
 
-  const Text = ({ children }) => <h3 className="citat">{children}</h3>;
+  const Text = ({ children }) => <div className="citat">{children}</div>;
 
   const Bla = ({ children }) => <h4 className="intro">{children}</h4>;
   const options = {

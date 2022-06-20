@@ -74,14 +74,15 @@ code {
   z-index: 100;
 }
 
-.button {
+/* .button {
   font-family: "WremenaLight";
-  position: absolute;
+
   border-radius: 50%;
   background: white;
   animation: ripple 15s infinite;
   z-index: 2;
-}
+  position: absolute;
+} */
 
 @keyframes ripple {
   0% {
@@ -97,29 +98,22 @@ code {
   }
 }
 
-.circle {
+/* .circle {
   border: none;
-  width: 60px;
-  height: 60px;
-  padding: 5px;
-  right: 30px;
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  right: 40px;
   bottom: 10%;
   background-color: #edbe44;
-  color: #24384a;
-  font-size: 12px;
-}
+} */
+
 .wrapper-scroll {
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
 
   scroll-snap-type: y mandatory;
-
-  /* scroll-snap-type: y proximity;
-  max-height: 100vh;
-  overflow-y: scroll;
-  height: 100vh;
-  width: 100vw; */
 }
 
 .scroll {
@@ -128,13 +122,27 @@ code {
   /* scroll-snap-align: center; */
 }
 
+/* .ctaText {
+  font-family: "WremenaRegular";
+  font-size: 15px;
+  color: #24384a;
+  width: 60px;
+} */
+
 @media screen and (min-width: 1025px) {
   .circle {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     padding: 20px;
-    right: 65px;
-    bottom: 30%;
-    font-size: 15px;
+    right: 80px;
+    bottom: 10%;
   }
+
+  /* .ctaText {
+    font-family: "WremenaRegular";
+    color: #24384a;
+    width: 80px;
+    font-size: 20px;
+    padding-right: 90px;
+  } */
 }

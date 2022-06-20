@@ -15,7 +15,7 @@ export const App = () => {
     <HashRouter>
       <Routes>
         <Route path="/" element={<StartPage />} />
-        <Route path="/Policy" element={<Policy />} />
+        <Route path="/policy" element={<Policy />} />
       </Routes>
     </HashRouter>
   );

@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Form } from "./Form";
+import X from "icons/X.svg";
 
 export const SignUp = ({
+  setSidebar,
   sidebar,
   showSidebar,
   hideSidebar,
@@ -42,7 +44,7 @@ export const SignUp = ({
           <DeleteButton onClick={hideSidebar}>
             {" "}
             <span role="img" aria-label="delete">
-              ❌
+              <img className="X" src={X} alt="close" />
             </span>
           </DeleteButton>
           <Form
@@ -52,9 +54,9 @@ export const SignUp = ({
           />
         </div>
         <div>
-          <button className="button circle" type="button" onClick={showSidebar}>
-            <h3>Info!</h3>
-          </button>
+          {/* <button className="button circle" type="button" onClick={showSidebar}>
+            <h3 className="ctaText">Jag vill veta mer!</h3>
+          </button> */}
         </div>
       </StyledForm>
       <StyledOverlay>
@@ -94,18 +96,6 @@ const StyledForm = styled.div`
     justify-content: center;
   }
 
-  .cta-button {
-    border: none;
-    right: 40px;
-    outline: 0;
-    width: auto;
-    position: fixed;
-    top: 100px;
-    background-color: #24384a;
-    font-family: "WremenaLight";
-    color: #edbe44;
-    padding: 20px;
-  }
   .overlay {
     position: fixed;
     padding: 0;
@@ -123,11 +113,16 @@ const StyledForm = styled.div`
 
 const DeleteButton = styled.button`
   position: absolute;
+  height: 10px;
   top: 10px;
   right: 10px;
   background: none;
   border: none;
   cursor: pointer;
+
+  .X {
+    width: 12px;
+  }
 `;
 const StyledOverlay = styled.div`
   .overlay {

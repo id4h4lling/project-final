@@ -23,7 +23,7 @@ const TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
 
 const query = `
 {  
-  heroCollection {
+  heroCollection (limit:1){
   items {
     headline
     mainHeader
@@ -76,7 +76,7 @@ quoteCollection {
   techniqueGalleryCollection {
     items {
       title
-      pictureCollection(limit: 20) {
+      pictureCollection(limit: 10) {
         items {
           title
           url
@@ -85,22 +85,21 @@ quoteCollection {
     }
   }
 
-  lifestoryCollection {
-    items {picture {
-      title
-      description
-      contentType
-      fileName
-      size
-      url
-      width
-      height
-    }, title
-      text{json}
-    }
-  }
+  lifestoryCollection(limit:1){items{title, picture,{
+    title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height
+  },
+  text{json
+  links{entries{inline{sys{id}__typename
+  ... on Lifestory{title}}}}}}}
 
-  ctaCollection(limit: 5) {
+  ctaCollection(limit: 1) {
     items {
       cta
       picture {
@@ -118,7 +117,7 @@ quoteCollection {
 
  
 
-  aboutAuthorCollection(limit: 5) {
+  aboutAuthorCollection(limit: 1) {
     items {title,authorPicture {
       title
       description
@@ -149,7 +148,7 @@ quoteCollection {
   }
 
 
-  footerContactCollection(limit: 1) {
+  footerContactCollection(limit: 5) {
     items {
       title
       footer {
@@ -243,22 +242,25 @@ const StartPage = () => {
   }
   return (
     <div className="wrapper-scroll">
+      {/* <SnapScrollChild> */}
       <SignUp
+        setSidebar={setSidebar}
         sidebar={sidebar}
         showSidebar={showSidebar}
         hideSidebar={hideSidebar}
         setShowThankYou={setShowThankYou}
         showThankYou={showThankYou}
       />
-      <HeroPage hero={hero} />
+      {/* </SnapScrollChild> */}
+      <HeroPage hero={hero} showSidebar={showSidebar} />
       <HistoryQuote quoteHistory={quoteHistory} />
       <JewelleryGallery jewelleryGallery={jewelleryGallery} />
       <TravelQuote quoteTravel={quoteTravel} />
       <TravelPage travelPage={travelPage} />
       <FinanceQuote quoteFinance={quoteFinance} />
       <TechniqueGallery techniqueGallery={techniqueGallery} />
-      <LifeStory lifeStory={lifeStory} />
       <Video />
+      <LifeStory lifeStory={lifeStory} />
       <Cta
         cta={cta}
         sidebar={sidebar}
@@ -270,5 +272,10 @@ const StartPage = () => {
     </div>
   );
 };
+
+// const SnapScrollChild = styled.div`
+//   scroll-snap-align: start;
+//   min-height: 100vh;
+// `;
 
 export default StartPage;

@@ -53,7 +53,7 @@ export const Footer = ({ footer }) => {
         {/* <div>{documentToReactComponents(footer.grants, options)}</div> */}
       </Grants>
       <Copy>
-        <h3>{footer.copyright}</h3>
+        {/* <h3>{footer.copyright}</h3> */}
         <Link to={"/Policy"}>
           <h3>Intigretetspolicy</h3>
         </Link>

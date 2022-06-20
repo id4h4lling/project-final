@@ -28,6 +28,32 @@ const Background = styled.div`
       width: 80%;
       font-size: 48px;
     }
+
+    /* width: 21ch; */
+    overflow: hidden;
+    font-size: 40px;
+    white-space: nowrap;
+    border-right: 4px solid orange;
+    animation: printed-text 5s steps(80),
+      flashin-border 0.75s step-start infinite;
+  }
+
+  @keyframes flashin-border {
+    0% {
+      border-color: #edbe44;
+    }
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: #edbe44;
+    }
+  }
+
+  @keyframes printed-text {
+    from {
+      width: 0%;
+    }
   }
 
   h6 {

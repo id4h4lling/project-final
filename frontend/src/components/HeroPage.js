@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import { SignUp } from "./SignUp";
+import { CtaButton } from "./CtaButton";
 const devices = {
   mobile: "(min-width: 375px)",
   tablet: "(min-width: 768px)",
@@ -16,6 +17,7 @@ const HeroSection = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
+    position: relative;
   }
 
   .title-section {
@@ -67,7 +69,7 @@ const HeroSection = styled.div`
   }
 `;
 
-export const HeroPage = ({ hero }) => {
+export const HeroPage = ({ hero, showSidebar }) => {
   return (
     <div className="scroll">
       <HeroSection>
@@ -82,6 +84,11 @@ export const HeroPage = ({ hero }) => {
             <h1>{hero.mainHeader}</h1>
             <h3>{hero.subheading}</h3>
           </div>
+          <CtaButton
+            showSidebar={showSidebar}
+            color={"red"}
+            backgroundcolor={"#edbe44"}
+          />
         </div>
       </HeroSection>
     </div>

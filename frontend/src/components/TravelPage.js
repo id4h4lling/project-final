@@ -9,7 +9,6 @@ const devices = {
 
 const Background = styled.div`
   background-color: #24384a;
-  width: 100%;
   min-height: 100vh;
   padding: 90px;
 

@@ -14,7 +14,7 @@ import { Policy } from "./Policy";
 import { Cta } from "./Cta";
 import { LifeStory } from "./LifeStory";
 import { AboutAuthor } from "./AboutAuthor";
-// import { Footer } from "./Footer";
+import { Footer } from "./Footer";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import styled from "styled-components";
 
@@ -268,7 +268,7 @@ const StartPage = () => {
         hideSidebar={hideSidebar}
       />
       <AboutAuthor aboutAuthor={aboutAuthor} />
-      {/* <Footer footer={footer} /> */}
+      <Footer />
     </div>
   );
 };

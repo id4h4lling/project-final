@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import quoteYellowStart from "icons/quoteYellowStart.svg";
 import quoteYellowEnd from "icons/quoteYellowEnd.svg";
@@ -23,16 +23,15 @@ const Background = styled.div`
     letter-spacing: 3px;
     font-size: 24px;
     width: 80%;
+    white-space: pre-wrap;
 
     @media ${devices.desktop} {
       width: 80%;
       font-size: 48px;
     }
+  }
 
-    /* width: 21ch; */
-    overflow: hidden;
-    font-size: 40px;
-    white-space: nowrap;
+  .flashinBorder {
     border-right: 4px solid orange;
     animation: printed-text 5s steps(80),
       flashin-border 0.75s step-start infinite;
@@ -76,14 +75,33 @@ const Background = styled.div`
   }
 `;
 
+const TypeContainer = styled.div``;
+
 export const HistoryQuote = ({ quoteHistory }) => {
+  const [current, setCurrent] = useState("");
+  const index = useRef(0);
+
+  useEffect(() => {
+    console.log(quoteHistory.quote, "words");
+    if (index.current <= quoteHistory.quote.length) {
+      setTimeout(() => {
+        setCurrent((value) => value + quoteHistory.quote.charAt(index.current));
+        index.current += 1;
+      }, 90);
+    }
+  }, [current]);
+
+  console.log(typeof quoteHistory.quote);
+
   return (
     <div className="scroll">
       <Background>
         <p>
-          <img className="signTop" src={quoteYellowStart} alt="quotesign" />{" "}
-          {quoteHistory.quote}{" "}
-          <img className="signDown" src={quoteYellowEnd} alt="quotesign" />
+          {<img className="signTop" src={quoteYellowStart} alt="quotesign" />}{" "}
+          <span className="flashinBorder">{current}</span>
+          {index.current >= quoteHistory.quote.length - 1 && (
+            <img className="signDown" src={quoteYellowEnd} alt="quotesign" />
+          )}
         </p>
       </Background>
     </div>

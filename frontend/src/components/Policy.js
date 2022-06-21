@@ -1,32 +1,27 @@
 import React from "react";
 import { Footer } from "./Footer";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Policy = () => {
-  const navigate = useNavigate();
-
-  const onBackButtonClick = () => {
-    navigate(-1);
-  };
-
   return (
     <Background>
-      <GoBackButton type="button" onClick={onBackButtonClick}>
-        <h2>Tillbaka</h2>
-      </GoBackButton>
+      <Back>
+        <a href="javascript:history.back()">Tillbaka</a>
+      </Back>
 
       <Text>
         <p>
-          Sedan den 25 maj 2018 gäller den nya dataskyddsförordningen GDPR för
-          alla medborgare inom EU. Förenklat innebär det ett uppdaterat
-          regelverk för hur vi hanterar personuppgifter som exempelvis
-          e-postadress och telefonnummer. Vi har i linje med detta utformat vår
-          Integritetspolicy för att på ett tydligt sätt förklara vilka uppgifter
-          som finns sparade hos oss och vad de faktiskt används till. Har du
-          ytterligare frågor kring hur vi hanterar arbetet kring GDPR? Kontakta
-          oss gärna på info@idahalling.com
+          <span className="bold">
+            Sedan den 25 maj 2018 gäller den nya dataskyddsförordningen GDPR för
+            alla medborgare inom EU. Förenklat innebär det ett uppdaterat
+            regelverk för hur vi hanterar personuppgifter som exempelvis
+            e-postadress och telefonnummer. Vi har i linje med detta utformat
+            vår Integritetspolicy för att på ett tydligt sätt förklara vilka
+            uppgifter som finns sparade hos oss och vad de faktiskt används
+            till. Har du ytterligare frågor kring hur vi hanterar arbetet kring
+            GDPR? Kontakta oss gärna på info@idahalling.com
+          </span>
         </p>
         <br />
         <b>Introduktion </b>
@@ -517,7 +512,8 @@ export const Policy = () => {
           info@idahalling.com
         </p>
       </Text>
-      {/* <Footer /> */}
+      <Back />
+      <Footer />
     </Background>
   );
 };
@@ -527,18 +523,19 @@ const Background = styled.div`
   padding: 70px;
 `;
 
-const GoBackButton = styled.button`
-  all: unset;
-  border: none;
-  right: 40px;
-  outline: 0;
-  width: auto;
-  position: fixed;
-  top: 100px;
-  background-color: #24384a;
-  font-family: "WremenaLight";
-  color: #edbe44;
-  padding: 20px;
+const Back = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  a {
+    text-decoration: none;
+    font-family: wremena;
+    font-size: 20px;
+    color: #24384a;
+    &:hover {
+      color: #fff0bb;
+      cursor: pointer;
+    }
+  }
 `;
 
 const Text = styled.div`
@@ -548,8 +545,13 @@ const Text = styled.div`
   padding: 20px;
   line-height: 25px;
   font-size: 16px;
+  padding: 100px;
 
   li {
     margin: 15px;
+  }
+
+  .bold {
+    font-family: wremenabold;
   }
 `;

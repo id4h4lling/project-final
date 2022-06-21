@@ -46,6 +46,17 @@ const HeroSection = styled.div`
       font-size: 50px;
     }
   }
+  .button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    @media ${devices.desktop} {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+    }
+  }
 
   h3 {
     font-family: "WremenaRegular";
@@ -84,7 +95,9 @@ export const HeroPage = ({ hero, showSidebar }) => {
             <h1>{hero.mainHeader}</h1>
             <h3>{hero.subheading}</h3>
           </div>
+
           <CtaButton
+            className="button"
             showSidebar={showSidebar}
             color={"red"}
             backgroundcolor={"#edbe44"}

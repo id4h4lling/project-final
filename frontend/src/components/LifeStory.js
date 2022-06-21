@@ -12,7 +12,12 @@ const devices = {
 const Background = styled.div`
   background-color: #24384a;
   min-height: 100vh;
-  padding-top: 150px;
+
+  .wrapper {
+    width: 90%;
+    margin: auto;
+    padding-top: 150px;
+  }
 
   h2 {
     font-family: "WremenaRegular";
@@ -44,7 +49,10 @@ const Content = styled.div`
   display: flex;
   flex-direction: row;
   width: 80%;
+
   margin: auto;
+
+  padding: 180px 0 200px 0;
 
   .lifestory-image {
     width: 50%;
@@ -56,7 +64,6 @@ const Content = styled.div`
 
     align-items: center;
     width: 80%;
-    padding: 70px;
   }
 `;
 
@@ -76,18 +83,20 @@ export const LifeStory = ({ lifeStory }) => {
   return (
     <div className="scroll">
       <Background>
-        <h2>{lifeStory.title}</h2>
-        <Content>
-          <div>
-            {documentToReactComponents(lifeStory.text.json, options)}
-            {/* <p>{lifeStory.text.json.content[0].content[0].value}</p> */}
-          </div>
-          <img
-            className="lifestory-image"
-            src={lifeStory.picture.url + "?w=500"}
-            alt="picture"
-          />
-        </Content>
+        <div className="wrapper">
+          <h2>{lifeStory.title}</h2>
+          <Content>
+            <div>
+              {documentToReactComponents(lifeStory.text.json, options)}
+              {/* <p>{lifeStory.text.json.content[0].content[0].value}</p> */}
+            </div>
+            <img
+              className="lifestory-image"
+              src={lifeStory.picture.url + "?w=500"}
+              alt="picture"
+            />
+          </Content>
+        </div>
       </Background>
     </div>
   );

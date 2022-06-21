@@ -8,7 +8,12 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 const Background = styled.div`
   background-color: #24384a;
   min-height: 100vh;
-  padding: 90px;
+
+  .wrapper {
+    width: 90%;
+    margin: auto;
+    padding-top: 150px;
+  }
 
   h2 {
     font-family: "WremenaRegular";
@@ -30,17 +35,20 @@ const Background = styled.div`
     color: #edbe44;
     margin-bottom: 40px;
     margin-left: 70px;
+    line-height: 30px;
   }
   .citat {
     color: #edbe44;
     white-space: pre-wrap;
     margin-left: 70px;
+    line-height: 35px;
   }
 `;
 
 const Content = styled.div`
-  width: 1200px;
-  padding: 70px;
+  width: 80%;
+  margin: auto;
+  padding: 180px 0 200px 0;
   display: flex;
 `;
 export const AboutAuthor = ({ aboutAuthor }) => {
@@ -67,15 +75,15 @@ export const AboutAuthor = ({ aboutAuthor }) => {
   return (
     <div className="scroll">
       <Background>
-        <h2>{aboutAuthor.title}</h2>
-        <Content>
-          <img src={aboutAuthor.authorPicture.url + "?w=400"} alt="picture" />
-          <div>
-            {documentToReactComponents(aboutAuthor.authorBio.json, options)}
-          </div>
-          {/* {documentToReactComponents(aboutAuthor.authorBio.json)} */}
-          {/* <p>{aboutAuthor.authorBio.json.content[0].content[0].value}</p> */}
-        </Content>
+        <div className="wrapper">
+          <h2>{aboutAuthor.title}</h2>
+          <Content>
+            <img src={aboutAuthor.authorPicture.url + "?w=400"} alt="picture" />
+            <div>
+              {documentToReactComponents(aboutAuthor.authorBio.json, options)}
+            </div>
+          </Content>
+        </div>
       </Background>
     </div>
   );

@@ -1,10 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
+
 const Button = styled.button`
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
 
   border: none;
   outline: 0;
@@ -14,15 +20,27 @@ const Button = styled.button`
 
   .ctaText {
     font-family: "WremenaRegular";
-    font-size: 15px;
-    width: 60px;
+    font-size: 10px;
+    width: 40px;
+
+    @media ${devices.desktop} {
+      font-family: "WremenaRegular";
+      font-size: 16px;
+      width: 70px;
+    }
   }
 
   .circle {
     border: none;
-    width: 80px;
-    height: 80px;
-    padding: 10px;
+    width: 90px;
+    height: 90px;
+    padding: 30px;
+
+    @media ${devices.desktop} {
+      width: 80px;
+      height: 80px;
+      padding: 10px;
+    }
   }
 `;
 
@@ -34,9 +52,9 @@ export const CtaButton = ({ showSidebar, color, backgroundcolor }) => {
       type="button"
       onClick={showSidebar}
     >
-      <h3 className="ctaText" style={{ color: `${color}` }}>
+      <p className="ctaText" style={{ color: `${color}` }}>
         Jag vill veta mer!
-      </h3>
+      </p>
     </Button>
   );
 };

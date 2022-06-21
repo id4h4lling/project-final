@@ -121,6 +121,9 @@ code {
   min-height: 100vh;
   /* scroll-snap-align: center; */
 }
+.scroll-stop {
+  scroll-snap-align: end;
+}
 
 /* .ctaText {
   font-family: "WremenaRegular";

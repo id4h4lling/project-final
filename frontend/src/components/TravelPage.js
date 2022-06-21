@@ -10,7 +10,12 @@ const devices = {
 const Background = styled.div`
   background-color: #24384a;
   min-height: 100vh;
-  padding: 90px;
+
+  .wrapper {
+    width: 90%;
+    margin: auto;
+    padding-top: 150px;
+  }
 
   h2 {
     font-family: "WremenaRegular";
@@ -26,24 +31,20 @@ const Background = styled.div`
   p {
     font-family: "WremenaRegular";
     color: #edbe44;
-    width: 80%;
+
     font-size: 18px;
-    text-align: left;
+
     line-height: 35px;
 
     @media ${devices.desktop} {
       font-size: 25px;
-      width: 40%;
+      padding: 80px 0 0 0;
     }
   }
 
   .map-image {
-    width: 80%;
-    margin: 50px auto 100px auto;
-
     @media ${devices.desktop} {
-      width: 50%;
-      margin: auto;
+      width: 100%;
     }
   }
 `;
@@ -51,15 +52,12 @@ const Background = styled.div`
 const Content = styled.div`
   width: 80%;
   margin: auto;
-  margin-top: 90px;
+  padding: 180px 0 200px 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
 
   @media ${devices.desktop} {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
   }
 `;
 
@@ -67,16 +65,18 @@ export const TravelPage = ({ travelPage }) => {
   return (
     <div className="scroll">
       <Background>
-        <h2 className="title">{travelPage.title}</h2>
-        <Content>
-          <p className="text">{travelPage.travelText}</p>
+        <div className="wrapper">
+          <h2 className="title">{travelPage.title}</h2>
+          <Content>
+            <p className="text">{travelPage.travelText}</p>
 
-          <img
-            className="map-image"
-            src={travelPage.picture.url + "?w=1500"}
-            alt="picture"
-          />
-        </Content>
+            <img
+              className="map-image"
+              src={travelPage.picture.url + "?w=1500"}
+              alt="picture"
+            />
+          </Content>
+        </div>
       </Background>
     </div>
   );

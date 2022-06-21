@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import quoteBlueStart from "icons/quoteBlueStart.svg";
 import quoteBlueEnd from "icons/quoteBlueEnd.svg";
@@ -16,6 +16,30 @@ const Background = styled.div`
   background-color: #e3b921;
   width: 100%;
   min-height: 100vh;
+
+  .flashinBorder {
+    border-right: 4px solid orange;
+    animation: printed-text 5s steps(80),
+      flashin-border 0.75s step-start infinite;
+  }
+
+  @keyframes flashin-border {
+    0% {
+      border-color: #24384a;
+    }
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: #24384a;
+    }
+  }
+
+  @keyframes printed-text {
+    from {
+      width: 0%;
+    }
+  }
 
   p {
     font-family: "WremenaRegular";
@@ -45,13 +69,26 @@ const Background = styled.div`
 `;
 
 export const TravelQuote = ({ quoteTravel }) => {
+  const [current, setCurrent] = useState("");
+  const index = useRef(0);
+
+  useEffect(() => {
+    if (index.current <= quoteTravel.quote.length) {
+      setTimeout(() => {
+        setCurrent((value) => value + quoteTravel.quote.charAt(index.current));
+        index.current += 1;
+      }, 90);
+    }
+  }, [current]);
   return (
     <div className="scroll">
       <Background>
         <p>
-          <img className="signTop" src={quoteBlueStart} alt="quotesign" />{" "}
-          {quoteTravel.quote}{" "}
-          <img className="signDown" src={quoteBlueEnd} alt="quotesign" />
+          {<img className="signTop" src={quoteBlueStart} alt="quotesign" />}{" "}
+          <span className="flashinBorder">{current}</span>
+          {index.current >= quoteTravel.quote.length - 1 && (
+            <img className="signDown" src={quoteBlueEnd} alt="quotesign" />
+          )}
         </p>
       </Background>
     </div>

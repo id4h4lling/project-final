@@ -99,7 +99,7 @@ export const HeroPage = ({ hero, showSidebar }) => {
           <CtaButton
             className="button"
             showSidebar={showSidebar}
-            color={"red"}
+            color={"#24384a"}
             backgroundcolor={"#edbe44"}
           />
         </div>

@@ -13,6 +13,18 @@ const Background = styled.div`
   padding: 90px;
   height: 100vh;
   position: relative;
+
+  .button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    @media ${devices.desktop} {
+      position: absolute;
+      bottom: 70px;
+      right: 70px;
+    }
+  }
 `;
 const Title = styled.div`
   h2 {
@@ -67,6 +79,12 @@ export const JewelleryGallery = ({ jewelleryGallery, showSidebar }) => {
             ))}
           </PictureBox>
         </Gallery>
+        <CtaButton
+          className="button"
+          showSidebar={showSidebar}
+          color={"#edbe44"}
+          backgroundcolor={"#24384a"}
+        />
       </Background>
     </div>
   );

@@ -25,7 +25,7 @@ const Background = styled.div`
 
     @media ${devices.desktop} {
       position: absolute;
-      bottom: 50px;
+      bottom: 500px;
       right: 50px;
     }
   }
@@ -93,7 +93,7 @@ export const TravelPage = ({ travelPage, showSidebar }) => {
         <CtaButton
           className="button"
           showSidebar={showSidebar}
-          color={"red"}
+          color={"#24384a"}
           backgroundcolor={"#edbe44"}
         />
       </Background>

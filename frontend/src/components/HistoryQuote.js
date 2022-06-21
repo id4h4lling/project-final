@@ -83,8 +83,8 @@ const Background = styled.div`
 
     @media ${devices.desktop} {
       position: absolute;
-      bottom: 50px;
-      right: 50px;
+      bottom: 70px;
+      right: 70px;
     }
   }
 `;
@@ -141,7 +141,7 @@ export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
         <CtaButton
           className="button"
           showSidebar={showSidebar}
-          color={"red"}
+          color={"#24384a"}
           backgroundcolor={"#edbe44"}
         />
         {/* <p>{visible ? "yes" : "no"}</p> */}

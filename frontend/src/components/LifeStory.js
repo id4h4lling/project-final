@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { CtaButton } from "./CtaButton";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -67,7 +68,7 @@ const Content = styled.div`
   }
 `;
 
-export const LifeStory = ({ lifeStory }) => {
+export const LifeStory = ({ lifeStory, showSidebar }) => {
   console.log(lifeStory.url);
   const Text = ({ children }) => <p className="text">{children}</p>;
   const options = {

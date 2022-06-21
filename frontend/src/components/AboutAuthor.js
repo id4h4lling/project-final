@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { CtaButton } from "./CtaButton";
 
 // import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
@@ -51,7 +52,7 @@ const Content = styled.div`
   padding: 180px 0 200px 0;
   display: flex;
 `;
-export const AboutAuthor = ({ aboutAuthor }) => {
+export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
   console.log(
     "ABOUT AUTHOR",
     aboutAuthor.authorBio.json.content[0].content[0].value

@@ -1,10 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { CtaButton } from "./CtaButton";
+
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
 
 const Background = styled.div`
   background-color: #9f9f9f;
   padding: 90px;
   height: 100vh;
+  position: relative;
 `;
 const Title = styled.div`
   h2 {
@@ -43,7 +51,7 @@ const PictureBox = styled.div`
   }
 `;
 
-export const JewelleryGallery = ({ jewelleryGallery }) => {
+export const JewelleryGallery = ({ jewelleryGallery, showSidebar }) => {
   return (
     <div className="scroll">
       <Background>
@@ -54,7 +62,7 @@ export const JewelleryGallery = ({ jewelleryGallery }) => {
           <PictureBox>
             {jewelleryGallery.pictureCollection.items.map((picture) => (
               <div className="picture">
-                <img src={picture.url + "?w=500"} alt="picture" />
+                <img src={picture.url + "?w=600"} alt="picture" />
               </div>
             ))}
           </PictureBox>

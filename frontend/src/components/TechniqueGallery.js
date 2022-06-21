@@ -1,12 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import { CtaButton } from "./CtaButton";
 
 const Background = styled.div`
   background-color: #9f9f9f;
   min-height: 100vh;
   padding: 90px;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   scroll-padding: 50%;
+`;
+
+const Gallery = styled.div`
+  height: 100vh;
+  scroll-snap-type: x proximity;
+  overflow-x: auto;
+  scroll-padding-left: 90px;
+  scrollbar-width: none; /* Firefox */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const PictureBox = styled.div`
@@ -36,20 +49,22 @@ const Title = styled.div`
   }
 `;
 
-export const TechniqueGallery = ({ techniqueGallery }) => {
+export const TechniqueGallery = ({ techniqueGallery, showSidebar }) => {
   return (
     <div className="scroll">
       <Background>
         <Title>
           <h2>{techniqueGallery.title}</h2>
         </Title>
-        <PictureBox>
-          {techniqueGallery.pictureCollection.items.map((picture) => (
-            <div className="picture">
-              <img src={picture.url + "?w=500"} alt="picture" />
-            </div>
-          ))}
-        </PictureBox>
+        <Gallery>
+          <PictureBox>
+            {techniqueGallery.pictureCollection.items.map((picture) => (
+              <div className="picture">
+                <img src={picture.url + "?w=600"} alt="picture" />
+              </div>
+            ))}
+          </PictureBox>
+        </Gallery>
       </Background>
     </div>
   );

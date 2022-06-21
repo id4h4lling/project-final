@@ -253,21 +253,27 @@ const StartPage = () => {
       />
       {/* </SnapScrollChild> */}
       <HeroPage hero={hero} showSidebar={showSidebar} />
-      <HistoryQuote quoteHistory={quoteHistory} />
-      <JewelleryGallery jewelleryGallery={jewelleryGallery} />
-      <TravelQuote quoteTravel={quoteTravel} />
-      <TravelPage travelPage={travelPage} />
-      <FinanceQuote quoteFinance={quoteFinance} />
-      <TechniqueGallery techniqueGallery={techniqueGallery} />
-      <Video />
-      <LifeStory lifeStory={lifeStory} />
+      <HistoryQuote quoteHistory={quoteHistory} showSidebar={showSidebar} />
+      <JewelleryGallery
+        jewelleryGallery={jewelleryGallery}
+        showSidebar={showSidebar}
+      />
+      <TravelQuote quoteTravel={quoteTravel} showSidebar={showSidebar} />
+      <TravelPage travelPage={travelPage} showSidebar={showSidebar} />
+      <FinanceQuote quoteFinance={quoteFinance} showSidebar={showSidebar} />
+      <TechniqueGallery
+        techniqueGallery={techniqueGallery}
+        showSidebar={showSidebar}
+      />
+      <Video showSidebar={showSidebar} />
+      <LifeStory lifeStory={lifeStory} showSidebar={showSidebar} />
       <Cta
         cta={cta}
         sidebar={sidebar}
         showSidebar={showSidebar}
         hideSidebar={hideSidebar}
       />
-      <AboutAuthor aboutAuthor={aboutAuthor} />
+      <AboutAuthor aboutAuthor={aboutAuthor} showSidebar={showSidebar} />
       <Footer />
     </div>
   );

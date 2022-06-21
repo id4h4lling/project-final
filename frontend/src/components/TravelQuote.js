@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import quoteBlueStart from "icons/quoteBlueStart.svg";
 import quoteBlueEnd from "icons/quoteBlueEnd.svg";
+import { CtaButton } from "./CtaButton";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -16,6 +17,19 @@ const Background = styled.div`
   background-color: #e3b921;
   width: 100%;
   min-height: 100vh;
+  position: relative;
+
+  .button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    @media ${devices.desktop} {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+    }
+  }
 
   .flashinBorder {
     border-right: 4px solid orange;
@@ -68,28 +82,49 @@ const Background = styled.div`
   }
 `;
 
-export const TravelQuote = ({ quoteTravel }) => {
+export const TravelQuote = ({ quoteTravel, showSidebar }) => {
   const [current, setCurrent] = useState("");
   const index = useRef(0);
+  const myRef = useRef();
+  const [visible, setVisble] = useState();
 
   useEffect(() => {
-    if (index.current <= quoteTravel.quote.length) {
-      setTimeout(() => {
-        setCurrent((value) => value + quoteTravel.quote.charAt(index.current));
-        index.current += 1;
-      }, 90);
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setVisble(entry.isIntersecting);
+    });
+    observer.observe(myRef.current);
+  }, []);
+
+  useEffect(() => {
+    console.log({ index });
+    if (visible) {
+      if (index.current <= quoteTravel.quote.length) {
+        setTimeout(() => {
+          setCurrent(
+            (value) => value + quoteTravel.quote.charAt(index.current)
+          );
+          index.current += 1;
+        }, 90);
+      }
     }
-  }, [current]);
+  }, [current, visible]);
   return (
     <div className="scroll">
       <Background>
-        <p>
+        <p ref={myRef}>
           {<img className="signTop" src={quoteBlueStart} alt="quotesign" />}{" "}
           <span className="flashinBorder">{current}</span>
           {index.current >= quoteTravel.quote.length - 1 && (
             <img className="signDown" src={quoteBlueEnd} alt="quotesign" />
           )}
         </p>
+        <CtaButton
+          className="button"
+          showSidebar={showSidebar}
+          color={"red"}
+          backgroundcolor={"#edbe44"}
+        />
       </Background>
     </div>
   );

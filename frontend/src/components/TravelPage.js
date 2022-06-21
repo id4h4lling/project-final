@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { CtaButton } from "./CtaButton";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -10,11 +11,23 @@ const devices = {
 const Background = styled.div`
   background-color: #24384a;
   min-height: 100vh;
+  position: relative;
 
   .wrapper {
     width: 90%;
     margin: auto;
     padding-top: 150px;
+  }
+  .button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    @media ${devices.desktop} {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+    }
   }
 
   h2 {
@@ -38,13 +51,13 @@ const Background = styled.div`
 
     @media ${devices.desktop} {
       font-size: 25px;
-      padding: 80px 0 0 0;
+      padding: 0 0 80 0;
     }
   }
 
   .map-image {
     @media ${devices.desktop} {
-      width: 100%;
+      width: auto;
     }
   }
 `;
@@ -54,14 +67,14 @@ const Content = styled.div`
   margin: auto;
   padding: 180px 0 200px 0;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
 
   @media ${devices.desktop} {
   }
 `;
 
-export const TravelPage = ({ travelPage }) => {
+export const TravelPage = ({ travelPage, showSidebar }) => {
   return (
     <div className="scroll">
       <Background>
@@ -77,6 +90,12 @@ export const TravelPage = ({ travelPage }) => {
             />
           </Content>
         </div>
+        <CtaButton
+          className="button"
+          showSidebar={showSidebar}
+          color={"red"}
+          backgroundcolor={"#edbe44"}
+        />
       </Background>
     </div>
   );

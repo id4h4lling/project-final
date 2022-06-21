@@ -18,7 +18,7 @@ const Button = styled.button`
   border-radius: 50%;
   animation: ripple 15s infinite;
 
-  .ctaText {
+  #ctaText {
     font-family: "WremenaRegular";
     font-size: 10px;
     width: 40px;
@@ -26,7 +26,7 @@ const Button = styled.button`
     @media ${devices.desktop} {
       font-family: "WremenaRegular";
       font-size: 16px;
-      width: 70px;
+      width: 90px;
     }
   }
 
@@ -39,7 +39,7 @@ const Button = styled.button`
     @media ${devices.desktop} {
       width: 80px;
       height: 80px;
-      padding: 10px;
+      padding: 20px;
     }
   }
 `;
@@ -52,7 +52,7 @@ export const CtaButton = ({ showSidebar, color, backgroundcolor }) => {
       type="button"
       onClick={showSidebar}
     >
-      <p className="ctaText" style={{ color: `${color}` }}>
+      <p id="ctaText" style={{ color: `${color}` }}>
         Jag vill veta mer!
       </p>
     </Button>

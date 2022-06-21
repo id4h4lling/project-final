@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
+// import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import quoteYellowStart from "icons/quoteYellowStart.svg";
 import quoteYellowEnd from "icons/quoteYellowEnd.svg";
+import { CtaButton } from "./CtaButton";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -14,7 +16,7 @@ const Background = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #7b2020;
-
+  position: relative;
   min-height: 100vh;
 
   p {
@@ -73,36 +75,76 @@ const Background = styled.div`
       height: 60px;
     }
   }
+
+  .button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    @media ${devices.desktop} {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+    }
+  }
 `;
 
 const TypeContainer = styled.div``;
 
-export const HistoryQuote = ({ quoteHistory }) => {
+export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
   const [current, setCurrent] = useState("");
   const index = useRef(0);
 
-  useEffect(() => {
-    console.log(quoteHistory.quote, "words");
-    if (index.current <= quoteHistory.quote.length) {
-      setTimeout(() => {
-        setCurrent((value) => value + quoteHistory.quote.charAt(index.current));
-        index.current += 1;
-      }, 90);
-    }
-  }, [current]);
+  const myRef = useRef();
+  const [visible, setVisble] = useState();
 
-  console.log(typeof quoteHistory.quote);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setVisble(entry.isIntersecting);
+    });
+    observer.observe(myRef.current);
+  }, []);
+
+  useEffect(() => {
+    index.current = 0;
+    setCurrent("");
+  }, [quoteHistory]);
+
+  useEffect(() => {
+    console.log({ index });
+    if (visible) {
+      if (index.current <= quoteHistory.quote.length) {
+        const timeoutId = setTimeout(() => {
+          setCurrent(
+            (value) => value + quoteHistory.quote.charAt(index.current)
+          );
+          index.current += 1;
+        }, 90);
+        return () => {
+          clearTimeout(timeoutId);
+        };
+      }
+    }
+  }, [current, visible, quoteHistory]);
 
   return (
     <div className="scroll">
       <Background>
-        <p>
+        <p ref={myRef}>
           {<img className="signTop" src={quoteYellowStart} alt="quotesign" />}{" "}
           <span className="flashinBorder">{current}</span>
           {index.current >= quoteHistory.quote.length - 1 && (
             <img className="signDown" src={quoteYellowEnd} alt="quotesign" />
           )}
         </p>
+        <CtaButton
+          className="button"
+          showSidebar={showSidebar}
+          color={"red"}
+          backgroundcolor={"#edbe44"}
+        />
+        {/* <p>{visible ? "yes" : "no"}</p> */}
       </Background>
     </div>
   );

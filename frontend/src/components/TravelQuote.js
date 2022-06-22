@@ -32,7 +32,7 @@ const Background = styled.div`
   }
 
   .flashinBorder {
-    border-right: 4px solid orange;
+    border-right: 4px solid #24384a;
     animation: printed-text 5s steps(80),
       flashin-border 0.75s step-start infinite;
   }
@@ -63,7 +63,7 @@ const Background = styled.div`
     width: 80%;
 
     @media ${devices.desktop} {
-      width: 80%;
+      width: 70%;
       font-size: 48px;
     }
     .signTop {
@@ -97,7 +97,11 @@ export const TravelQuote = ({ quoteTravel, showSidebar }) => {
   }, []);
 
   useEffect(() => {
-    console.log({ index });
+    index.current = -1;
+    setCurrent("");
+  }, [quoteTravel]);
+
+  useEffect(() => {
     if (visible) {
       if (index.current <= quoteTravel.quote.length) {
         setTimeout(() => {

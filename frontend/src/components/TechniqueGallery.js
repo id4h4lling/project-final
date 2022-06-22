@@ -2,13 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import { CtaButton } from "./CtaButton";
 
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
+
 const Background = styled.div`
   background-color: #9f9f9f;
   min-height: 100vh;
-  padding: 90px;
+
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scroll-padding: 50%;
+  position: relative;
+
+  .wrapper {
+    width: 90%;
+    margin: auto;
+    padding-top: 90px;
+
+    @media ${devices.desktop} {
+      padding-top: 150px;
+    }
+  }
 `;
 
 const Gallery = styled.div`
@@ -38,14 +55,19 @@ const PictureBox = styled.div`
 const Title = styled.div`
   h2 {
     font-family: "WremenaRegular";
-    color: #edbe44;
-    font-size: 30px;
+    color: #24384a;
+    font-size: 18px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    padding: 30px;
-    background-color: #7b2020;
-    padding: 30px 40px;
+    background-color: #edbe44;
+    padding: 20px 30px;
     display: inline;
+
+    @media ${devices.desktop} {
+      font-size: 30px;
+      letter-spacing: 3px;
+      padding: 30px 40px;
+    }
   }
 `;
 
@@ -53,18 +75,22 @@ export const TechniqueGallery = ({ techniqueGallery, showSidebar }) => {
   return (
     <div className="scroll">
       <Background>
-        <Title>
-          <h2>{techniqueGallery.title}</h2>
-        </Title>
-        <Gallery>
-          <PictureBox>
-            {techniqueGallery.pictureCollection.items.map((picture) => (
-              <div className="picture">
-                <img src={picture.url + "?w=600"} alt="picture" />
-              </div>
-            ))}
-          </PictureBox>
-        </Gallery>
+        <div className="wrapper">
+          <Title>
+            <h2>{techniqueGallery.title}</h2>
+          </Title>
+          <Gallery>
+            <PictureBox>
+              {techniqueGallery.pictureCollection.items.map((picture) => (
+                <div key={picture.title}>
+                  <div className="picture">
+                    <img src={picture.url + "?w=600"} alt="picture" />
+                  </div>
+                </div>
+              ))}
+            </PictureBox>
+          </Gallery>
+        </div>
       </Background>
     </div>
   );

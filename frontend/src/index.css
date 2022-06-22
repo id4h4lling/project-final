@@ -131,7 +131,7 @@ code {
   color: #24384a;
   width: 60px;
 } */
-
+/* 
 @media screen and (min-width: 1025px) {
   .circle {
     width: 140px;
@@ -139,13 +139,12 @@ code {
     padding: 20px;
     right: 80px;
     bottom: 10%;
-  }
+  } */
 
-  /* .ctaText {
+/* .ctaText {
     font-family: "WremenaRegular";
     color: #24384a;
     width: 80px;
     font-size: 20px;
     padding-right: 90px;
   } */
-}

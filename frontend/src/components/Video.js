@@ -4,30 +4,53 @@ import { useInView } from "react-intersection-observer";
 import { CtaButton } from "./CtaButton";
 import { useRef, useEffect, useState } from "react";
 
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
+
 const Background = styled.div`
   background-color: #7b2020;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  position: relative;
+
+  .button {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+
+    @media ${devices.desktop} {
+      position: absolute;
+      bottom: 70px;
+      right: 70px;
+    }
+  }
   .video {
-    margin: 200px 0;
+    margin: 20px 0;
+
+    @media ${devices.desktop} {
+      margin: 200px 0;
+    }
   }
 `;
 
 export const Video = ({ showSidebar }) => {
-  // const { ref: myRef, inView: visible } = useInView();
-  const myRef = useRef();
-  const [visible, setVisble] = useState();
+  const { ref: myRef, inView: visible } = useInView();
+  // const myRef = useRef();
+  // const [visible, setVisble] = useState();
 
-  console.log("visible", visible);
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setVisble(entry.isIntersecting);
-    });
-    observer.observe(myRef.current);
-  }, []);
+  // console.log("visible", visible);
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     const entry = entries[0];
+  //     setVisble(entry.isIntersecting);
+  //   });
+  //   observer.observe(myRef.current);
+  // }, []);
   return (
     <div className="scroll">
       <Background>
@@ -41,6 +64,12 @@ export const Video = ({ showSidebar }) => {
           allow="autoplay allow='autoplay'"
           allowFullScreen
         ></iframe>
+        <CtaButton
+          className="button"
+          showSidebar={showSidebar}
+          color={"#24384a"}
+          backgroundcolor={"#edbe44"}
+        />
       </Background>
     </div>
   );

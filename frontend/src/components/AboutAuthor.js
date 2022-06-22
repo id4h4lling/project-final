@@ -6,58 +6,96 @@ import { CtaButton } from "./CtaButton";
 
 // import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
+// import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
 const Background = styled.div`
   background-color: #24384a;
   min-height: 100vh;
+  position: relative;
+
+  .button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    @media ${devices.desktop} {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+    }
+  }
 
   .wrapper {
     width: 90%;
     margin: auto;
-    padding-top: 150px;
+    padding-top: 90px;
+
+    @media ${devices.desktop} {
+      padding-top: 150px;
+    }
   }
 
   h2 {
     font-family: "WremenaRegular";
     color: #24384a;
-    font-size: 30px;
+    font-size: 18px;
     letter-spacing: 3px;
     text-transform: uppercase;
     background-color: #edbe44;
-    padding: 30px 40px;
+    padding: 20px 30px;
     display: inline;
+
+    @media ${devices.desktop} {
+      font-size: 30px;
+      letter-spacing: 3px;
+      padding: 30px 40px;
+    }
   }
 
-  p {
-    font-family: "WremenaRegular";
-    color: #edbe44;
-    width: 500px;
-  }
   .intro {
     color: #edbe44;
     margin-bottom: 40px;
-    margin-left: 70px;
+    margin-top: 40px;
     line-height: 30px;
+    text-align: center;
+
+    @media ${devices.desktop} {
+      margin: 0 0 40px 70px;
+      text-align: left;
+    }
   }
   .citat {
     color: #edbe44;
     white-space: pre-wrap;
-    margin-left: 70px;
-    line-height: 35px;
+    text-align: center;
+
+    line-height: 28px;
+    @media ${devices.desktop} {
+      margin-left: 70px;
+      line-height: 35px;
+      text-align: left;
+    }
   }
 `;
 
 const Content = styled.div`
   width: 80%;
   margin: auto;
-  padding: 180px 0 200px 0;
+  padding: 120px 0 70px 0;
   display: flex;
+  flex-direction: column;
+
+  @media ${devices.desktop} {
+    flex-direction: row;
+    padding: 180px 0 200px 0;
+  }
 `;
 export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
-  console.log(
-    "ABOUT AUTHOR",
-    aboutAuthor.authorBio.json.content[0].content[0].value
-  );
-
   const Text = ({ children }) => <div className="citat">{children}</div>;
 
   const Bla = ({ children }) => <h4 className="intro">{children}</h4>;
@@ -85,6 +123,12 @@ export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
             </div>
           </Content>
         </div>
+        <CtaButton
+          className="button"
+          showSidebar={showSidebar}
+          color={"#24384a"}
+          backgroundcolor={"#edbe44"}
+        />
       </Background>
     </div>
   );

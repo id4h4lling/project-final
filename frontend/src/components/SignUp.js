@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { Form } from "./Form";
 import X from "icons/X.svg";
 
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
+
 export const SignUp = ({
   setSidebar,
   sidebar,
@@ -76,7 +82,7 @@ const StyledForm = styled.div`
     position: fixed;
     top: 100px;
     left: -700px;
-    width: 500px;
+    width: 250px;
     height: 60%;
     background-color: #24384a;
     transition: left 700ms ease-out;
@@ -86,6 +92,11 @@ const StyledForm = styled.div`
     align-items: center;
     padding: 20px;
     justify-content: center;
+
+    @media ${devices.desktop} {
+      width: 500px;
+      height: 60%;
+    }
   }
   .sidebar.active {
     left: 0;

@@ -10,32 +10,35 @@ const devices = {
 
 const Background = styled.div`
   background-color: #9f9f9f;
-  padding: 90px;
   height: 100vh;
   position: relative;
 
-  .button {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+  .wrapper {
+    width: 90%;
+    margin: auto;
+    padding-top: 90px;
 
     @media ${devices.desktop} {
-      position: absolute;
-      bottom: 70px;
-      right: 70px;
+      padding-top: 150px;
     }
   }
 `;
 const Title = styled.div`
   h2 {
     font-family: "WremenaRegular";
-    color: #edbe44;
-    font-size: 30px;
+    color: #24384a;
+    font-size: 18px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    background-color: #7b2020;
-    padding: 30px 40px;
+    background-color: #edbe44;
+    padding: 20px 30px;
     display: inline;
+
+    @media ${devices.desktop} {
+      font-size: 30px;
+      letter-spacing: 3px;
+      padding: 30px 40px;
+    }
   }
 `;
 
@@ -67,24 +70,22 @@ export const JewelleryGallery = ({ jewelleryGallery, showSidebar }) => {
   return (
     <div className="scroll">
       <Background>
-        <Title>
-          <h2>{jewelleryGallery.title}</h2>
-        </Title>
-        <Gallery>
-          <PictureBox>
-            {jewelleryGallery.pictureCollection.items.map((picture) => (
-              <div className="picture">
-                <img src={picture.url + "?w=600"} alt="picture" />
-              </div>
-            ))}
-          </PictureBox>
-        </Gallery>
-        <CtaButton
-          className="button"
-          showSidebar={showSidebar}
-          color={"#edbe44"}
-          backgroundcolor={"#24384a"}
-        />
+        <div className="wrapper">
+          <Title>
+            <h2>{jewelleryGallery.title}</h2>
+          </Title>
+          <Gallery>
+            <PictureBox>
+              {jewelleryGallery.pictureCollection.items.map((picture) => (
+                <div key={picture.title}>
+                  <div className="picture">
+                    <img src={picture.url + "?w=500"} alt="picture" />
+                  </div>
+                </div>
+              ))}
+            </PictureBox>
+          </Gallery>
+        </div>
       </Background>
     </div>
   );

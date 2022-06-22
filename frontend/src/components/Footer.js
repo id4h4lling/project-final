@@ -3,20 +3,48 @@ import { Policy } from "./Policy";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
+
 const Background = styled.div`
   background-color: #7b2020;
   display: flex;
-  justify-content: space-around;
-  padding: 60px 0 60px 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 10px 40px 10px;
   font-family: "WremenaRegular";
   color: #edbe44;
+
+  @media ${devices.desktop} {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0 60px 0;
+  }
+  p {
+    font-size: 12px;
+    @media ${devices.desktop} {
+      font-size: 16px;
+    }
+  }
+  h4 {
+    font-size: 14px;
+    @media ${devices.desktop} {
+      font-size: 18px;
+    }
+  }
 
   section {
     line-height: 1.6;
   }
 
   .middle {
-    text-align: center;
+    text-align: left;
+    @media ${devices.desktop} {
+      text-align: center;
+    }
   }
 `;
 const StyledLink = styled.div`

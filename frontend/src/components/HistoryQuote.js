@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-// import { useInView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import quoteYellowStart from "icons/quoteYellowStart.svg";
 import quoteYellowEnd from "icons/quoteYellowEnd.svg";
@@ -28,7 +28,7 @@ const Background = styled.div`
     white-space: pre-wrap;
 
     @media ${devices.desktop} {
-      width: 80%;
+      width: 70%;
       font-size: 48px;
     }
   }
@@ -92,27 +92,27 @@ const Background = styled.div`
 const TypeContainer = styled.div``;
 
 export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
+  const { ref: myRef, inView: visible } = useInView();
   const [current, setCurrent] = useState("");
   const index = useRef(0);
 
-  const myRef = useRef();
-  const [visible, setVisble] = useState();
+  // const myRef = useRef();
+  // const [visible, setVisble] = useState();
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     const entry = entries[0];
+  //     setVisble(entry.isIntersecting);
+  //   });
+  //   observer.observe(myRef.current);
+  // }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setVisble(entry.isIntersecting);
-    });
-    observer.observe(myRef.current);
-  }, []);
-
-  useEffect(() => {
-    index.current = 0;
+    index.current = -1;
     setCurrent("");
   }, [quoteHistory]);
 
   useEffect(() => {
-    console.log({ index });
     if (visible) {
       if (index.current <= quoteHistory.quote.length) {
         const timeoutId = setTimeout(() => {

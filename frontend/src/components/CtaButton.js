@@ -9,37 +9,35 @@ const devices = {
 
 const Button = styled.button`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
   border: none;
   outline: 0;
   font-family: "WremenaLight";
   border-radius: 50%;
   animation: ripple 15s infinite;
+  width: 70px;
+  height: 70px;
+  padding: 20px;
+
+  @media ${devices.desktop} {
+    width: 140px;
+    height: 140px;
+    padding: 20px;
+  }
 
   #ctaText {
     font-family: "WremenaRegular";
     font-size: 10px;
-    width: 40px;
+    width: 60px;
+    letter-spacing: 1px;
+    line-height: initial;
 
     @media ${devices.desktop} {
       font-family: "WremenaRegular";
       font-size: 16px;
       width: 90px;
-    }
-  }
-
-  .circle {
-    border: none;
-    width: 90px;
-    height: 90px;
-    padding: 30px;
-
-    @media ${devices.desktop} {
-      width: 80px;
-      height: 80px;
-      padding: 20px;
     }
   }
 `;
@@ -53,7 +51,10 @@ export const CtaButton = ({ showSidebar, color, backgroundcolor }) => {
       onClick={showSidebar}
     >
       <p id="ctaText" style={{ color: `${color}` }}>
-        Jag vill veta mer!
+        Jag vill
+      </p>
+      <p id="ctaText" style={{ color: `${color}` }}>
+        veta mer!
       </p>
     </Button>
   );

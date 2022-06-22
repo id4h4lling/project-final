@@ -3,6 +3,12 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
+
 const StyledForm = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,8 +21,11 @@ const StyledForm = styled.div`
   h1 {
     color: #edbe44;
     font-family: "WremenaLight";
-    font-size: 30px;
+    font-size: 24px;
     text-align: left;
+    @media ${devices.desktop} {
+      font-size: 30px;
+    }
   }
 
   h2 {
@@ -47,11 +56,14 @@ const StyledForm = styled.div`
 const Input = styled.input`
   background-color: #c4c4c4;
   border-radius: unset;
-  font-size: 22px;
+
   font-family: "WremenaLight";
-  font-size: 20px;
+  font-size: 16px;
   color: #2f2a65;
   padding: 10px;
+  @media ${devices.desktop} {
+    font-size: 20px;
+  }
   ::placeholder {
     font-size: 16px;
     color: #263541;
@@ -67,7 +79,12 @@ const SubmitButton = styled.button`
   background-color: #edbe44;
   font-family: "WremenaRegular";
   color: #263541;
-  padding: 10px;
+  padding: 6px;
+  font-size: 14px;
+  @media ${devices.desktop} {
+    font-size: 18px;
+    padding: 10px;
+  }
 `;
 
 const StyledThankYou = styled.div`
@@ -94,7 +111,7 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
         useremail: useremail,
       }),
     };
-    fetch("http://localhost:8080/signup", options)
+    fetch("https://bookreales-hair.herokuapp.com/signup", options)
       .then((res) => res.json())
       .then(() => setUserEmail(""))
       .finally(() => setShowThankYou(true));

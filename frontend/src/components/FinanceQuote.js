@@ -63,7 +63,7 @@ const Background = styled.div`
     width: 80%;
 
     @media ${devices.desktop} {
-      width: 80%;
+      width: 70%;
       font-size: 48px;
     }
     .signTop {
@@ -98,7 +98,12 @@ export const FinanceQuote = ({ quoteFinance, showSidebar }) => {
   }, []);
 
   useEffect(() => {
-    console.log({ index });
+    index.current = -1;
+    setCurrent("");
+  }, [quoteFinance]);
+
+  useEffect(() => {
+    // console.log({ index });
     if (visible) {
       if (index.current <= quoteFinance.quote.length) {
         setTimeout(() => {
@@ -124,8 +129,8 @@ export const FinanceQuote = ({ quoteFinance, showSidebar }) => {
         <CtaButton
           className="button"
           showSidebar={showSidebar}
-          color={"#24384a"}
-          backgroundcolor={"#edbe44"}
+          color={"#e3b921"}
+          backgroundcolor={"#24384a"}
         />
       </Background>
     </div>

@@ -13,63 +13,85 @@ const devices = {
 const Background = styled.div`
   background-color: #24384a;
   min-height: 100vh;
+  position: relative;
 
   .wrapper {
     width: 90%;
     margin: auto;
-    padding-top: 150px;
+    padding-top: 90px;
+
+    @media ${devices.desktop} {
+      padding-top: 150px;
+    }
   }
 
+  .button {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+
+    @media ${devices.desktop} {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+    }
+  }
   h2 {
     font-family: "WremenaRegular";
     color: #24384a;
-    font-size: 30px;
+    font-size: 18px;
     letter-spacing: 3px;
     text-transform: uppercase;
     background-color: #edbe44;
-    padding: 30px 40px;
+    padding: 20px 30px;
     display: inline;
+
+    @media ${devices.desktop} {
+      font-size: 30px;
+      letter-spacing: 3px;
+      padding: 30px 40px;
+    }
   }
 
   .text {
     font-family: "WremenaRegular";
     color: #edbe44;
-    font-size: 20px;
-    text-align: left;
+    font-size: 18px;
+    text-align: center;
     line-height: 35px;
     white-space: pre-wrap;
-    width: 80%;
 
     @media ${devices.desktop} {
       font-size: 20px;
+      text-align: left;
+      width: 80%;
     }
   }
 `;
 
 const Content = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 80%;
-
+  flex-direction: column;
+  width: 90%;
   margin: auto;
-
-  padding: 180px 0 200px 0;
-
-  .lifestory-image {
-    width: 50%;
-    margin-top: 50px;
-  }
+  padding: 120px 0 120px 0;
 
   @media ${devices.desktop} {
-    font-size: 20px;
-
-    align-items: center;
+    flex-direction: row;
     width: 80%;
+    margin: auto;
+    padding: 180px 0 200px 0;
+  }
+
+  .lifestory-image {
+    margin-top: 50px;
+    @media ${devices.desktop} {
+      width: 50%;
+    }
   }
 `;
 
 export const LifeStory = ({ lifeStory, showSidebar }) => {
-  console.log(lifeStory.url);
   const Text = ({ children }) => <p className="text">{children}</p>;
   const options = {
     renderMark: {
@@ -87,10 +109,7 @@ export const LifeStory = ({ lifeStory, showSidebar }) => {
         <div className="wrapper">
           <h2>{lifeStory.title}</h2>
           <Content>
-            <div>
-              {documentToReactComponents(lifeStory.text.json, options)}
-              {/* <p>{lifeStory.text.json.content[0].content[0].value}</p> */}
-            </div>
+            <div>{documentToReactComponents(lifeStory.text.json, options)}</div>
             <img
               className="lifestory-image"
               src={lifeStory.picture.url + "?w=500"}
@@ -98,6 +117,12 @@ export const LifeStory = ({ lifeStory, showSidebar }) => {
             />
           </Content>
         </div>
+        <CtaButton
+          className="button"
+          showSidebar={showSidebar}
+          color={"#24384a"}
+          backgroundcolor={"#edbe44"}
+        />
       </Background>
     </div>
   );

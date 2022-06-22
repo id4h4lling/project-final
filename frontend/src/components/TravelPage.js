@@ -18,6 +18,7 @@ const Background = styled.div`
     margin: auto;
     padding-top: 150px;
   }
+
   .button {
     position: absolute;
     bottom: 20px;
@@ -25,7 +26,7 @@ const Background = styled.div`
 
     @media ${devices.desktop} {
       position: absolute;
-      bottom: 500px;
+      bottom: 50px;
       right: 50px;
     }
   }
@@ -33,31 +34,39 @@ const Background = styled.div`
   h2 {
     font-family: "WremenaRegular";
     color: #24384a;
-    font-size: 30px;
+    font-size: 18px;
     letter-spacing: 3px;
     text-transform: uppercase;
     background-color: #edbe44;
-    padding: 30px 40px;
+    padding: 20px 30px;
     display: inline;
+
+    @media ${devices.desktop} {
+      font-size: 30px;
+      letter-spacing: 3px;
+      padding: 30px 40px;
+    }
   }
 
-  p {
+  .text {
     font-family: "WremenaRegular";
     color: #edbe44;
-
+    padding: 0 0 80px 0;
     font-size: 18px;
-
+    text-align: center;
     line-height: 35px;
 
     @media ${devices.desktop} {
       font-size: 25px;
-      padding: 0 0 80 0;
+      text-align: left;
     }
   }
 
   .map-image {
+    width: 100%;
+    margin: auto;
     @media ${devices.desktop} {
-      width: auto;
+      width: 100%;
     }
   }
 `;
@@ -65,12 +74,13 @@ const Background = styled.div`
 const Content = styled.div`
   width: 80%;
   margin: auto;
-  padding: 180px 0 200px 0;
+  padding: 120px 0 120px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media ${devices.desktop} {
+    padding: 180px 0 200px 0;
   }
 `;
 

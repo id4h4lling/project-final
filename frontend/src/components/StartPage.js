@@ -115,8 +115,6 @@ quoteCollection {
     }
   }
 
- 
-
   aboutAuthorCollection(limit: 1) {
     items {title,authorPicture {
       title

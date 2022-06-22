@@ -16,7 +16,11 @@ const Background = styled.div`
   .wrapper {
     width: 90%;
     margin: auto;
-    padding-top: 150px;
+    padding-top: 80px;
+
+    @media ${devices.desktop} {
+      padding-top: 150px;
+    }
   }
 
   .button {

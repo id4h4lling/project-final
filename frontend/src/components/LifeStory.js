@@ -57,7 +57,7 @@ const Background = styled.div`
     font-family: "WremenaRegular";
     color: #edbe44;
     font-size: 18px;
-    text-align: center;
+    text-align: left;
     line-height: 35px;
     white-space: pre-wrap;
 

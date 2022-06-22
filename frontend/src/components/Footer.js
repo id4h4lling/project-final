@@ -20,7 +20,8 @@ const Background = styled.div`
 
   @media ${devices.desktop} {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-direction: row;
     padding: 60px 0 60px 0;
   }
   p {
@@ -38,6 +39,7 @@ const Background = styled.div`
 
   section {
     line-height: 1.6;
+    margin: 10px;
   }
 
   .middle {
@@ -84,7 +86,7 @@ export const Footer = () => {
           <p> © 2022 Ida Halling </p>
         </section>
 
-        <section>
+        <section className="left">
           <h4>KONTAKT</h4>
           <p>Ida Halling</p>
           <p>info@idahalling.com</p>

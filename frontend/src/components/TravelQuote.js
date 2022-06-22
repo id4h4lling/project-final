@@ -83,8 +83,7 @@ const Background = styled.div`
 `;
 
 export const TravelQuote = ({ quoteTravel, showSidebar }) => {
-  const [current, setCurrent] = useState("");
-  const index = useRef(0);
+  const [index, setIndex] = useState(0);
   const myRef = useRef();
   const [visible, setVisble] = useState();
 
@@ -97,29 +96,27 @@ export const TravelQuote = ({ quoteTravel, showSidebar }) => {
   }, []);
 
   useEffect(() => {
-    index.current = -1;
-    setCurrent("");
+    setIndex(0);
   }, [quoteTravel]);
 
   useEffect(() => {
     if (visible) {
-      if (index.current <= quoteTravel.quote.length) {
+      if (index < quoteTravel.quote.length) {
         setTimeout(() => {
-          setCurrent(
-            (value) => value + quoteTravel.quote.charAt(index.current)
-          );
-          index.current += 1;
+          setIndex(index + 1);
         }, 90);
       }
     }
-  }, [current, visible]);
+  }, [index, visible]);
   return (
     <div className="scroll">
       <Background>
         <p ref={myRef}>
           {<img className="signTop" src={quoteBlueStart} alt="quotesign" />}{" "}
-          <span className="flashinBorder">{current}</span>
-          {index.current >= quoteTravel.quote.length - 1 && (
+          <span className="flashinBorder">
+            {quoteTravel.quote.substring(0, index)}
+          </span>
+          {index >= quoteTravel.quote.length - 1 && (
             <img className="signDown" src={quoteBlueEnd} alt="quotesign" />
           )}
         </p>

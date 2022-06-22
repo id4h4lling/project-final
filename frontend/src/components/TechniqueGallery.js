@@ -11,6 +11,7 @@ const devices = {
 const Background = styled.div`
   background-color: #9f9f9f;
   min-height: 100vh;
+  position: relative;
 
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -23,7 +24,8 @@ const Background = styled.div`
     padding-top: 90px;
 
     @media ${devices.desktop} {
-      padding-top: 150px;
+      padding-top: 100px;
+      padding-bottom: 100px;
     }
   }
 `;
@@ -42,14 +44,24 @@ const Gallery = styled.div`
 const PictureBox = styled.div`
   display: flex;
   justify-content: row;
-  height: 100vh;
-  width: 100vw;
+  /* margin-bottom: 90px; */
+
+  width: 50%auto;
   scroll-snap-align: center;
-  overflow-x: auto;
+
+  @media ${devices.desktop} {
+    height: 100vh;
+    width: 100vw;
+  }
 
   .picture {
     margin: 100px 15px;
     padding: 30px;
+    width: 300px;
+
+    @media ${devices.desktop} {
+      width: 500px;
+    }
   }
 `;
 const Title = styled.div`
@@ -83,9 +95,11 @@ export const TechniqueGallery = ({ techniqueGallery, showSidebar }) => {
             <PictureBox>
               {techniqueGallery.pictureCollection.items.map((picture) => (
                 <div key={picture.title}>
-                  <div className="picture">
-                    <img src={picture.url + "?w=600"} alt="picture" />
-                  </div>
+                  <img
+                    className="picture"
+                    src={picture.url + "?w=500"}
+                    alt="picture"
+                  />
                 </div>
               ))}
             </PictureBox>

@@ -62,7 +62,7 @@ const Background = styled.div`
     margin-bottom: 40px;
     margin-top: 40px;
     line-height: 30px;
-    text-align: center;
+    text-align: left;
 
     @media ${devices.desktop} {
       margin: 0 0 40px 70px;
@@ -72,7 +72,7 @@ const Background = styled.div`
   .citat {
     color: #edbe44;
     white-space: pre-wrap;
-    text-align: center;
+    text-align: left;
 
     line-height: 28px;
     @media ${devices.desktop} {
@@ -93,6 +93,10 @@ const Content = styled.div`
   @media ${devices.desktop} {
     flex-direction: row;
     padding: 180px 0 200px 0;
+  }
+
+  .picture {
+    width: 300px;
   }
 `;
 export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
@@ -117,7 +121,11 @@ export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
         <div className="wrapper">
           <h2>{aboutAuthor.title}</h2>
           <Content>
-            <img src={aboutAuthor.authorPicture.url + "?w=400"} alt="picture" />
+            <img
+              className="picture"
+              src={aboutAuthor.authorPicture.url + "?w=400"}
+              alt="picture"
+            />
             <div>
               {documentToReactComponents(aboutAuthor.authorBio.json, options)}
             </div>

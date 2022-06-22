@@ -20,13 +20,13 @@ const Background = styled.div`
 
   .button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
 
     @media ${devices.desktop} {
       position: absolute;
-      bottom: 50px;
-      right: 50px;
+      bottom: 70px;
+      right: 70px;
     }
   }
 
@@ -53,7 +53,7 @@ const Background = styled.div`
     @media ${devices.desktop} {
       font-size: 30px;
       letter-spacing: 3px;
-      padding: 30px 40px;
+      padding: 20px 30px;
     }
   }
 
@@ -94,10 +94,13 @@ const Content = styled.div`
     flex-direction: row;
     padding: 180px 0 200px 0;
   }
-
-  .picture {
-    width: 300px;
+  .text {
+    width: 40%;
   }
+  /* .picture {
+    width: 40%;
+    height: auto;
+  } */
 `;
 export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
   const Text = ({ children }) => <div className="citat">{children}</div>;
@@ -123,10 +126,10 @@ export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
           <Content>
             <img
               className="picture"
-              src={aboutAuthor.authorPicture.url + "?w=400"}
+              src={aboutAuthor.authorPicture.url}
               alt="picture"
             />
-            <div>
+            <div className="text">
               {documentToReactComponents(aboutAuthor.authorBio.json, options)}
             </div>
           </Content>

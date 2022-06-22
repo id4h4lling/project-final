@@ -49,7 +49,7 @@ const Background = styled.div`
     @media ${devices.desktop} {
       font-size: 30px;
       letter-spacing: 3px;
-      padding: 30px 40px;
+      padding: 20px 30px;
     }
   }
 
@@ -85,8 +85,13 @@ const Content = styled.div`
 
   .lifestory-image {
     margin-top: 50px;
+
+    width: 300px;
+
     @media ${devices.desktop} {
       width: 50%;
+      margin-top: 0;
+      margin-left: 20%;
     }
   }
 `;

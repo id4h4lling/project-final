@@ -11,19 +11,26 @@ const devices = {
 
 const Background = styled.div`
   background-color: #7b2020;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
   padding: 50px 10px 40px 10px;
   font-family: "WremenaRegular";
   color: #edbe44;
-
-  @media ${devices.desktop} {
+  .wrapper {
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    padding: 60px 0 60px 0;
+    flex-direction: column;
+    align-items: left;
+    width: 50%;
+    margin: auto;
+
+    @media ${devices.desktop} {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      padding: 60px 0 60px 0;
+      width: 100%;
+    }
   }
+
   p {
     font-size: 12px;
     @media ${devices.desktop} {
@@ -69,29 +76,31 @@ export const Footer = () => {
   return (
     <div className="scroll-stop">
       <Background>
-        <section>
-          <h4>MED STÖD AV</h4>
-          <p>IRIS stipendiet</p>
-          <p>AX:SON JOHONSONS STIFTELSE</p>
-          <p>LÄNGMANSKA KULTURFONDEN</p>
-        </section>
-        <section className="middle">
-          <StyledLink>
-            {" "}
-            <Link to={"/Policy"}>
-              <h4>Intigretetspolicy</h4>
-            </Link>
-          </StyledLink>
-          <p>Web: Katarina Elgerus | Ida Halling</p>
-          <p> © 2022 Ida Halling </p>
-        </section>
+        <div className="wrapper">
+          <section>
+            <h4>MED STÖD AV</h4>
+            <p>IRIS stipendiet</p>
+            <p>AX:SON JOHONSONS STIFTELSE</p>
+            <p>LÄNGMANSKA KULTURFONDEN</p>
+          </section>
+          <section className="middle">
+            <StyledLink>
+              {" "}
+              <Link to={"/Policy"}>
+                <h4>Intigretetspolicy</h4>
+              </Link>
+            </StyledLink>
+            <p>Web: Katarina Elgerus | Ida Halling</p>
+            <p> © 2022 Ida Halling </p>
+          </section>
 
-        <section className="left">
-          <h4>KONTAKT</h4>
-          <p>Ida Halling</p>
-          <p>info@idahalling.com</p>
-          <p>+4670 498 66 88</p>
-        </section>
+          <section className="left">
+            <h4>KONTAKT</h4>
+            <p>Ida Halling</p>
+            <p>info@idahalling.com</p>
+            <p>+4670 498 66 88</p>
+          </section>
+        </div>
       </Background>
     </div>
   );

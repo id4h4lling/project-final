@@ -17,26 +17,26 @@ const Button = styled.button`
   font-family: "WremenaLight";
   border-radius: 50%;
   animation: ripple 15s infinite;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   padding: 20px;
 
   @media ${devices.desktop} {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     padding: 20px;
   }
 
   #ctaText {
     font-family: "WremenaRegular";
-    font-size: 10px;
-    width: 60px;
+    font-size: 15px;
+    width: 70px;
     letter-spacing: 1px;
     line-height: initial;
 
     @media ${devices.desktop} {
       font-family: "WremenaRegular";
-      font-size: 16px;
+      font-size: 20px;
       width: 90px;
     }
   }

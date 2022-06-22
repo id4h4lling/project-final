@@ -27,7 +27,7 @@ export const SignUp = ({
       // If the menu is open and the clicked target is not within the menu,
       // then close the menu
       if (sidebar && ref.current && !ref.current.contains(e.target)) {
-        setSidebar(false);
+        hideSidebar();
 
         document.getElementById("overlay").style.display = "none";
       }
@@ -80,7 +80,7 @@ export const SignUp = ({
 const StyledForm = styled.div`
   .sidebar {
     position: fixed;
-    top: 100px;
+    top: 50px;
     left: -700px;
     width: 250px;
     height: 60%;
@@ -96,6 +96,7 @@ const StyledForm = styled.div`
     @media ${devices.desktop} {
       width: 500px;
       height: 60%;
+      top: 100px;
     }
   }
   .sidebar.active {

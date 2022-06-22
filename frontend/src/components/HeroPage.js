@@ -48,13 +48,13 @@ const HeroSection = styled.div`
   }
   .button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
 
     @media ${devices.desktop} {
       position: absolute;
-      bottom: 50px;
-      right: 50px;
+      bottom: 70px;
+      right: 70px;
     }
   }
 

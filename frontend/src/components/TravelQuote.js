@@ -21,13 +21,13 @@ const Background = styled.div`
 
   .button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    left: 40px;
 
     @media ${devices.desktop} {
       position: absolute;
-      bottom: 50px;
-      left: 50px;
+      bottom: 70px;
+      left: 70px;
     }
   }
 

@@ -34,7 +34,7 @@ const Background = styled.div`
   }
 
   .flashinBorder {
-    border-right: 4px solid orange;
+    border-right: 4px solid #edbe44;
     animation: printed-text 5s steps(80),
       flashin-border 0.75s step-start infinite;
   }
@@ -78,8 +78,8 @@ const Background = styled.div`
 
   .button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
 
     @media ${devices.desktop} {
       position: absolute;

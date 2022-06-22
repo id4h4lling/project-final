@@ -76,7 +76,7 @@ const PictureBox = styled.div`
   .picture {
     margin: 100px 15px;
     padding: 30px;
-    width: 300px;
+    width: 40vh;
 
     @media ${devices.desktop} {
       width: 500px;

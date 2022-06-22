@@ -25,13 +25,13 @@ const Background = styled.div`
 
   .button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
 
     @media ${devices.desktop} {
       position: absolute;
-      bottom: 50px;
-      right: 50px;
+      bottom: 70px;
+      right: 70px;
     }
   }
 
@@ -48,13 +48,14 @@ const Background = styled.div`
     @media ${devices.desktop} {
       font-size: 30px;
       letter-spacing: 3px;
-      padding: 30px 40px;
+      padding: 20px 30px;
     }
   }
 
   .text {
     font-family: "WremenaRegular";
     color: #edbe44;
+
     padding: 0 0 80px 0;
     font-size: 18px;
     text-align: center;
@@ -63,14 +64,15 @@ const Background = styled.div`
     @media ${devices.desktop} {
       font-size: 25px;
       text-align: left;
+      width: 80%;
     }
   }
 
   .map-image {
-    width: 100%;
+    width: 90%;
     margin: auto;
     @media ${devices.desktop} {
-      width: 100%;
+      width: 80%;
     }
   }
 `;

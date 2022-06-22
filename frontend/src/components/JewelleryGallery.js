@@ -63,8 +63,6 @@ const Gallery = styled.div`
 const PictureBox = styled.div`
   display: flex;
   justify-content: row;
-  /* margin-bottom: 90px; */
-
   width: 50%auto;
   scroll-snap-align: center;
 

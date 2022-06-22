@@ -20,7 +20,7 @@ const Background = styled.div`
 
   .button {
     position: absolute;
-    top: 60px;
+    top: 50px;
     right: 20px;
 
     @media ${devices.desktop} {
@@ -40,17 +40,7 @@ const Background = styled.div`
 
 export const Video = ({ showSidebar }) => {
   const { ref: myRef, inView: visible } = useInView();
-  // const myRef = useRef();
-  // const [visible, setVisble] = useState();
 
-  // console.log("visible", visible);
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     const entry = entries[0];
-  //     setVisble(entry.isIntersecting);
-  //   });
-  //   observer.observe(myRef.current);
-  // }, []);
   return (
     <div className="scroll">
       <Background>

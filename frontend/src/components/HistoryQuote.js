@@ -13,11 +13,17 @@ const devices = {
 
 const Background = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background-color: #7b2020;
   position: relative;
   min-height: 100vh;
+  padding-top: 90px;
+
+  @media ${devices.desktop} {
+    align-items: center;
+    justify-content: center;
+  }
 
   p {
     font-family: "WremenaRegular";
@@ -89,8 +95,6 @@ const Background = styled.div`
   }
 `;
 
-const TypeContainer = styled.div``;
-
 export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
   const [index, setIndex] = useState(0);
   const myRef = useRef();
@@ -136,7 +140,6 @@ export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
           color={"#24384a"}
           backgroundcolor={"#edbe44"}
         />
-        {/* <p>{visible ? "yes" : "no"}</p> */}
       </Background>
     </div>
   );

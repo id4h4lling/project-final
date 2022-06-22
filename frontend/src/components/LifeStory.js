@@ -91,7 +91,7 @@ const Content = styled.div`
     @media ${devices.desktop} {
       width: 50%;
       margin-top: 0;
-      margin-left: 20%;
+      margin-left: 70px;
     }
   }
 `;

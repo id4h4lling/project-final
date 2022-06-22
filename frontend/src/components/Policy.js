@@ -3,6 +3,58 @@ import { Footer } from "./Footer";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+const devices = {
+  mobile: "(min-width: 375px)",
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+};
+
+const Background = styled.div`
+  background-color: #e3b921;
+  padding: 70px;
+`;
+
+const Back = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  a {
+    text-decoration: none;
+    font-family: wremena;
+    font-size: 20px;
+    color: #24384a;
+    &:hover {
+      color: #fff0bb;
+      cursor: pointer;
+    }
+  }
+`;
+
+const Text = styled.div`
+  color: #24384a;
+  width: 90%;
+  font-family: wremena;
+  padding: 20px;
+  line-height: 25px;
+  font-size: 16px;
+  padding: 100px;
+
+  li {
+    margin: 15px;
+  }
+
+  .bold {
+    font-family: wremenabold;
+  }
+
+  @media ${devices.desktop} {
+    width: 60%;
+    padding: 20px;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 100px;
+  }
+`;
+
 export const Policy = () => {
   return (
     <Background>
@@ -517,41 +569,3 @@ export const Policy = () => {
     </Background>
   );
 };
-
-const Background = styled.div`
-  background-color: #e3b921;
-  padding: 70px;
-`;
-
-const Back = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  a {
-    text-decoration: none;
-    font-family: wremena;
-    font-size: 20px;
-    color: #24384a;
-    &:hover {
-      color: #fff0bb;
-      cursor: pointer;
-    }
-  }
-`;
-
-const Text = styled.div`
-  color: #24384a;
-  width: 60%;
-  font-family: wremena;
-  padding: 20px;
-  line-height: 25px;
-  font-size: 16px;
-  padding: 100px;
-
-  li {
-    margin: 15px;
-  }
-
-  .bold {
-    font-family: wremenabold;
-  }
-`;

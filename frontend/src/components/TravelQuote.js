@@ -12,12 +12,18 @@ const devices = {
 
 const Background = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background-color: #e3b921;
   width: 100%;
   min-height: 100vh;
   position: relative;
+  padding-top: 90px;
+
+  @media ${devices.desktop} {
+    align-items: center;
+    justify-content: center;
+  }
 
   .button {
     position: absolute;
@@ -27,7 +33,7 @@ const Background = styled.div`
     @media ${devices.desktop} {
       position: absolute;
       bottom: 70px;
-      left: 70px;
+      right: 70px;
     }
   }
 

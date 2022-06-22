@@ -104,8 +104,12 @@ const StyledForm = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     justify-content: center;
+
+    @media ${devices.desktop} {
+      padding: 20px;
+    }
   }
 
   .overlay {

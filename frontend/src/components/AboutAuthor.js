@@ -1,17 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { CtaButton } from "./CtaButton";
-
-// import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const devices = {
   mobile: "(min-width: 375px)",
   tablet: "(min-width: 768px)",
   desktop: "(min-width: 1025px)",
 };
-// import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const Background = styled.div`
   background-color: #24384a;
@@ -73,8 +70,8 @@ const Background = styled.div`
     color: #edbe44;
     white-space: pre-wrap;
     text-align: left;
-
     line-height: 28px;
+
     @media ${devices.desktop} {
       margin-left: 70px;
       line-height: 35px;
@@ -94,24 +91,31 @@ const Content = styled.div`
     flex-direction: row;
     padding: 180px 0 200px 0;
   }
-  .text {
-    width: 40%;
+
+  .image-container {
+    width: 80%;
+    margin: auto;
+
+    @media ${devices.desktop} {
+      width: 30%;
+    }
   }
-  /* .picture {
-    width: 40%;
-    height: auto;
-  } */
+  .text {
+    width: 100%;
+    @media ${devices.desktop} {
+      width: 50%;
+      margin-left: 40px;
+    }
+  }
+  .picture {
+    width: 100%;
+  }
 `;
 export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
   const Text = ({ children }) => <div className="citat">{children}</div>;
 
   const Bla = ({ children }) => <h4 className="intro">{children}</h4>;
   const options = {
-    renderMark: {
-      //  [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
-      //[MARKS.BOLD]: (text) => <div style={{fontSize:"28px", color:"red", width:"50%"}}>{text}</div>,
-      // [MARKS.ITALIC]: (text) => <div style={{fontSize:"22px", color:"blue", width:"50%"}}>{text}</div>
-    },
     renderNode: {
       [BLOCKS.PARAGRAPH]: (_node, children) => <Text>{children}</Text>,
       [BLOCKS.HEADING_1]: (_node, children) => <Bla>{children}</Bla>,
@@ -124,11 +128,13 @@ export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
         <div className="wrapper">
           <h2>{aboutAuthor.title}</h2>
           <Content>
-            <img
-              className="picture"
-              src={aboutAuthor.authorPicture.url}
-              alt="picture"
-            />
+            <div className="image-container">
+              <img
+                className="picture"
+                src={aboutAuthor.authorPicture.url}
+                alt="picture"
+              />
+            </div>
             <div className="text">
               {documentToReactComponents(aboutAuthor.authorBio.json, options)}
             </div>

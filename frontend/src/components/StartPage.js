@@ -146,29 +146,6 @@ quoteCollection {
   }
 
 
-  footerContactCollection(limit: 5) {
-    items {
-      title
-      footer {
-        json
-        links {
-          entries {
-            inline {
-              sys {
-                id
-              }
-              __typename
-              ... on FooterContact {
-                title
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-
   }
 
   
@@ -198,7 +175,6 @@ const StartPage = () => {
   const [lifeStory, setLifeStory] = useState(null);
   const [cta, setCta] = useState(null);
   const [aboutAuthor, setAboutAuthor] = useState(null);
-  // const [footer, setFooter] = useState(null);
 
   useEffect(() => {
     window
@@ -231,7 +207,6 @@ const StartPage = () => {
         setLifeStory(data.lifestoryCollection.items[0]);
         setCta(data.ctaCollection.items[0]);
         setAboutAuthor(data.aboutAuthorCollection.items[0]);
-        // setFooter(data.footerCollection.items[0]);
       });
   }, []);
 
@@ -240,7 +215,6 @@ const StartPage = () => {
   }
   return (
     <div className="wrapper-scroll">
-      {/* <SnapScrollChild> */}
       <SignUp
         setSidebar={setSidebar}
         sidebar={sidebar}
@@ -249,7 +223,6 @@ const StartPage = () => {
         setShowThankYou={setShowThankYou}
         showThankYou={showThankYou}
       />
-      {/* </SnapScrollChild> */}
       <HeroPage hero={hero} showSidebar={showSidebar} />
       <HistoryQuote quoteHistory={quoteHistory} showSidebar={showSidebar} />
       <JewelleryGallery
@@ -276,10 +249,5 @@ const StartPage = () => {
     </div>
   );
 };
-
-// const SnapScrollChild = styled.div`
-//   scroll-snap-align: start;
-//   min-height: 100vh;
-// `;
 
 export default StartPage;

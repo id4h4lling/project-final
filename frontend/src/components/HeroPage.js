@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { SignUp } from "./SignUp";
 import { CtaButton } from "./CtaButton";
+
 const devices = {
   mobile: "(min-width: 375px)",
   tablet: "(min-width: 768px)",
@@ -24,7 +23,6 @@ const HeroSection = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-evenly; */
     height: 200px;
     width: 70%;
     margin: auto;

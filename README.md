@@ -1,12 +1,12 @@
 # Final project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a book teaser Single Page Application about a book.
+It's about a group of women who during the nineteenhundreds saved their whole village from starving by walking all across northern Europe to sell and make jwellery out of human hair.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The site is build with a frontend using React and gets its' content through Contentful CMS, that uses GraphQL to fetch the data.
+The backend uses a express server and mongo db with a RESTFUL endpoint that is used for storing the users email.
 
 ## View it live
 

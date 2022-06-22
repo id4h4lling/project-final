@@ -94,7 +94,6 @@ const Content = styled.div`
 
   .image-container {
     width: 80%;
-    margin: auto;
 
     @media ${devices.desktop} {
       width: 30%;

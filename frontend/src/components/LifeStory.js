@@ -64,7 +64,7 @@ const Background = styled.div`
     @media ${devices.desktop} {
       font-size: 20px;
       text-align: left;
-      width: 80%;
+      width: 90%;
     }
   }
 `;
@@ -82,6 +82,9 @@ const Content = styled.div`
     margin: auto;
     padding: 180px 0 200px 0;
   }
+  .text-container {
+    width: 80%;
+  }
 
   .lifestory-image {
     margin-top: 50px;
@@ -89,9 +92,9 @@ const Content = styled.div`
     width: 300px;
 
     @media ${devices.desktop} {
-      width: 50%;
+      width: 30%;
       margin-top: 0;
-      margin-left: 70px;
+      margin-left: 20px;
     }
   }
 `;
@@ -114,7 +117,9 @@ export const LifeStory = ({ lifeStory, showSidebar }) => {
         <div className="wrapper">
           <h2>{lifeStory.title}</h2>
           <Content>
-            <div>{documentToReactComponents(lifeStory.text.json, options)}</div>
+            <div className="text-container">
+              {documentToReactComponents(lifeStory.text.json, options)}
+            </div>
             <img
               className="lifestory-image"
               src={lifeStory.picture.url + "?w=500"}

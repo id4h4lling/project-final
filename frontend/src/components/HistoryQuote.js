@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import quoteYellowStart from "icons/quoteYellowStart.svg";
 import quoteYellowEnd from "icons/quoteYellowEnd.svg";
@@ -33,7 +32,7 @@ const Background = styled.div`
     width: 80%;
     white-space: pre-wrap;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       width: 70%;
       font-size: 48px;
     }

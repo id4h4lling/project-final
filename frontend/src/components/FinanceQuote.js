@@ -68,20 +68,20 @@ const Background = styled.div`
     font-size: 24px;
     width: 80%;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       width: 70%;
       font-size: 48px;
     }
     .signTop {
       height: 30px;
-      @media ${devices.desktop} {
+      @media ${devices.tablet} {
         height: 60px;
       }
     }
     .signDown {
       height: 30px;
       margin: -25px 0px;
-      @media ${devices.desktop} {
+      @media ${devices.tablet} {
         height: 60px;
       }
     }

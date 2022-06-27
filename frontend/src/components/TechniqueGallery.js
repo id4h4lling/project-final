@@ -58,7 +58,7 @@ const PictureBox = styled.div`
     padding: 30px;
     width: 300px;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       width: 500px;
     }
   }
@@ -74,7 +74,7 @@ const Title = styled.div`
     padding: 20px 30px;
     display: inline;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       font-size: 30px;
       letter-spacing: 3px;
       padding: 30px 40px;

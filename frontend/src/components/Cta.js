@@ -37,11 +37,11 @@ const Button = styled.div`
       background-color: #24384a;
       cursor: pointer;
     }
-
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       padding: 10px;
       margin: 0;
-    }
+
+  
   }
 
   h1 {
@@ -49,6 +49,10 @@ const Button = styled.div`
     color: #edbe44;
     font-size: 24px;
     letter-spacing: 3px;
+
+    @media ${devices.tablet} {
+      font-size: 40px;
+    }
     @media ${devices.desktop} {
       font-size: 50px;
     }

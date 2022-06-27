@@ -23,7 +23,7 @@ const Background = styled.div`
     margin: auto;
     padding-top: 90px;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       padding-top: 100px;
       padding-bottom: 100px;
     }
@@ -41,7 +41,7 @@ const Title = styled.div`
     padding: 20px 30px;
     display: inline;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       font-size: 30px;
       letter-spacing: 3px;
       padding: 20px 30px;

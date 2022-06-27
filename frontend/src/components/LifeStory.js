@@ -20,7 +20,7 @@ const Background = styled.div`
     margin: auto;
     padding-top: 90px;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       padding-top: 150px;
     }
   }
@@ -46,7 +46,7 @@ const Background = styled.div`
     padding: 20px 30px;
     display: inline;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       font-size: 30px;
       letter-spacing: 3px;
       padding: 20px 30px;
@@ -61,10 +61,17 @@ const Background = styled.div`
     line-height: 35px;
     white-space: pre-wrap;
 
-    @media ${devices.desktop} {
-      font-size: 20px;
+    @media ${devices.tablet} {
+      font-size: 22px;
       text-align: left;
       width: 90%;
+      margin: auto;
+    }
+    @media ${devices.desktop} {
+      font-size: 22px;
+      text-align: left;
+      width: 90%;
+      margin: 0;
     }
   }
 `;
@@ -83,19 +90,30 @@ const Content = styled.div`
     padding: 180px 0 200px 0;
   }
   .text-container {
-    width: 80%;
+    width: 100%;
+
+    @media ${devices.desktop} {
+      width: 80%;
+    }
   }
 
-  .lifestory-image {
-    margin-top: 50px;
+  .image-container {
+    width: 80%;
+    margin-top: 70px;
 
-    width: 300px;
+    @media ${devices.tablet} {
+      width: 50%;
+      margin-left: 5%;
+    }
 
     @media ${devices.desktop} {
       width: 30%;
-      margin-top: 0;
-      margin-left: 20px;
+      margin: 0;
     }
+  }
+
+  .lifestory-image {
+    width: 100%;
   }
 `;
 
@@ -120,11 +138,13 @@ export const LifeStory = ({ lifeStory, showSidebar }) => {
             <div className="text-container">
               {documentToReactComponents(lifeStory.text.json, options)}
             </div>
-            <img
-              className="lifestory-image"
-              src={lifeStory.picture.url + "?w=500"}
-              alt="picture"
-            />
+            <div className="image-container">
+              <img
+                className="lifestory-image"
+                src={lifeStory.picture.url + "?w=500"}
+                alt="picture"
+              />
+            </div>
           </Content>
         </div>
         <CtaButton

@@ -5,9 +5,13 @@ It's about a group of women who during the nineteenhundreds saved their whole vi
 
 ## The problem
 
-The site is build with a frontend using React and gets its' content through Contentful CMS, that uses GraphQL to fetch the data.
+The site is build with a frontend using React and gets it's content through Contentful CMS, that uses GraphQL to fetch the data.
 The backend uses a express server and mongo db with a RESTFUL endpoint that is used for storing the users email.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Deployed site:
+https://harboken.netlify.app/
+
+Backend:
+https://bookreales-hair.herokuapp.com/signup

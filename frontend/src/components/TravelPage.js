@@ -45,7 +45,7 @@ const Background = styled.div`
     padding: 20px 30px;
     display: inline;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       font-size: 30px;
       letter-spacing: 3px;
       padding: 20px 30px;
@@ -58,8 +58,13 @@ const Background = styled.div`
 
     padding: 0 0 80px 0;
     font-size: 18px;
-    text-align: center;
+    text-align: left;
     line-height: 35px;
+
+    @media ${devices.tablet} {
+      font-size: 22px;
+      text-align: left;
+    }
 
     @media ${devices.desktop} {
       font-size: 25px;
@@ -85,7 +90,7 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media ${devices.desktop} {
+  @media ${devices.tablet} {
     padding: 180px 0 200px 0;
   }
 `;

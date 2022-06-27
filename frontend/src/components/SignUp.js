@@ -59,11 +59,6 @@ export const SignUp = ({
             resetSidebarContent={resetSidebarContent}
           />
         </div>
-        <div>
-          {/* <button className="button circle" type="button" onClick={showSidebar}>
-            <h3 className="ctaText">Jag vill veta mer!</h3>
-          </button> */}
-        </div>
       </StyledForm>
       <StyledOverlay>
         <div
@@ -93,7 +88,7 @@ const StyledForm = styled.div`
     padding: 20px;
     justify-content: center;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       width: 500px;
       height: 60%;
       top: 100px;
@@ -107,7 +102,7 @@ const StyledForm = styled.div`
     padding: 10px;
     justify-content: center;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       padding: 20px;
     }
   }

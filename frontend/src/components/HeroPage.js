@@ -28,8 +28,13 @@ const HeroSection = styled.div`
     margin: auto;
     padding-top: 70px;
 
+    @media ${devices.tablet} {
+      padding-top: 120px;
+    }
+
     @media ${devices.desktop} {
       margin-left: 0;
+      padding-top: 70px;
     }
   }
 
@@ -40,7 +45,7 @@ const HeroSection = styled.div`
     letter-spacing: 4px;
     margin: 0px 0px 10px 0px;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       font-size: 50px;
     }
   }
@@ -63,7 +68,7 @@ const HeroSection = styled.div`
     letter-spacing: 3px;
     text-align: center;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       font-size: 20px;
     }
   }
@@ -72,7 +77,7 @@ const HeroSection = styled.div`
     font-family: "WremenaLight";
     color: #edbe44;
 
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       font-size: 20px;
     }
   }

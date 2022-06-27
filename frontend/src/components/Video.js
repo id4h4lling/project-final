@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { CtaButton } from "./CtaButton";
-import { useRef, useEffect, useState } from "react";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -31,9 +30,16 @@ const Background = styled.div`
   }
   .video {
     margin: 20px 0;
+    width: 300px;
+
+    @media ${devices.tablet} {
+      margin: 200px 0;
+      width: 500px;
+    }
 
     @media ${devices.desktop} {
       margin: 200px 0;
+      width: 700px;
     }
   }
 `;

@@ -1,7 +1,7 @@
 import React from "react";
-import { Policy } from "./Policy";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import linkedin from "icons/Linkdin.svg";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -11,7 +11,6 @@ const devices = {
 
 const Background = styled.div`
   background-color: #7b2020;
-
   padding: 50px 10px 40px 10px;
   font-family: "WremenaRegular";
   color: #edbe44;
@@ -20,20 +19,19 @@ const Background = styled.div`
     flex-direction: column;
     align-items: left;
     width: 50%;
-    margin: auto;
-
-    @media ${devices.desktop} {
+    margin: 15%;
+    @media ${devices.tablet} {
       display: flex;
       justify-content: space-evenly;
       flex-direction: row;
       padding: 60px 0 60px 0;
       width: 100%;
+      margin: auto;
     }
   }
-
   p {
     font-size: 12px;
-    @media ${devices.desktop} {
+    @media ${devices.tablet} {
       font-size: 16px;
     }
   }
@@ -43,16 +41,20 @@ const Background = styled.div`
       font-size: 18px;
     }
   }
-
   section {
     line-height: 1.6;
     margin: 10px;
   }
-
   .middle {
     text-align: left;
     @media ${devices.desktop} {
       text-align: center;
+    }
+  }
+  .logo {
+    padding: 0px 2px;
+    @media ${devices.desktop} {
+      width: 15px;
     }
   }
 `;
@@ -65,13 +67,11 @@ const StyledLink = styled.div`
       cursor: pointer;
     }
   }
-
   h4 {
     font-family: "WremenaRegular";
     color: #edbe44;
   }
 `;
-
 export const Footer = () => {
   return (
     <div className="scroll-stop">
@@ -86,12 +86,23 @@ export const Footer = () => {
           <section className="middle">
             <StyledLink>
               {" "}
-              <Link to={"/Policy"}>
+              <Link to={"/policy"}>
                 <h4>Intigretetspolicy</h4>
               </Link>
+              <p>
+                Web:
+                <a href="https://www.linkedin.com/in/katarina-elgerus/">
+                  <img className="logo" src={linkedin} alt="logo" />
+                  Katarina Elgerus
+                </a>
+                |
+                <a href="https://www.linkedin.com/in/ida-halling/">
+                  <img className="logo" src={linkedin} alt="logo" />
+                  Ida Halling
+                </a>
+              </p>
+              <p> © 2022 Ida Halling </p>
             </StyledLink>
-            <p>Web: Katarina Elgerus | Ida Halling</p>
-            <p> © 2022 Ida Halling </p>
           </section>
 
           <section className="left">

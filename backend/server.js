@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import { isEmail } from "validator";
-import getEndpoints from "express-list-endpoints";
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/project-mongo";
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -26,7 +25,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model("User", UserSchema);
 
 app.get("/", (req, res) => {
-  res.send(getEndpoints(app));
+  res.send("Endpoints for haribook");
 });
 
 app.post("/signup", async (req, res) => {

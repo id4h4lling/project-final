@@ -14,4 +14,4 @@ Deployed site:
 https://harboken.netlify.app/
 
 Backend:
-https://bookreales-hair.herokuapp.com/signup
+https://bookreales-hair.herokuapp.com/

@@ -5,6 +5,7 @@
     "postinstall": "npm install --prefix backend"
   },
   "dependencies": {
+    "express-list-endpoints": "^6.0.0",
     "react-intersection-observer": "^9.3.3"
   }
 }

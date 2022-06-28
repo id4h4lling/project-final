@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Route, NavLink, HashRouter } from "react-router-dom";
 import { SignUp } from "./SignUp";
 import { HeroPage } from "./HeroPage";
 import { HistoryQuote } from "./HistoryQuote";
@@ -10,13 +9,10 @@ import { TravelQuote } from "./TravelQuote";
 import { TechniqueGallery } from "./TechniqueGallery";
 import { FinanceQuote } from "./FinanceQuote";
 import { Video } from "./Video";
-import { Policy } from "./Policy";
 import { Cta } from "./Cta";
 import { LifeStory } from "./LifeStory";
 import { AboutAuthor } from "./AboutAuthor";
 import { Footer } from "./Footer";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import styled from "styled-components";
 
 const ID = process.env.REACT_APP_SPACE_ID;
 const TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
@@ -144,11 +140,7 @@ quoteCollection {
       }
     }
   }
-
-
   }
-
-  
 `;
 
 const StartPage = () => {

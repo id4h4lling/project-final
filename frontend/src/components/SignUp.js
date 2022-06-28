@@ -9,69 +9,6 @@ const devices = {
   desktop: "(min-width: 1025px)",
 };
 
-export const SignUp = ({
-  setSidebar,
-  sidebar,
-  showSidebar,
-  hideSidebar,
-  showThankYou,
-  setShowThankYou,
-}) => {
-  const ref = useRef();
-  const resetSidebarContent = () => {
-    () => setShowThankYou(false);
-  };
-
-  useEffect(() => {
-    const checkIfClickedOutside = (e) => {
-      // If the menu is open and the clicked target is not within the menu,
-      // then close the menu
-      if (sidebar && ref.current && !ref.current.contains(e.target)) {
-        hideSidebar();
-
-        document.getElementById("overlay").style.display = "none";
-      }
-    };
-    document.addEventListener("mousedown", checkIfClickedOutside);
-
-    return () => {
-      // Cleanup the event listener
-      document.removeEventListener("mousedown", checkIfClickedOutside);
-    };
-  }, [sidebar]);
-
-  return (
-    <>
-      <StyledForm ref={ref}>
-        <div
-          style={{ zIndex: "101" }}
-          className={sidebar ? "sidebar active" : "sidebar"}
-        >
-          <DeleteButton onClick={hideSidebar}>
-            {" "}
-            <span role="img" aria-label="delete">
-              <img className="X" src={X} alt="close" />
-            </span>
-          </DeleteButton>
-          <Form
-            showThankYou={showThankYou}
-            setShowThankYou={setShowThankYou}
-            resetSidebarContent={resetSidebarContent}
-          />
-        </div>
-      </StyledForm>
-      <StyledOverlay>
-        <div
-          id="overlay"
-          className="overlay"
-          onClick={hideSidebar}
-          style={{ display: "none" }}
-        ></div>
-      </StyledOverlay>
-    </>
-  );
-};
-
 const StyledForm = styled.div`
   .sidebar {
     position: fixed;
@@ -148,3 +85,61 @@ const StyledOverlay = styled.div`
     z-index: 100;
   }
 `;
+
+export const SignUp = ({
+  sidebar,
+  hideSidebar,
+  showThankYou,
+  setShowThankYou,
+}) => {
+  const ref = useRef();
+  const resetSidebarContent = () => {
+    () => setShowThankYou(false);
+  };
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (sidebar && ref.current && !ref.current.contains(e.target)) {
+        hideSidebar();
+
+        document.getElementById("overlay").style.display = "none";
+      }
+    };
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [sidebar]);
+
+  return (
+    <>
+      <StyledForm ref={ref}>
+        <div
+          style={{ zIndex: "101" }}
+          className={sidebar ? "sidebar active" : "sidebar"}
+        >
+          <DeleteButton onClick={hideSidebar}>
+            {" "}
+            <span role="img" aria-label="delete">
+              <img className="X" src={X} alt="close" />
+            </span>
+          </DeleteButton>
+          <Form
+            showThankYou={showThankYou}
+            setShowThankYou={setShowThankYou}
+            resetSidebarContent={resetSidebarContent}
+          />
+        </div>
+      </StyledForm>
+      <StyledOverlay>
+        <div
+          id="overlay"
+          className="overlay"
+          onClick={hideSidebar}
+          style={{ display: "none" }}
+        ></div>
+      </StyledOverlay>
+    </>
+  );
+};

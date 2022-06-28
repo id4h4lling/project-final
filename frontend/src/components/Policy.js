@@ -1,7 +1,6 @@
 import React from "react";
 import { Footer } from "./Footer";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const devices = {
   mobile: "(min-width: 375px)",

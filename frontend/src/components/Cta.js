@@ -40,25 +40,23 @@ const Button = styled.div`
     @media ${devices.tablet} {
       padding: 10px;
       margin: 0;
-
-  
-  }
-
-  h1 {
-    font-family: "WremenaRegular";
-    color: #edbe44;
-    font-size: 24px;
-    letter-spacing: 3px;
-
-    @media ${devices.tablet} {
-      font-size: 40px;
     }
-    @media ${devices.desktop} {
-      font-size: 50px;
+
+    h1 {
+      font-family: "WremenaRegular";
+      color: #edbe44;
+      font-size: 24px;
+      letter-spacing: 3px;
+
+      @media ${devices.tablet} {
+        font-size: 40px;
+      }
+      @media ${devices.desktop} {
+        font-size: 50px;
+      }
     }
   }
 `;
-
 export const Cta = ({ cta, sidebar, showSidebar, hideSidebar }) => {
   return (
     <div className="scroll">

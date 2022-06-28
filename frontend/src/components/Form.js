@@ -100,7 +100,7 @@ const StyledThankYou = styled.div`
 
 export const Form = ({ showThankYou, setShowThankYou }) => {
   const [useremail, setUserEmail] = useState("");
-  // const [showThankYou, setShowThankYou]= useState(false);
+
   const onFormSubmit = (event) => {
     event.preventDefault();
 

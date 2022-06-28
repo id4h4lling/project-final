@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { CtaButton } from "./CtaButton";
 
 const devices = {
   mobile: "(min-width: 375px)",

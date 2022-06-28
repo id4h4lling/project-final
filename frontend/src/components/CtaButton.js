@@ -39,6 +39,20 @@ const Button = styled.button`
       font-size: 20px;
       width: 90px;
     }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0.9);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(0.8);
+      }
+    }
   }
 `;
 

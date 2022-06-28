@@ -79,7 +79,7 @@ const Background = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 80%;
   margin: auto;
   padding: 120px 0 120px 0;
 

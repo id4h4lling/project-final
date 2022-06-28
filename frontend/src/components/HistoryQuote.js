@@ -38,7 +38,7 @@ const Background = styled.div`
     }
   }
 
-  .flashinBorder {
+  .flashin {
     border-right: 4px solid #edbe44;
     animation: printed-text 5s steps(80),
       flashin-border 0.75s step-start infinite;
@@ -126,7 +126,7 @@ export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
       <Background>
         <p ref={myRef}>
           {<img className="signTop" src={quoteYellowStart} alt="quotesign" />}{" "}
-          <span className="flashinBorder">
+          <span className="flashin">
             {quoteHistory.quote.substring(0, index)}
           </span>
           {index >= quoteHistory.quote.length - 1 && (

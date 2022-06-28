@@ -70,6 +70,10 @@ const StyledLink = styled.div`
   h4 {
     font-family: "WremenaRegular";
     color: #edbe44;
+    &:hover {
+      color: #fff0bb;
+      cursor: pointer;
+    }
   }
 `;
 export const Footer = () => {
@@ -109,7 +113,7 @@ export const Footer = () => {
             <h4>KONTAKT</h4>
             <p>Ida Halling</p>
             <p>info@idahalling.com</p>
-            <p>+4670 498 66 88</p>
+            <p>+46 70 498 66 88</p>
           </section>
         </div>
       </Background>

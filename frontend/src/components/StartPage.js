@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { SignUp } from "./SignUp";
-import { Navbar } from "./Navbar";
+// import { Navbar } from "./Navbar";
 import { HeroPage } from "./HeroPage";
 import { HistoryQuote } from "./HistoryQuote";
 import { JewelleryGallery } from "./JewelleryGallery";
@@ -216,7 +216,7 @@ const StartPage = () => {
         setShowThankYou={setShowThankYou}
         showThankYou={showThankYou}
       />
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroPage hero={hero} showSidebar={showSidebar} />
       <HistoryQuote quoteHistory={quoteHistory} showSidebar={showSidebar} />
       <JewelleryGallery

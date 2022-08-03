@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { CtaButton } from "./CtaButton";
+import { CtaButton } from "../CtaButton";
 
 const devices = {
   mobile: "(min-width: 375px)",

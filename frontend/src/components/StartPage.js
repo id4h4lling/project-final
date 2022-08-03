@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { SignUp } from "./SignUp";
+import { Navbar } from "./Navbar";
 import { HeroPage } from "./HeroPage";
 import { HistoryQuote } from "./HistoryQuote";
 import { JewelleryGallery } from "./JewelleryGallery";
@@ -11,7 +12,7 @@ import { FinanceQuote } from "./FinanceQuote";
 import { Video } from "./Video";
 import { Cta } from "./Cta";
 import { LifeStory } from "./LifeStory";
-import { AboutAuthor } from "./AboutAuthor";
+import { AboutAuthor } from "./Author/AboutAuthor";
 import { Footer } from "./Footer";
 
 const ID = process.env.REACT_APP_SPACE_ID;
@@ -215,6 +216,7 @@ const StartPage = () => {
         setShowThankYou={setShowThankYou}
         showThankYou={showThankYou}
       />
+      <Navbar />
       <HeroPage hero={hero} showSidebar={showSidebar} />
       <HistoryQuote quoteHistory={quoteHistory} showSidebar={showSidebar} />
       <JewelleryGallery

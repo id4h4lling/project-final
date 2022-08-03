@@ -9,14 +9,16 @@ import {
   HashRouter,
   Navigate,
 } from "react-router-dom";
+import { JewelleryGallery } from "components/JewelleryGallery";
 
 export const App = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<StartPage />} />
-        <Route path="/policy" element={<Policy />} />
+        <Route path="/policy/:id" element={<Policy />} />
+        <Route path="/jewelleryGallery" element={<JewelleryGallery />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { Footer } from "./Footer";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -13,7 +14,7 @@ const Background = styled.div`
   padding: 30px;
 `;
 
-const Back = styled.div`
+const GoBackButton = styled.button`
   display: flex;
   justify-content: flex-start;
   a {
@@ -55,12 +56,15 @@ const Text = styled.div`
 `;
 
 export const Policy = () => {
+  const navigate = useNavigate();
+
+  const onBackButtonClick = () => {
+    navigate(-1);
+  };
   return (
     <>
       <Background>
-        <Back>
-          <a href="javascript:history.back()">Tillbaka</a>
-        </Back>
+        <GoBackButton onClick={onBackButtonClick}>Tillbaka</GoBackButton>
 
         <Text>
           <p>

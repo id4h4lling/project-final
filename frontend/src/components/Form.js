@@ -97,8 +97,7 @@ const SubmitButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #7b2020;
-    color: #edbe44;
+    background-color: #ffdb5c;
   }
   @media ${devices.desktop} {
     font-size: 18px;

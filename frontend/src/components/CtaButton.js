@@ -28,14 +28,13 @@ const Button = styled.button`
   height: 100px;
   padding: 20px;
   background-color: #edbe44;
-  border: solid #24384a;
 
   &:hover,
   &:focus {
-    background-color: #7b2020;
+    background-color: #ffdb5c;
   }
   &:active {
-    color: #7b2020;
+    color: #ffdb5c;
   }
 
   @media ${devices.desktop} {
@@ -51,14 +50,6 @@ const Button = styled.button`
     letter-spacing: 1px;
     line-height: initial;
     color: #24384a;
-
-    &:hover,
-    &:focus {
-      color: #edbe44;
-    }
-    &:active {
-      color: #7b2020;
-    }
 
     @media ${devices.desktop} {
       font-family: "WremenaRegular";

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import quoteYellowStart from "icons/quoteYellowStart.svg";
 import quoteYellowEnd from "icons/quoteYellowEnd.svg";
 import { CtaButton } from "./CtaButton";
+import { QuoteBackground } from "theme/reusable";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -10,89 +11,89 @@ const devices = {
   desktop: "(min-width: 1025px)",
 };
 
-const Background = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  background-color: #7b2020;
-  position: relative;
-  min-height: 100vh;
-  padding-top: 90px;
+// const Background = styled.div`
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: center;
+//   background-color: #7b2020;
+//   position: relative;
+//   min-height: 100vh;
+//   padding-top: 90px;
 
-  @media ${devices.desktop} {
-    align-items: center;
-    justify-content: center;
-  }
+//   @media ${devices.desktop} {
+//     align-items: center;
+//     justify-content: center;
+//   }
 
-  p {
-    font-family: "WremenaRegular";
-    color: #edbe44;
-    letter-spacing: 3px;
-    font-size: 24px;
-    width: 80%;
-    white-space: pre-wrap;
+//   p {
+//     font-family: "WremenaRegular";
+//     color: #edbe44;
+//     letter-spacing: 3px;
+//     font-size: 24px;
+//     width: 80%;
+//     white-space: pre-wrap;
 
-    @media ${devices.tablet} {
-      width: 70%;
-      font-size: 48px;
-    }
-  }
+//     @media ${devices.tablet} {
+//       width: 70%;
+//       font-size: 48px;
+//     }
+//   }
 
-  .flashin {
-    border-right: 4px solid #edbe44;
-    animation: printed-text 5s steps(80),
-      flashin-border 0.75s step-start infinite;
-  }
+//   .flashin {
+//     border-right: 4px solid #edbe44;
+//     animation: printed-text 5s steps(80),
+//       flashin-border 0.75s step-start infinite;
+//   }
 
-  @keyframes flashin-border {
-    0% {
-      border-color: #edbe44;
-    }
-    50% {
-      border-color: transparent;
-    }
-    100% {
-      border-color: #edbe44;
-    }
-  }
+//   @keyframes flashin-border {
+//     0% {
+//       border-color: #edbe44;
+//     }
+//     50% {
+//       border-color: transparent;
+//     }
+//     100% {
+//       border-color: #edbe44;
+//     }
+//   }
 
-  @keyframes printed-text {
-    from {
-      width: 0%;
-    }
-  }
+//   @keyframes printed-text {
+//     from {
+//       width: 0%;
+//     }
+//   }
 
-  h6 {
-    font-family: "WremenaRegular";
-    font-size: 100px;
-  }
+//   h6 {
+//     font-family: "WremenaRegular";
+//     font-size: 100px;
+//   }
 
-  .signTop {
-    height: 30px;
-    @media ${devices.desktop} {
-      height: 60px;
-    }
-  }
-  .signDown {
-    height: 30px;
-    margin: -25px 0px;
-    @media ${devices.desktop} {
-      height: 60px;
-    }
-  }
+//   .signTop {
+//     height: 30px;
+//     @media ${devices.desktop} {
+//       height: 60px;
+//     }
+//   }
+//   .signDown {
+//     height: 30px;
+//     margin: -25px 0px;
+//     @media ${devices.desktop} {
+//       height: 60px;
+//     }
+//   }
 
-  .button {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
+//   /* .button {
+//     position: absolute;
+//     bottom: 40px;
+//     right: 40px;
 
-    @media ${devices.desktop} {
-      position: absolute;
-      bottom: 70px;
-      right: 70px;
-    }
-  }
-`;
+//     @media ${devices.desktop} {
+//       position: absolute;
+//       bottom: 70px;
+//       right: 70px;
+//     }
+//   } */
+// `;
 
 export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
   const [index, setIndex] = useState(0);
@@ -123,7 +124,7 @@ export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
 
   return (
     <div className="scroll">
-      <Background>
+      <QuoteBackground>
         <p ref={myRef}>
           {<img className="signTop" src={quoteYellowStart} alt="quotesign" />}{" "}
           <span className="flashin">
@@ -139,7 +140,7 @@ export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
           color={"#24384a"}
           backgroundcolor={"#edbe44"}
         /> */}
-      </Background>
+      </QuoteBackground>
     </div>
   );
 };

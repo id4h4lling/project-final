@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import quoteBlueStart from "icons/quoteBlueStart.svg";
-import quoteBlueEnd from "icons/quoteBlueEnd.svg";
+import quoteYellowStart from "icons/quoteYellowStart.svg";
+import quoteYellowEnd from "icons/quoteYellowEnd.svg";
 import { CtaButton } from "./CtaButton";
+import { QuoteBackground } from "theme/reusable";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -116,14 +117,14 @@ export const TravelQuote = ({ quoteTravel, showSidebar }) => {
   }, [index, visible]);
   return (
     <div className="scroll">
-      <Background>
+      <QuoteBackground>
         <p ref={myRef}>
-          {<img className="signTop" src={quoteBlueStart} alt="quotesign" />}{" "}
+          {<img className="signTop" src={quoteYellowStart} alt="quotesign" />}{" "}
           <span className="flashinBorder">
             {quoteTravel.quote.substring(0, index)}
           </span>
           {index >= quoteTravel.quote.length - 1 && (
-            <img className="signDown" src={quoteBlueEnd} alt="quotesign" />
+            <img className="signDown" src={quoteYellowEnd} alt="quotesign" />
           )}
         </p>
         {/* <CtaButton
@@ -132,7 +133,7 @@ export const TravelQuote = ({ quoteTravel, showSidebar }) => {
           color={"#edbe44"}
           backgroundcolor={"#24384a"}
         /> */}
-      </Background>
+      </QuoteBackground>
     </div>
   );
 };

@@ -19,11 +19,11 @@ export const Burger = styled.div`
     display: flex;
     flex-direction: column;
   }
-  #jewelleryGallery,
-  #travelPage,
-  #techniqueGallery,
+  #smycken,
+  #resorna,
+  #tekniken,
   #video,
-  #aboutAuthor {
+  #författare {
     text-decoration: none;
     font-family: "WremenaLight";
     color: #e3b921;

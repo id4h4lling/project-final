@@ -99,12 +99,12 @@ export const HeroPage = ({ hero, showSidebar }) => {
             <h3>{hero.subheading}</h3>
           </div>
 
-          <CtaButton
+          {/* <CtaButton
             className="button"
             showSidebar={showSidebar}
             color={"#24384a"}
             backgroundcolor={"#edbe44"}
-          />
+          /> */}
         </div>
       </HeroSection>
     </div>

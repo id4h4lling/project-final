@@ -71,6 +71,19 @@ const Input = styled.input`
   }
 `;
 
+const NavLink = styled.a``;
+
+const StyledNavLink = styled(NavLink)`
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: #7b2020;
+  }
+  &:active {
+    color: #7b2020;
+  }
+`;
+
 const SubmitButton = styled.button`
   all: unset;
   border: none;
@@ -81,6 +94,12 @@ const SubmitButton = styled.button`
   color: #263541;
   padding: 6px;
   font-size: 14px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #7b2020;
+    color: #edbe44;
+  }
   @media ${devices.desktop} {
     font-size: 18px;
     padding: 10px;
@@ -135,7 +154,9 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
             Genom att fylla i din mail godkänner du att vi använder din
             information för att kontakta dig om boken.
             <br />
-            <Link to={"/policy"}>Se vår integritetspolicy här.</Link>
+            <Link to={"/policy"}>
+              <StyledNavLink>Se vår integritetspolicy här.</StyledNavLink>
+            </Link>
           </p>
           <SubmitButton type="submit">Skicka in</SubmitButton>
         </StyledForm>

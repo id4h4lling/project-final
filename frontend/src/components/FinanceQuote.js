@@ -14,7 +14,7 @@ const Background = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background-color: #e3b921;
+  background-color: #edbe44;
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -127,12 +127,12 @@ export const FinanceQuote = ({ quoteFinance, showSidebar }) => {
             <img className="signDown" src={quoteBlueEnd} alt="quotesign" />
           )}
         </p>
-        <CtaButton
+        {/* <CtaButton
           className="button"
           showSidebar={showSidebar}
           color={"#e3b921"}
           backgroundcolor={"#24384a"}
-        />
+        /> */}
       </Background>
     </div>
   );

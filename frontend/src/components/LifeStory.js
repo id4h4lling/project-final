@@ -147,12 +147,12 @@ export const LifeStory = ({ lifeStory, showSidebar }) => {
             </div>
           </Content>
         </div>
-        <CtaButton
+        {/* <CtaButton
           className="button"
           showSidebar={showSidebar}
           color={"#24384a"}
           backgroundcolor={"#edbe44"}
-        />
+        /> */}
       </Background>
     </div>
   );

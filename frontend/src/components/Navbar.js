@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import { Burger } from "theme/styles";
+import ScrollTo from "react-scroll-into-view";
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -25,25 +26,26 @@ export const Navbar = () => {
         <div id="page-wrap">
           <div className="page-wrap">
             <Link
-              id="jewelleryGallery"
+              id="smycken"
               class-name="bm-item"
-              to="/jewelleryGallery"
+              to="/smycken"
               onClick={closeSideBar}
             >
+              {" "}
               Hårsmycken
             </Link>
             <Link
-              id="travelPage"
+              id="resorna"
               class-name="bm-item"
-              to="/TravelPage"
+              to="/resorna"
               onClick={closeSideBar}
             >
               Resorna
             </Link>
             <Link
-              id="techniqueGallery"
+              id="tekniken"
               class-name="bm-item"
-              to="/techniqueGallery"
+              to="/tekniken"
               onClick={closeSideBar}
             >
               Tekniken
@@ -57,12 +59,12 @@ export const Navbar = () => {
               Video från 1936
             </Link>
             <Link
-              id="aboutAuthor"
+              id="författare"
               class-name="bm-item"
-              to="/logout"
+              to="/författare"
               onClick={closeSideBar}
             >
-              Om Författaren
+              Författaren
             </Link>
           </div>
         </div>

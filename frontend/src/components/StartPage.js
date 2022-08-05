@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { SignUp } from "./SignUp";
-// import { Navbar } from "./Navbar";
+import { Navbar } from "./Navbar";
 import { HeroPage } from "./HeroPage";
 import { HistoryQuote } from "./HistoryQuote";
 import { JewelleryGallery } from "./JewelleryGallery";
@@ -12,8 +12,9 @@ import { FinanceQuote } from "./FinanceQuote";
 import { Video } from "./Video";
 import { Cta } from "./Cta";
 import { LifeStory } from "./LifeStory";
-import { AboutAuthor } from "./Author/AboutAuthor";
+import { AboutAuthor } from "./AboutAuthor";
 import { Footer } from "./Footer";
+import { CtaButton } from "./CtaButton";
 
 const ID = process.env.REACT_APP_SPACE_ID;
 const TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
@@ -208,6 +209,8 @@ const StartPage = () => {
   }
   return (
     <div className="wrapper-scroll">
+      <Navbar />
+      <CtaButton showSidebar={showSidebar} />
       <SignUp
         setSidebar={setSidebar}
         sidebar={sidebar}
@@ -216,7 +219,6 @@ const StartPage = () => {
         setShowThankYou={setShowThankYou}
         showThankYou={showThankYou}
       />
-      {/* <Navbar /> */}
       <HeroPage hero={hero} showSidebar={showSidebar} />
       <HistoryQuote quoteHistory={quoteHistory} showSidebar={showSidebar} />
       <JewelleryGallery

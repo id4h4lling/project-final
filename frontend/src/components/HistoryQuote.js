@@ -133,12 +133,12 @@ export const HistoryQuote = ({ quoteHistory, showSidebar }) => {
             <img className="signDown" src={quoteYellowEnd} alt="quotesign" />
           )}
         </p>
-        <CtaButton
+        {/* <CtaButton
           className="button"
           showSidebar={showSidebar}
           color={"#24384a"}
           backgroundcolor={"#edbe44"}
-        />
+        /> */}
       </Background>
     </div>
   );

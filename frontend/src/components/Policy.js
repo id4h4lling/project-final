@@ -14,18 +14,22 @@ const Background = styled.div`
   padding: 30px;
 `;
 
-const GoBackButton = styled.button`
-  display: flex;
-  justify-content: flex-start;
-  a {
-    text-decoration: none;
-    font-family: wremena;
-    font-size: 20px;
-    color: #24384a;
-    &:hover {
-      color: #fff0bb;
-      cursor: pointer;
-    }
+const NavLink = styled.a``;
+
+const StyledNavLink = styled(NavLink)`
+  font-family: wremena;
+  margin: 20px 0 10px;
+  padding: 15px;
+  font-weight: bold;
+  color: #24384a;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: #7b2020;
+  }
+  &:active {
+    color: #7b2020;
   }
 `;
 
@@ -64,7 +68,7 @@ export const Policy = () => {
   return (
     <>
       <Background>
-        <GoBackButton onClick={onBackButtonClick}>Tillbaka</GoBackButton>
+        <StyledNavLink onClick={onBackButtonClick}>Tillbaka</StyledNavLink>
 
         <Text>
           <p>
@@ -574,7 +578,6 @@ export const Policy = () => {
             info@idahalling.com
           </p>
         </Text>
-        <Back />
       </Background>
       <Footer />
     </>

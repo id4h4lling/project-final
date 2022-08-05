@@ -60,12 +60,12 @@ export const Video = ({ showSidebar }) => {
           allow="autoplay allow='autoplay'"
           allowFullScreen
         ></iframe>
-        <CtaButton
+        {/* <CtaButton
           className="button"
           showSidebar={showSidebar}
           color={"#24384a"}
           backgroundcolor={"#edbe44"}
-        />
+        /> */}
       </Background>
     </div>
   );

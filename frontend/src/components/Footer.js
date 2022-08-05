@@ -76,6 +76,21 @@ const StyledLink = styled.div`
     }
   }
 `;
+
+const NavLink = styled.a``;
+
+const StyledNavLink = styled(NavLink)`
+  font-weight: bold;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: #7b2020;
+  }
+  &:active {
+    color: #7b2020;
+  }
+`;
+
 export const Footer = () => {
   return (
     <div className="scroll-stop">
@@ -91,7 +106,7 @@ export const Footer = () => {
             <StyledLink>
               {" "}
               <Link to={"/policy"}>
-                <h4>Intigretetspolicy</h4>
+                <StyledNavLink>Intigretetspolicy</StyledNavLink>
               </Link>
               <p>
                 Web:

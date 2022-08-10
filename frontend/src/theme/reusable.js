@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 /////////////// DEVICES ///////////////
 
-export const Devices = {
+export const devices = {
   mobile: "(min-width: 375px)",
   tablet: "(min-width: 768px)",
   desktop: "(min-width: 1025px)",
@@ -14,10 +14,8 @@ export const Devices = {
 export const NavLink = styled.a``;
 
 export const StyledNavLink = styled(NavLink)`
-  font-family: wremena;
+  font-family: "WremenaRegular";
   margin: 20px 0 10px;
-  padding: 15px;
-  font-weight: bold;
   color: #24384a;
   text-decoration: none;
   cursor: pointer;
@@ -29,12 +27,6 @@ export const StyledNavLink = styled(NavLink)`
     color: #7b2020;
   }
 `;
-
-const devices = {
-  mobile: "(min-width: 375px)",
-  tablet: "(min-width: 768px)",
-  desktop: "(min-width: 1025px)",
-};
 
 /////////////// Quotes ///////////////
 
@@ -61,6 +53,11 @@ export const QuoteBackground = styled.div`
     white-space: pre-wrap;
 
     @media ${devices.tablet} {
+      width: 70%;
+      font-size: 28px;
+    }
+
+    @media ${devices.desktop} {
       width: 70%;
       font-size: 48px;
     }
@@ -106,6 +103,116 @@ export const QuoteBackground = styled.div`
     margin: -25px 0px;
     @media ${devices.desktop} {
       height: 60px;
+    }
+  }
+`;
+
+export const ContentBackground = styled.div`
+  background-color: #24384a;
+  min-height: 100vh;
+
+  .wrapper {
+    width: 90%;
+    margin: auto;
+    padding-top: 80px;
+
+    @media ${devices.desktop} {
+      padding-top: 150px;
+      max-width: 1800px;
+    }
+  }
+
+  h2 {
+    font-family: "WremenaRegular";
+    color: #24384a;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background-color: #edbe44;
+    padding: 20px 30px;
+    display: inline;
+
+    @media ${devices.tablet} {
+      font-size: 30px;
+      letter-spacing: 3px;
+      padding: 20px 30px;
+    }
+  }
+`;
+
+export const GalleryBackground = styled.div`
+  background-color: #9f9f9f;
+  min-height: 100vh;
+  position: relative;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding: 50%;
+  position: relative;
+
+  .wrapper {
+    width: 90%;
+    margin: auto;
+    padding-top: 90px;
+
+    @media ${devices.desktop} {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+`;
+
+/////////////// Gallery ///////////////
+
+export const Title = styled.div`
+  h2 {
+    font-family: "WremenaRegular";
+    color: #24384a;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background-color: #edbe44;
+    padding: 20px 30px;
+    display: inline;
+
+    @media ${devices.tablet} {
+      font-size: 30px;
+      letter-spacing: 3px;
+      padding: 20px 30px;
+    }
+  }
+`;
+export const Gallery = styled.div`
+  width: 90%;
+  margin: auto;
+  height: 100vh;
+  scroll-snap-type: x proximity;
+  overflow-x: auto;
+  scroll-padding-left: 90px;
+  scrollbar-width: none; /* Firefox */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const PictureBox = styled.div`
+  display: flex;
+  justify-content: row;
+  width: 50%auto;
+  scroll-snap-align: center;
+
+  @media ${devices.desktop} {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .picture {
+    margin: 100px 15px;
+    padding: 30px;
+    width: 40vh;
+
+    @media ${devices.desktop} {
+      width: 500px;
     }
   }
 `;

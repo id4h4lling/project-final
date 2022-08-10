@@ -1,63 +1,8 @@
 import React from "react";
 import { Footer } from "./Footer";
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
-const devices = {
-  mobile: "(min-width: 375px)",
-  tablet: "(min-width: 768px)",
-  desktop: "(min-width: 1025px)",
-};
-
-const Background = styled.div`
-  background-color: #e3b921;
-  padding: 30px;
-`;
-
-const NavLink = styled.a``;
-
-const StyledNavLink = styled(NavLink)`
-  font-family: wremena;
-  margin: 20px 0 10px;
-  padding: 15px;
-  font-weight: bold;
-  color: #24384a;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover,
-  &:focus {
-    color: #7b2020;
-  }
-  &:active {
-    color: #7b2020;
-  }
-`;
-
-const Text = styled.div`
-  color: #24384a;
-  width: 100%;
-  font-family: wremena;
-  padding: 20px;
-  line-height: 25px;
-  font-size: 16px;
-  padding: 20px;
-
-  li {
-    margin: 15px;
-  }
-
-  .bold {
-    font-family: wremenabold;
-  }
-
-  @media ${devices.desktop} {
-    width: 60%;
-    padding: 20px;
-    line-height: 25px;
-    font-size: 16px;
-    padding: 100px;
-  }
-`;
+import { StyledNavLink } from "theme/reusable";
+import { PolicyBackground, Text } from "theme/styles";
 
 export const Policy = () => {
   const navigate = useNavigate();
@@ -67,7 +12,7 @@ export const Policy = () => {
   };
   return (
     <>
-      <Background>
+      <PolicyBackground>
         <StyledNavLink onClick={onBackButtonClick}>Tillbaka</StyledNavLink>
 
         <Text>
@@ -578,7 +523,7 @@ export const Policy = () => {
             info@idahalling.com
           </p>
         </Text>
-      </Background>
+      </PolicyBackground>
       <Footer />
     </>
   );

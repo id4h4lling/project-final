@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { CtaButton } from "./CtaButton";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -49,7 +48,7 @@ export const Video = ({ showSidebar }) => {
 
   return (
     <div className="scroll">
-      <Background>
+      <Background id="video">
         <iframe
           ref={myRef}
           className="video"
@@ -60,12 +59,6 @@ export const Video = ({ showSidebar }) => {
           allow="autoplay allow='autoplay'"
           allowFullScreen
         ></iframe>
-        {/* <CtaButton
-          className="button"
-          showSidebar={showSidebar}
-          color={"#24384a"}
-          backgroundcolor={"#edbe44"}
-        /> */}
       </Background>
     </div>
   );

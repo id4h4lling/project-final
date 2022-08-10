@@ -42,9 +42,9 @@ code {
 }
 
 .scroll {
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   min-height: 100vh;
-  /* scroll-snap-align: center; */
+  scroll-snap-align: center;
 }
 .scroll-stop {
   scroll-snap-align: end;

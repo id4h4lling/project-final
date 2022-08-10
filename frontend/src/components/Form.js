@@ -1,120 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import styled from "styled-components";
+import { useState } from "react";
+import {
+  StyledForm,
+  Input,
+  SubmitButton,
+  StyledThankYou,
+} from "theme/styledForm";
+import { StyledNavLink } from "theme/reusable";
 import { Link } from "react-router-dom";
-
-const devices = {
-  mobile: "(min-width: 375px)",
-  tablet: "(min-width: 768px)",
-  desktop: "(min-width: 1025px)",
-};
-
-const StyledForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-  justify-content: space-evenly;
-  height: 350px;
-  width: 90%;
-
-  h1 {
-    color: #edbe44;
-    font-family: "WremenaLight";
-    font-size: 24px;
-    text-align: left;
-    @media ${devices.desktop} {
-      font-size: 30px;
-    }
-  }
-
-  h2 {
-    color: #edbe44;
-    font-family: "WremenaLight";
-    font-size: 20px;
-    padding: 0px 10px 0px 0px;
-    text-align: left;
-  }
-
-  p {
-    color: #edbe44;
-    font-family: "WremenaLight";
-    font-size: 12px;
-    width: 70%;
-  }
-
-  a {
-    text-decoration: none;
-    color: #edbe44;
-    &:hover {
-      color: #fff0bb;
-      cursor: pointer;
-    }
-  }
-`;
-
-const Input = styled.input`
-  background-color: #c4c4c4;
-  border-radius: unset;
-
-  font-family: "WremenaLight";
-  font-size: 16px;
-  color: #2f2a65;
-  padding: 10px;
-  @media ${devices.desktop} {
-    font-size: 20px;
-  }
-  ::placeholder {
-    font-size: 16px;
-    color: #263541;
-    padding: 10px;
-  }
-`;
-
-const NavLink = styled.a``;
-
-const StyledNavLink = styled(NavLink)`
-  cursor: pointer;
-  &:hover,
-  &:focus {
-    color: #7b2020;
-  }
-  &:active {
-    color: #7b2020;
-  }
-`;
-
-const SubmitButton = styled.button`
-  all: unset;
-  border: none;
-  outline: 0;
-  width: auto;
-  background-color: #edbe44;
-  font-family: "WremenaRegular";
-  color: #263541;
-  padding: 6px;
-  font-size: 14px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #ffdb5c;
-  }
-  @media ${devices.desktop} {
-    font-size: 18px;
-    padding: 10px;
-  }
-`;
-
-const StyledThankYou = styled.div`
-  color: #edbe44;
-  font-family: "WremenaLight";
-  font-size: 20px;
-  text-align: center;
-
-  h1 {
-    padding: 20px 0px;
-  }
-`;
 
 export const Form = ({ showThankYou, setShowThankYou }) => {
   const [useremail, setUserEmail] = useState("");

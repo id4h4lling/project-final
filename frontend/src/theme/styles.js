@@ -40,21 +40,7 @@ export const Burger = styled.div`
     display: flex;
     flex-direction: column;
   }
-  #smycken,
-  #resorna,
-  #tekniken,
-  #video,
-  #författare {
-    text-decoration: none;
-    font-family: "WremenaLight";
-    color: #e3b921;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    list-style: none;
-  }
+
   .bm-item {
     display: inline-block;
     /* Our sidebar item styling */
@@ -68,10 +54,10 @@ export const Burger = styled.div`
   }
   .bm-burger-button {
     position: absolute;
-    width: 42px;
-    height: 30px;
-    right: 6%;
-    top: 7%;
+    width: 22px;
+    height: 20px;
+    right: 7%;
+    top: 5%;
   }
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
@@ -93,7 +79,6 @@ export const Burger = styled.div`
     border: solid #edbe44;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
-    /* width: 80%; */
   }
   /* Morph shape necessary with bubble or elastic */
   .bm-morph-shape {
@@ -117,9 +102,15 @@ export const Burger = styled.div`
     margin-top: 10px;
     border-radius: 30px;
   }
-  /* @media ${devices.desktop} {
-    display: none;
-  } */
+  @media ${devices.desktop} {
+    .bm-burger-button {
+      position: absolute;
+      width: 42px;
+      height: 30px;
+      right: 6%;
+      top: 7%;
+    }
+  }
 `;
 
 ////////////// CTABUTTON ////////////
@@ -236,17 +227,6 @@ export const HeroSection = styled.div`
       font-size: 50px;
     }
   }
-  .button {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-
-    @media ${devices.desktop} {
-      position: absolute;
-      bottom: 70px;
-      right: 70px;
-    }
-  }
 
   h3 {
     font-family: "WremenaRegular";
@@ -283,6 +263,11 @@ export const ContentTravel = styled.div`
     padding: 180px 0 200px 0;
   }
 
+  @media ${devices.desktop} {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
   .content-image {
     width: 100%;
     @media ${devices.desktop} {
@@ -294,7 +279,7 @@ export const ContentTravel = styled.div`
     font-family: "WremenaRegular";
     color: #edbe44;
     padding: 0 0 80px 0;
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
     line-height: 35px;
 
@@ -329,7 +314,7 @@ export const ContentLife = styled.div`
   .text {
     font-family: "WremenaRegular";
     color: #edbe44;
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
     line-height: 35px;
     white-space: pre-wrap;

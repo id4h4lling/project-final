@@ -13,7 +13,7 @@ export const LifeStory = ({ lifeStory }) => {
     },
   };
   return (
-    <div className="scroll">
+    <div className="scroll-start">
       <ContentBackground>
         <div className="wrapper">
           <h2>{lifeStory.title}</h2>

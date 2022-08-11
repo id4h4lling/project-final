@@ -30,7 +30,7 @@ export const TravelQuote = ({ quoteTravel, showSidebar }) => {
     }
   }, [index, visible]);
   return (
-    <div className="scroll">
+    <div className="scroll-center">
       <QuoteBackground>
         <p ref={myRef}>
           {<img className="signTop" src={quoteYellowStart} alt="quotesign" />}{" "}

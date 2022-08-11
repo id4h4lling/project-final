@@ -4,7 +4,7 @@ import { ContentTravel } from "theme/styles";
 
 export const TravelPage = ({ travelPage }) => {
   return (
-    <div className="scroll">
+    <div className="scroll-center">
       <ContentBackground>
         <div className="wrapper" id="resorna">
           <h2 className="title">{travelPage.title}</h2>

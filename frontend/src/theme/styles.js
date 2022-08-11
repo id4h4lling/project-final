@@ -490,7 +490,7 @@ export const BackgroundFooter = styled.div`
       display: flex;
       justify-content: space-evenly;
       flex-direction: row;
-      padding: 60px 0 60px 0;
+      padding: 60px 100px 60px 0px;
       width: 80%;
       margin: auto;
     }

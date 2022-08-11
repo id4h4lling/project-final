@@ -3,7 +3,7 @@ import { BackgroundCtaPage, ButtonCtaPage } from "theme/styles";
 
 export const Cta = ({ cta, showSidebar }) => {
   return (
-    <div className="scroll">
+    <div className="scroll-center">
       <BackgroundCtaPage>
         <div
           className="background"

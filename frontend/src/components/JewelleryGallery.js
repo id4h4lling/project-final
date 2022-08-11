@@ -3,7 +3,7 @@ import { GalleryBackground, Gallery, PictureBox, Title } from "theme/reusable";
 
 export const JewelleryGallery = ({ jewelleryGallery, showSidebar }) => {
   return (
-    <div className="scroll">
+    <div className="scroll-center">
       <GalleryBackground>
         <div className="wrapper" id="hårsmycken">
           <Title>

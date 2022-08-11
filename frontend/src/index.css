@@ -41,8 +41,12 @@ code {
   scroll-snap-type: y mandatory;
 }
 
-.scroll {
-  /* scroll-snap-align: start; */
+.scroll-start {
+  scroll-snap-align: start;
+  min-height: 100vh;
+}
+
+.scroll-center {
   min-height: 100vh;
   scroll-snap-align: center;
 }

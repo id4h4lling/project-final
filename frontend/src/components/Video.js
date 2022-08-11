@@ -47,7 +47,7 @@ export const Video = ({ showSidebar }) => {
   const { ref: myRef, inView: visible } = useInView();
 
   return (
-    <div className="scroll">
+    <div className="scroll-center">
       <Background id="video">
         <iframe
           ref={myRef}

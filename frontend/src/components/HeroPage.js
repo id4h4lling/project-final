@@ -3,7 +3,7 @@ import { HeroSection } from "theme/styles";
 
 export const HeroPage = ({ hero }) => {
   return (
-    <div className="scroll">
+    <div className="scroll-start">
       <HeroSection>
         <div
           className="background"

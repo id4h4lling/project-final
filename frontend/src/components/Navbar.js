@@ -26,48 +26,25 @@ export const Navbar = () => {
         <div id="page-wrap">
           <div className="page-wrap">
             <ScrollIntoView selector="#hårsmycken">
-              <NavbarButton
-                onClick={closeSideBar}
-                className="mdl-button mdl-js-button mdl-button--raised"
-              >
-                Hårsmycken
-              </NavbarButton>
+              <NavbarButton onClick={closeSideBar}>Hårsmycken</NavbarButton>
             </ScrollIntoView>
 
             <ScrollIntoView selector="#resorna">
-              <NavbarButton
-                onClick={closeSideBar}
-                className="mdl-button mdl-js-button mdl-button--raised"
-              >
-                Resorna
-              </NavbarButton>
+              <NavbarButton onClick={closeSideBar}>Resorna</NavbarButton>
             </ScrollIntoView>
 
             <ScrollIntoView selector="#teknik">
-              <NavbarButton
-                onClick={closeSideBar}
-                className="mdl-button mdl-js-button mdl-button--raised"
-              >
-                Tekniken
-              </NavbarButton>
+              <NavbarButton onClick={closeSideBar}>Tekniken</NavbarButton>
             </ScrollIntoView>
 
             <ScrollIntoView selector="#video">
-              <NavbarButton
-                onClick={closeSideBar}
-                className="mdl-button mdl-js-button mdl-button--raised"
-              >
+              <NavbarButton onClick={closeSideBar}>
                 Video från 1936
               </NavbarButton>
             </ScrollIntoView>
 
             <ScrollIntoView selector="#författare">
-              <NavbarButton
-                onClick={closeSideBar}
-                className="mdl-button mdl-js-button mdl-button--raised"
-              >
-                Författaren
-              </NavbarButton>
+              <NavbarButton onClick={closeSideBar}>Författaren</NavbarButton>
             </ScrollIntoView>
           </div>
         </div>

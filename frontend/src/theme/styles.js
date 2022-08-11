@@ -70,8 +70,8 @@ export const Burger = styled.div`
     position: absolute;
     width: 42px;
     height: 30px;
-    right: 5%;
-    top: 5%;
+    right: 6%;
+    top: 7%;
   }
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
@@ -125,18 +125,13 @@ export const Burger = styled.div`
 ////////////// CTABUTTON ////////////
 
 export const ButtonCta = styled.button`
-  position: sticky;
+  position: fixed;
   top: 80%;
-  left: 70%;
+  right: 6%;
   align-items: right;
   z-index: 1;
 
-  @media ${devices.laptop} {
-    left: 80%;
-  }
-
   @media ${devices.desktop} {
-    left: 88%;
   }
 
   display: flex;
@@ -285,8 +280,6 @@ export const ContentTravel = styled.div`
   align-items: center;
 
   @media ${devices.tablet} {
-    flex-direction: row-reverse;
-    justify-content: space-between;
     padding: 180px 0 200px 0;
   }
 

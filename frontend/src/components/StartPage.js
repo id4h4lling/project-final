@@ -15,6 +15,7 @@ import { LifeStory } from "./LifeStory";
 import { AboutAuthor } from "./AboutAuthor";
 import { Footer } from "./Footer";
 import { CtaButton } from "./CtaButton";
+import { BackToTopButton } from "./BackToTopButton";
 
 const ID = process.env.REACT_APP_SPACE_ID;
 const TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
@@ -209,8 +210,10 @@ const StartPage = () => {
   }
   return (
     <div className="wrapper-scroll">
+      <BackToTopButton />
       <Navbar />
       <CtaButton showSidebar={showSidebar} />
+
       <SignUp
         setSidebar={setSidebar}
         sidebar={sidebar}

@@ -1,10 +1,11 @@
 import React from "react";
 import { HeroSection } from "theme/styles";
+import { Arrow } from "components/Arrow";
 
 export const HeroPage = ({ hero }) => {
   return (
     <div className="scroll-start">
-      <HeroSection>
+      <HeroSection id="start">
         <div
           className="background"
           style={{
@@ -16,6 +17,7 @@ export const HeroPage = ({ hero }) => {
             <h1>{hero.mainHeader}</h1>
             <h3>{hero.subheading}</h3>
           </div>
+          <Arrow />
         </div>
       </HeroSection>
     </div>

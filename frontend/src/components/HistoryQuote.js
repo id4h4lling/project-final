@@ -32,7 +32,7 @@ export const HistoryQuote = ({ quoteHistory }) => {
 
   return (
     <div className="scroll-center">
-      <QuoteBackground>
+      <QuoteBackground id="history-quote">
         <p ref={myRef}>
           {<img className="signTop" src={quoteYellowStart} alt="quotesign" />}{" "}
           <span className="flashin">

@@ -5,7 +5,7 @@ export const TechniqueGallery = ({ techniqueGallery, showSidebar }) => {
   return (
     <div className="scroll-center">
       <GalleryBackground>
-        <div className="wrapper" id="teknik">
+        <div className="wrapper" id="technique">
           <Title>
             <h2>{techniqueGallery.title}</h2>
           </Title>

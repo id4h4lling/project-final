@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <div className="scroll-stop">
       <BackgroundFooter>
-        <div className="wrapper">
+        <div className="wrapper" id="contact">
           <section>
             <h4>MED STÖD AV</h4>
             <p>IRIS stipendiet</p>

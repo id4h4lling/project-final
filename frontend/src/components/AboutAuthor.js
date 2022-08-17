@@ -18,7 +18,7 @@ export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
   return (
     <div className="scroll-start">
       <ContentBackground>
-        <div className="wrapper" id="författare">
+        <div className="wrapper" id="author">
           <h2>{aboutAuthor.title}</h2>
           <ContentAuthor>
             <div className="image-container">

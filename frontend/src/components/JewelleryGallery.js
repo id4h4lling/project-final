@@ -5,7 +5,7 @@ export const JewelleryGallery = ({ jewelleryGallery, showSidebar }) => {
   return (
     <div className="scroll-center">
       <GalleryBackground>
-        <div className="wrapper" id="hårsmycken">
+        <div className="wrapper" id="hairjwellery">
           <Title>
             <h2>{jewelleryGallery.title}</h2>
           </Title>

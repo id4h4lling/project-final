@@ -9,6 +9,7 @@ export const App = () => {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<StartPage />}></Route>
+
         <Route path="/policy" element={<Policy />} />
       </Routes>
     </BrowserRouter>

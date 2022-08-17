@@ -6,7 +6,7 @@ export const TravelPage = ({ travelPage }) => {
   return (
     <div className="scroll-center">
       <ContentBackground>
-        <div className="wrapper" id="resorna">
+        <div className="wrapper" id="travel">
           <h2 className="title">{travelPage.title}</h2>
           <ContentTravel>
             <p className="content-text">{travelPage.travelText}</p>

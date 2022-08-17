@@ -25,15 +25,19 @@ export const Navbar = () => {
       >
         <div id="page-wrap">
           <div className="page-wrap">
-            <ScrollIntoView selector="#hårsmycken">
+            <ScrollIntoView selector="#start">
+              <NavbarButton onClick={closeSideBar}>Start</NavbarButton>
+            </ScrollIntoView>
+
+            <ScrollIntoView selector="#hairjwellery">
               <NavbarButton onClick={closeSideBar}>Hårsmycken</NavbarButton>
             </ScrollIntoView>
 
-            <ScrollIntoView selector="#resorna">
+            <ScrollIntoView selector="#travel">
               <NavbarButton onClick={closeSideBar}>Resorna</NavbarButton>
             </ScrollIntoView>
 
-            <ScrollIntoView selector="#teknik">
+            <ScrollIntoView selector="#technique">
               <NavbarButton onClick={closeSideBar}>Tekniken</NavbarButton>
             </ScrollIntoView>
 
@@ -43,8 +47,12 @@ export const Navbar = () => {
               </NavbarButton>
             </ScrollIntoView>
 
-            <ScrollIntoView selector="#författare">
+            <ScrollIntoView selector="#author">
               <NavbarButton onClick={closeSideBar}>Författaren</NavbarButton>
+            </ScrollIntoView>
+
+            <ScrollIntoView selector="#contact">
+              <NavbarButton onClick={closeSideBar}>Kontakt</NavbarButton>
             </ScrollIntoView>
           </div>
         </div>

@@ -183,36 +183,44 @@ export const Title = styled.div`
   }
 `;
 export const Gallery = styled.div`
-  width: 90%;
-  margin: auto;
-  height: 100vh;
-  scroll-snap-type: x proximity;
-  overflow-x: auto;
-  scroll-padding-left: 90px;
-  scrollbar-width: none; /* Firefox */
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-export const PictureBox = styled.div`
   display: flex;
-  justify-content: row;
-  width: 50%auto;
-  scroll-snap-align: center;
-
-  @media ${devices.desktop} {
-    height: 100vh;
-    width: 100vw;
-  }
+  align-items: center;
+  padding-top: 70px;
 
   .picture {
-    margin: 100px 15px;
-    padding: 30px;
     width: 40vh;
+    display: inline-block;
+    padding: 30px;
+    transition: 0.8s;
+    transition-timing-function: ease-in-out;
 
     @media ${devices.desktop} {
       width: 500px;
+    }
+  }
+  .picture:hover {
+    scale: 1.1;
+    cursor: pointer;
+  }
+  .pointer {
+    opacity: 0.5;
+    color: #edbe44;
+  }
+  .pointer:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .image-slider {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    scroll-padding-left: 90px;
+    scrollbar-width: none; /* Firefox */
+    ::-webkit-scrollbar {
+      display: none;
     }
   }
 `;

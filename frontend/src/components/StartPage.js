@@ -209,7 +209,6 @@ const StartPage = () => {
   }
   return (
     <div className="wrapper-scroll">
-      <BackToTopButton />
       <Navbar />
       <CtaButton showSidebar={showSidebar} />
 

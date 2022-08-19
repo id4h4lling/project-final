@@ -65,10 +65,9 @@ export const DeleteButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-
-  .X {
-    width: 12px;
-  }
+  color: #edbe44;
+  font-size: 20px;
+  font-weight: bold;
 `;
 export const StyledOverlay = styled.div`
   .overlay {

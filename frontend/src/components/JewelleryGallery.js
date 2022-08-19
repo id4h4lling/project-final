@@ -1,8 +1,8 @@
 import React from "react";
-import { GalleryBackground, Gallery, PictureBox, Title } from "theme/reusable";
+import { GalleryBackground, Gallery, Title } from "theme/reusable";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-export const JewelleryGallery = ({ jewelleryGallery, showSidebar }) => {
+export const JewelleryGallery = ({ jewelleryGallery }) => {
   const slideLeft = () => {
     let slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - 500;
@@ -20,7 +20,7 @@ export const JewelleryGallery = ({ jewelleryGallery, showSidebar }) => {
             <h2>{jewelleryGallery.title}</h2>
           </Title>
           <Gallery>
-            <MdChevronLeft className="pointer" onClick={slideLeft} size={200} />
+            <MdChevronLeft className="pointer" onClick={slideLeft} size={450} />
             <div id="slider" className="image-slider">
               {jewelleryGallery.pictureCollection.items.map((picture) => (
                 <div key={picture.title}>
@@ -34,7 +34,7 @@ export const JewelleryGallery = ({ jewelleryGallery, showSidebar }) => {
             </div>
             <MdChevronRight
               onClick={slideRight}
-              size={200}
+              size={450}
               className="pointer"
             />
           </Gallery>

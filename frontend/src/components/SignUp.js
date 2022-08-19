@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { FormStyled, DeleteButton, StyledOverlay } from "theme/styledForm";
 import { Form } from "./Form";
-import X from "icons/X.svg";
 
 export const SignUp = ({
   sidebar,
@@ -39,8 +38,8 @@ export const SignUp = ({
         >
           <DeleteButton onClick={hideSidebar}>
             {" "}
-            <span role="img" aria-label="delete">
-              <img className="X" src={X} alt="close" />
+            <span aria-label="delete" className="X">
+              x
             </span>
           </DeleteButton>
           <Form

@@ -188,7 +188,7 @@ export const Gallery = styled.div`
   padding-top: 70px;
 
   .picture {
-    width: 40vh;
+    width: 50vh;
     display: inline-block;
     padding: 30px;
     transition: 0.8s;
@@ -205,6 +205,10 @@ export const Gallery = styled.div`
   .pointer {
     opacity: 0.5;
     color: #edbe44;
+
+    @media ${devices.desktop} {
+      height: 70px;
+    }
   }
   .pointer:hover {
     opacity: 1;

@@ -188,7 +188,7 @@ export const Gallery = styled.div`
   padding-top: 70px;
 
   .picture {
-    width: 50vh;
+    width: 300px;
     display: inline-block;
     padding: 30px;
     transition: 0.8s;

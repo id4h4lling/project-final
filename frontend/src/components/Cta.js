@@ -16,7 +16,6 @@ export const Cta = ({ cta, showSidebar }) => {
               <h1>{cta.cta}</h1>
             </button>
           </ButtonCtaPage>
-          s
         </div>
       </BackgroundCtaPage>
     </div>

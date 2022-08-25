@@ -1,7 +1,7 @@
 # Final project
 
 This is the final project on the Tecnigo Bootcamp. It's a book teaser Single Page Application.
-It's about a group of women who during the nineteenhundreds saved their whole village from starving by walking all across northern Europe to sell and make jwellery out of human hair.
+The book is about a group of women who during the nineteenhundreds saved their whole village from starving by walking all across northern Europe to sell and make jwellery out of human hair.
 
 ## The problem
 
@@ -14,6 +14,3 @@ To start the project: frontend - npm start | backend - npm run dev
 
 Deployed site:
 https://harboken.netlify.app/
-
-Backend:
-https://bookreales-hair.herokuapp.com/

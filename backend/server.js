@@ -25,7 +25,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model("User", UserSchema);
 
 app.get("/", (req, res) => {
-  res.send("Endpoints for haribook");
+  res.send("Endpoints for hairbook");
 });
 
 app.post("/signup", async (req, res) => {

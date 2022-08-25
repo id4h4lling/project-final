@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { FormStyled, DeleteButton, StyledOverlay } from "theme/styledForm";
+import { FormStyled, DeleteButton, StyledOverlay } from "theme/SignUpStyled";
 import { Form } from "./Form";
 
 export const SignUp = ({

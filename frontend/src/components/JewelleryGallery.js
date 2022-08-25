@@ -1,5 +1,5 @@
 import React from "react";
-import { GalleryBackground, Gallery, Title } from "theme/reusable";
+import { GalleryBackground, Gallery, Title } from "theme/ReusableStyle";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 export const JewelleryGallery = ({ jewelleryGallery }) => {

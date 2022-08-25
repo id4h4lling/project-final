@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroSection } from "theme/styles";
+import { HeroSection } from "theme/HeroPageStyled";
 import { Arrow } from "components/Arrow";
 
 export const HeroPage = ({ hero }) => {

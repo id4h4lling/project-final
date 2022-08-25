@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import quoteYellowStart from "icons/quoteYellowStart.svg";
 import quoteYellowEnd from "icons/quoteYellowEnd.svg";
-import { QuoteBackground } from "theme/reusable";
+import { QuoteBackground } from "theme/ReusableStyle";
 
 export const HistoryQuote = ({ quoteHistory }) => {
   const [index, setIndex] = useState(0);

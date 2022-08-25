@@ -1,6 +1,6 @@
 import React from "react";
-import { ContentBackground } from "theme/reusable";
-import { ContentLife } from "theme/styles";
+import { ContentBackground } from "theme/ReusableStyle";
+import { ContentLife } from "theme/LifeStoryStyled";
 
 import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";

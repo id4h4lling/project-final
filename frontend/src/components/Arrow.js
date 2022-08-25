@@ -1,5 +1,5 @@
 import ScrollIntoView from "react-scroll-into-view";
-import { ArrowDown, ArrowWrapper } from "theme/styles";
+import { ArrowDown, ArrowWrapper } from "theme/ArrowStyled";
 
 export const Arrow = () => {
   return (

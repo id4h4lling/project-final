@@ -1,8 +1,8 @@
 import React from "react";
 import { Footer } from "./Footer";
 import { useNavigate } from "react-router-dom";
-import { StyledNavLink } from "theme/reusable";
-import { PolicyBackground, Text } from "theme/styles";
+import { StyledNavLink } from "theme/ReusableStyle";
+import { PolicyBackground, Text } from "theme/PolicyStyled";
 
 export const Policy = () => {
   const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import linkedin from "icons/Linkdin.svg";
-import { StyledNavLink } from "theme/reusable";
-import { BackgroundFooter, StyledLink } from "theme/styles";
+import { StyledNavLink } from "theme/ReusableStyle";
+import { BackgroundFooter, StyledLink } from "theme/FooterStyled";
 
 export const Footer = () => {
   return (

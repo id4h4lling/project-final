@@ -1,4 +1,4 @@
-import { ButtonCta } from "theme/styles";
+import { ButtonCta } from "theme/CtaButtonStyled";
 // import { react, useState } from "react";
 
 export const CtaButton = ({ showSidebar }) => {

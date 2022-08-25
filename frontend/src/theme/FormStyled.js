@@ -5,7 +5,6 @@ const devices = {
   tablet: "(min-width: 768px)",
   desktop: "(min-width: 1025px)",
 };
-/////////// SIGN UP / MODAL ///////////
 
 export const FormStyled = styled.div`
   .sidebar {

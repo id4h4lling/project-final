@@ -5,8 +5,8 @@ import {
   Input,
   SubmitButton,
   StyledThankYou,
-} from "theme/styledForm";
-import { StyledNavLink } from "theme/reusable";
+} from "theme/FormStyled";
+import { StyledNavLink } from "theme/ReusableStyle";
 import { Link } from "react-router-dom";
 
 export const Form = ({ showThankYou, setShowThankYou }) => {

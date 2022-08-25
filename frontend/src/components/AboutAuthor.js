@@ -1,10 +1,10 @@
 import React from "react";
-import { ContentBackground } from "theme/reusable";
-import { ContentAuthor } from "theme/styles";
+import { ContentBackground } from "theme/ReusableStyle";
+import { ContentAuthor } from "theme/AboutAuthorStyled";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-export const AboutAuthor = ({ aboutAuthor, showSidebar }) => {
+export const AboutAuthor = ({ aboutAuthor }) => {
   const Text = ({ children }) => <div className="citat">{children}</div>;
 
   const Bla = ({ children }) => <h4 className="intro">{children}</h4>;

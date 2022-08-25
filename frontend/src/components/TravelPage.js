@@ -1,6 +1,6 @@
 import React from "react";
-import { ContentBackground } from "theme/reusable";
-import { ContentTravel } from "theme/styles";
+import { ContentBackground } from "theme/ReusableStyle";
+import { ContentTravel } from "theme/TravelPageStyled";
 
 export const TravelPage = ({ travelPage }) => {
   return (

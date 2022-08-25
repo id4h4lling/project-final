@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
-import { Burger, NavbarButton } from "theme/styles";
+import { Burger, NavbarButton } from "theme/NavBarStyled";
 import ScrollIntoView from "react-scroll-into-view";
 
 export const Navbar = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { BackgroundCtaPage, ButtonCtaPage } from "theme/styles";
+import { BackgroundCtaPage, ButtonCtaPage } from "theme/CtaStyled";
 
 export const Cta = ({ cta, showSidebar }) => {
   return (

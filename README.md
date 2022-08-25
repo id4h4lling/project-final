@@ -18,4 +18,5 @@ Deployed site:
 https://harboken.netlify.app/
 
 All content by Ida Halling
+
 Built by Katarina Elgérus & Ida Halling

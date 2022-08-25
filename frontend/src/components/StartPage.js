@@ -176,10 +176,8 @@ const StartPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Authenticate the request
           Authorization: `Bearer ${TOKEN}`,
         },
-        // send the GraphQL query
         body: JSON.stringify({ query }),
       })
 
@@ -188,8 +186,6 @@ const StartPage = () => {
         if (errors) {
           console.error(errors);
         }
-
-        // rerender the entire component with new data
 
         setHero(data.heroCollection.items[0]);
         setQuoteHistory(data.quoteCollection.items[2]);

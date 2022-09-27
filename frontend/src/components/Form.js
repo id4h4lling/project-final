@@ -60,6 +60,7 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
             {" "}
             Vad kul att du vill veta mer, <br />
             du kommer få ett mail när boken släpps.
+            <p>hej</p>
           </h3>
         </StyledThankYou>
       )}

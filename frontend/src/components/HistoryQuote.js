@@ -25,7 +25,7 @@ export const HistoryQuote = ({ quoteHistory }) => {
       if (index < quoteHistory.quote.length) {
         setTimeout(() => {
           setIndex(index + 1);
-        }, 90);
+        }, 50);
       }
     }
   }, [index, visible]);

@@ -48,11 +48,11 @@ export const ContentAuthor = styled.div`
     width: 80%;
 
     @media ${devices.tablet} {
-      width: 50%;
+      width: 40%;
     }
 
     @media ${devices.desktop} {
-      width: 25%;
+      width: 45%;
     }
   }
   .text {

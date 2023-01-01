@@ -25,7 +25,7 @@ export const TravelQuote = ({ quoteTravel, showSidebar }) => {
       if (index < quoteTravel.quote.length) {
         setTimeout(() => {
           setIndex(index + 1);
-        }, 90);
+        }, 50);
       }
     }
   }, [index, visible]);

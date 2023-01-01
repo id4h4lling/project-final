@@ -25,7 +25,7 @@ export const FinanceQuote = ({ quoteFinance }) => {
       if (index < quoteFinance.quote.length) {
         setTimeout(() => {
           setIndex(index + 1);
-        }, 90);
+        }, 50);
       }
     }
   }, [index, visible]);

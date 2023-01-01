@@ -41,7 +41,6 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
             value={useremail}
             onChange={(e) => setUserEmail(e.target.value)}
           />
-
           <p>
             Genom att fylla i din mail godkänner du att vi använder din
             information för att kontakta dig om boken.
@@ -51,6 +50,10 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
             </Link>
           </p>
           <SubmitButton type="submit">Skicka in</SubmitButton>
+          <p>
+            Ibland kan de gå lite långsamt innan knappen svarar, <br />
+            tack för att du väntar!
+          </p>
         </StyledForm>
       )}
       {showThankYou && (

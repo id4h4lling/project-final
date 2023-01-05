@@ -37,10 +37,9 @@ export const QuoteBackground = styled.div`
   background-color: #7b2020;
   position: relative;
   min-height: 100vh;
-  padding-top: 90px;
+  padding-top: 300px;
 
   @media ${devices.desktop} {
-    align-items: center;
     justify-content: center;
   }
 

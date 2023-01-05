@@ -30,6 +30,9 @@ export const HistoryQuote = ({ quoteHistory }) => {
     }
   }, [index, visible]);
 
+  /* const [rotate, setRotate] = useState<boolean>(false);
+  rotate?document.body.style.overflow = "hidden" :document.body.style.overflow ="auto"; */
+
   return (
     <div className="scroll-center">
       <QuoteBackground id="history-quote">

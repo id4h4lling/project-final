@@ -188,14 +188,15 @@ export const Gallery = styled.div`
   padding-top: 70px;
 
   .picture {
-    width: 300px;
+    width: 400px;
     display: inline-block;
-    padding: 30px;
+    padding: 10px;
     transition: 0.8s;
     transition-timing-function: ease-in-out;
 
     @media ${devices.desktop} {
       width: 500px;
+      padding: 30px;
     }
   }
   .picture:hover {

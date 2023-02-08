@@ -26,7 +26,7 @@ export const Navbar = () => {
         <div id="page-wrap">
           <div className="page-wrap">
             <ScrollIntoView selector="#start">
-              <NavbarButton onClick={closeSideBar}>Start</NavbarButton>
+              <NavbarButton onClick={closeSideBar}>Hem</NavbarButton>
             </ScrollIntoView>
 
             <ScrollIntoView selector="#hairjwellery">
@@ -43,7 +43,7 @@ export const Navbar = () => {
 
             <ScrollIntoView selector="#video">
               <NavbarButton onClick={closeSideBar}>
-                Video från 1936
+                Video - Löshårstillverkning
               </NavbarButton>
             </ScrollIntoView>
 

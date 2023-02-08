@@ -20,7 +20,7 @@ export const JewelleryGallery = ({ jewelleryGallery }) => {
             <h2>{jewelleryGallery.title}</h2>
           </Title>
           <Gallery>
-            <MdChevronLeft className="pointer" onClick={slideLeft} size={450} />
+            <MdChevronLeft className="pointer" onClick={slideLeft} size={350} />
             <div id="slider" className="image-slider">
               {jewelleryGallery.pictureCollection.items.map((picture) => (
                 <div key={picture.title}>
@@ -34,7 +34,7 @@ export const JewelleryGallery = ({ jewelleryGallery }) => {
             </div>
             <MdChevronRight
               onClick={slideRight}
-              size={450}
+              size={350}
               className="pointer"
             />
           </Gallery>

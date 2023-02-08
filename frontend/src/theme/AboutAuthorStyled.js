@@ -12,6 +12,7 @@ export const ContentAuthor = styled.div`
   padding: 120px 0 70px 0;
   display: flex;
   flex-direction: column;
+  font-family: "WremenaRegular";
 
   @media ${devices.desktop} {
     flex-direction: row;
@@ -39,7 +40,7 @@ export const ContentAuthor = styled.div`
 
     @media ${devices.desktop} {
       margin-left: 70px;
-      line-height: 35px;
+      line-height: 30px;
       text-align: left;
     }
   }
@@ -56,7 +57,7 @@ export const ContentAuthor = styled.div`
     }
   }
   .text {
-    width: 100%;
+    width: 80%;
     @media ${devices.desktop} {
       width: 50%;
       margin-left: 40px;

@@ -144,6 +144,7 @@ export const GalleryBackground = styled.div`
   background-color: #9f9f9f;
   min-height: 100vh;
   position: relative;
+  z-index: 2;
 
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;

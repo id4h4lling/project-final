@@ -7,6 +7,8 @@ export const devices = {
 };
 
 export const BackgroundCtaPage = styled.div`
+  position: relative;
+  z-index: 2;
   .background {
     width: 100%;
     min-height: 100vh;
@@ -22,17 +24,17 @@ export const BackgroundCtaPage = styled.div`
 
 export const ButtonCtaPage = styled.div`
   button {
-    margin: 0 20px 0 20px;
-    background-color: #7b2020;
+    margin: 2px 20px 40px;
+    background-color: #24384a;
     color: inherit;
     border: none;
-    padding: 5px;
     font: inherit;
+    border-radius: 20px;
     cursor: pointer;
     outline: inherit;
     transition: 0.5s;
     &:hover {
-      background-color: #24384a;
+      background-color: #2c465e;
       cursor: pointer;
     }
     @media ${devices.tablet} {
@@ -45,12 +47,14 @@ export const ButtonCtaPage = styled.div`
       color: #edbe44;
       font-size: 24px;
       letter-spacing: 3px;
+      padding: 20px;
 
       @media ${devices.tablet} {
         font-size: 40px;
       }
       @media ${devices.desktop} {
         font-size: 50px;
+        padding: 30px;
       }
     }
   }

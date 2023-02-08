@@ -8,12 +8,22 @@ export const devices = {
 
 export const ButtonCta = styled.button`
   position: fixed;
-  top: 80%;
-  right: 6%;
+  top: 85%;
+  right: 30px;
   align-items: right;
-  z-index: 1;
+  z-index: 2;
+
+  @media ${devices.tablet} {
+    width: 100px;
+    height: 100px;
+    left: 83%;
+  }
 
   @media ${devices.desktop} {
+    left: 85%;
+    width: 110px;
+    height: 110px;
+    padding: 20px;
   }
 
   display: flex;
@@ -38,7 +48,6 @@ export const ButtonCta = styled.button`
   &:active {
     color: #ffdb5c;
   }
-
   @media ${devices.desktop} {
     width: 150px;
     height: 150px;
@@ -48,7 +57,7 @@ export const ButtonCta = styled.button`
   #ctaText {
     font-family: "WremenaRegular";
     font-size: 15px;
-    width: 70px;
+    width: 80px;
     letter-spacing: 1px;
     line-height: initial;
     color: #24384a;
@@ -69,7 +78,7 @@ export const ButtonCta = styled.button`
       }
 
       100% {
-        transform: scale(0.8);
+        transform: scale(0.7);
       }
     }
   }

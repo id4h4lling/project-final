@@ -17,6 +17,7 @@ export const BackgroundFooter = styled.div`
     align-items: left;
     width: 50%;
     margin: 15%;
+    z-index: 2;
     @media ${devices.tablet} {
       display: flex;
       justify-content: space-evenly;

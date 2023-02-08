@@ -3,7 +3,7 @@ import quoteYellowStart from "icons/quoteYellowStart.svg";
 import quoteYellowEnd from "icons/quoteYellowEnd.svg";
 import { QuoteBackground } from "theme/ReusableStyle";
 
-export const TravelQuote = ({ quoteTravel, showSidebar }) => {
+export const TravelQuote = ({ quoteTravel }) => {
   const [index, setIndex] = useState(0);
   const myRef = useRef();
   const [visible, setVisble] = useState();

@@ -12,21 +12,21 @@ export const ContentLife = styled.div`
   width: 80%;
   margin: auto;
   padding: 120px 0 120px 0;
+  font-family: "WremenaRegular";
 
   @media ${devices.desktop} {
     flex-direction: row;
     justify-content: space-around;
 
     margin: auto;
-    padding: 180px 0 200px 0;
+    padding: 180px 50 200px 0;
   }
 
   .text {
-    font-family: "WremenaRegular";
     color: #edbe44;
-    font-size: 16px;
+    font-size: 1.125rem;
+    line-height: 30px;
     text-align: left;
-    line-height: 35px;
     white-space: pre-wrap;
 
     @media ${devices.tablet} {

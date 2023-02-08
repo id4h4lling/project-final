@@ -34,9 +34,9 @@ export const ContentTravel = styled.div`
     font-family: "WremenaRegular";
     color: #edbe44;
     padding: 0 0 80px 0;
-    font-size: 16px;
+    font-size: 1.125rem;
     text-align: left;
-    line-height: 35px;
+    line-height: 30px;
 
     @media ${devices.tablet} {
       font-size: 22px;

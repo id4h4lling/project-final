@@ -27,7 +27,7 @@ export const Footer = () => {
                   <img className="logo" src={linkedin} alt="logo" />
                   Katarina Elgerus
                 </a>
-                |
+                |<br />
                 <a href="https://www.linkedin.com/in/ida-halling/">
                   <img className="logo" src={linkedin} alt="logo" />
                   Ida Halling

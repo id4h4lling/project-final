@@ -20,6 +20,7 @@ export const ButtonCta = styled.button`
   }
 
   @media ${devices.desktop} {
+    top: 80%;
     left: 85%;
     width: 110px;
     height: 110px;

@@ -25,7 +25,7 @@ export const ContentLife = styled.div`
   .text {
     color: #edbe44;
     font-size: 1.125rem;
-    line-height: 30px;
+    line-height: 33px;
     text-align: left;
     white-space: pre-wrap;
 

@@ -117,7 +117,7 @@ export const ContentBackground = styled.div`
     padding-top: 80px;
 
     @media ${devices.desktop} {
-      padding-top: 150px;
+      padding-top: 100px;
       max-width: 1800px;
     }
   }
@@ -189,7 +189,7 @@ export const Gallery = styled.div`
   padding-top: 70px;
 
   .picture {
-    width: 350px;
+    width: 250px;
     display: inline-block;
     padding: 10px;
     transition: 0.8s;

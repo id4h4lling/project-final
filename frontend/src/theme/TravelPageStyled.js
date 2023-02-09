@@ -36,7 +36,7 @@ export const ContentTravel = styled.div`
     padding: 0 0 80px 0;
     font-size: 1.125rem;
     text-align: left;
-    line-height: 30px;
+    line-height: 33px;
 
     @media ${devices.tablet} {
       font-size: 22px;

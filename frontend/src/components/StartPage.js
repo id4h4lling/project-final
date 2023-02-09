@@ -188,11 +188,11 @@ const StartPage = () => {
         }
 
         setHero(data.heroCollection.items[0]);
-        setQuoteHistory(data.quoteCollection.items[2]);
+        setQuoteHistory(data.quoteCollection.items[1]);
         setJewelleryGallery(data.jewelleryGalleryCollection.items[0]);
-        setQuoteTravel(data.quoteCollection.items[1]);
+        setQuoteTravel(data.quoteCollection.items[2]);
         setTravelPage(data.travelPageCollection.items[0]);
-        setQuoteFinance(data.quoteCollection.items[0]);
+        setQuoteFinance(data.quoteCollection.items[3]);
         setTechniqueGallery(data.techniqueGalleryCollection.items[0]);
         setLifeStory(data.lifestoryCollection.items[0]);
         setCta(data.ctaCollection.items[0]);

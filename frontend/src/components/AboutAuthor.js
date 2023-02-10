@@ -23,12 +23,12 @@ export const AboutAuthor = ({ aboutAuthor }) => {
           <ContentAuthor>
             <div className="image-container">
               <img
-                className="picture"
+                className="picture-author"
                 src={aboutAuthor.authorPicture.url}
                 alt="picture"
               />
             </div>
-            <div className="text">
+            <div className="text-container">
               {documentToReactComponents(aboutAuthor.authorBio.json, options)}
             </div>
           </ContentAuthor>

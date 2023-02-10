@@ -7,46 +7,77 @@ export const devices = {
 };
 
 export const ContentTravel = styled.div`
-  width: 80%;
-  margin: auto;
-  padding: 120px 0 120px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 90%;
+  margin: auto;
+  padding: 90px 0 60px 0;
+  font-family: "WremenaLight";
 
   @media ${devices.tablet} {
-    padding: 180px 0 200px 0;
+    flex-direction: column;
+    margin: auto;
+    padding: 80px 50px 200px 0px;
   }
 
   @media ${devices.desktop} {
     flex-direction: row-reverse;
-    justify-content: space-between;
+    margin: auto;
+    padding: 140px 50px 200px 0px;
   }
 
-  .content-image {
-    width: 100%;
-    @media ${devices.desktop} {
-      width: 50%;
-    }
-  }
-
-  .content-text {
-    font-family: "WremenaRegular";
+  .text {
     color: #edbe44;
-    padding: 0 0 80px 0;
     font-size: 1.125rem;
-    text-align: left;
     line-height: 33px;
+    text-align: left;
+    white-space: pre-wrap;
 
     @media ${devices.tablet} {
-      font-size: 22px;
+      font-size: 18px;
       text-align: left;
+      margin: auto;
+    }
+    @media ${devices.desktop} {
+      font-size: 20px;
+      text-align: left;
+      width: 80%;
+    }
+  }
+
+  .text-container {
+    width: 70%;
+
+    @media ${devices.desktop} {
+      width: 30%;
+    }
+    @media ${devices.desktop} {
+      width: 40%;
+    }
+  }
+
+  .image-container {
+    width: 100%;
+    margin-top: 60px;
+    @media ${devices.tablet} {
+      width: 100%;
+      margin-top: 60px;
     }
 
     @media ${devices.desktop} {
-      font-size: 25px;
-      text-align: left;
-      width: 40%;
+      width: 50%;
+      margin-top: 0px;
+    }
+  }
+
+  .picture {
+    width: 100%;
+
+    @media ${devices.tablet} {
+      width: 80%;
+    }
+    @media ${devices.desktop} {
+      width: 100%;
     }
   }
 `;

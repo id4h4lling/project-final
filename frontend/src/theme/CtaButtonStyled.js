@@ -14,16 +14,16 @@ export const ButtonCta = styled.button`
   z-index: 2;
 
   @media ${devices.tablet} {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     left: 83%;
   }
 
   @media ${devices.desktop} {
-    top: 80%;
+    top: 78%;
     left: 85%;
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     padding: 20px;
   }
 

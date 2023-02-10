@@ -7,41 +7,61 @@ export const devices = {
 };
 
 export const ContentAuthor = styled.div`
-  width: 80%;
-  margin: auto;
-  padding: 120px 0 70px 0;
   display: flex;
   flex-direction: column;
+  width: 80%;
+  margin: auto;
+  padding: 90px 0 10px 0;
   font-family: "WremenaRegular";
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+    margin: auto;
+    padding: 80px 50px 200px 0px;
+  }
 
   @media ${devices.desktop} {
     flex-direction: row;
-    justify-content: center;
-    padding: 180px 0 200px 0;
+    margin: auto;
+    padding: 140px 50px 200px 50px;
   }
 
   .intro {
     color: #edbe44;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin: 40px 0 40px 0px;
     line-height: 30px;
     text-align: left;
 
     @media ${devices.desktop} {
-      margin: 0 0 40px 70px;
+      margin: 0 0 40px 0px;
       text-align: left;
     }
   }
   .citat {
     color: #edbe44;
     white-space: pre-wrap;
-    text-align: left;
+    text-align: center;
     line-height: 28px;
 
-    @media ${devices.desktop} {
-      margin-left: 70px;
+    @media ${devices.laptop} {
       line-height: 30px;
       text-align: left;
+    }
+
+    @media ${devices.desktop} {
+      line-height: 30px;
+      text-align: left;
+    }
+  }
+
+  .text-container {
+    width: 80%;
+
+    @media ${devices.desktop} {
+      width: 30%;
+    }
+    @media ${devices.desktop} {
+      width: 40%;
     }
   }
 
@@ -49,21 +69,15 @@ export const ContentAuthor = styled.div`
     width: 80%;
 
     @media ${devices.tablet} {
-      width: 40%;
+      width: 60%;
     }
 
     @media ${devices.desktop} {
-      width: 45%;
+      width: 40%;
     }
   }
-  .text {
+
+  .picture-author {
     width: 80%;
-    @media ${devices.desktop} {
-      width: 50%;
-      margin-left: 40px;
-    }
-  }
-  .picture {
-    width: 100%;
   }
 `;

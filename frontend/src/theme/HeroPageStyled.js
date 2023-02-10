@@ -27,7 +27,7 @@ export const HeroSection = styled.div`
     padding-top: 70px;
 
     @media ${devices.tablet} {
-      padding-top: 120px;
+      padding: 90px;
     }
 
     @media ${devices.desktop} {

@@ -23,8 +23,8 @@ export const LifeStory = ({ lifeStory }) => {
             </div>
             <div className="image-container">
               <img
-                className="lifestory-image"
-                src={lifeStory.picture.url + "?w=500"}
+                className="picture-LifeStory"
+                src={lifeStory.picture.url + "?w=800"}
                 alt="picture"
               />
             </div>

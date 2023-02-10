@@ -107,6 +107,8 @@ export const QuoteBackground = styled.div`
   }
 `;
 
+/////////////// Picture + text pages ///////////////
+
 export const ContentBackground = styled.div`
   background-color: #24384a;
   min-height: 100vh;
@@ -125,7 +127,7 @@ export const ContentBackground = styled.div`
   h2 {
     font-family: "WremenaRegular";
     color: #24384a;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 3px;
     text-transform: uppercase;
     background-color: #edbe44;
@@ -133,7 +135,13 @@ export const ContentBackground = styled.div`
     display: inline;
 
     @media ${devices.tablet} {
-      font-size: 30px;
+      font-size: 20px;
+      letter-spacing: 3px;
+      padding: 20px 30px;
+    }
+
+    @media ${devices.desktop} {
+      font-size: 25px;
       letter-spacing: 3px;
       padding: 20px 30px;
     }
@@ -177,8 +185,12 @@ export const Title = styled.div`
     display: inline;
 
     @media ${devices.tablet} {
+      font-size: 25px;
+      padding: 20px 30px;
+    }
+
+    @media ${devices.desktop} {
       font-size: 30px;
-      letter-spacing: 3px;
       padding: 20px 30px;
     }
   }

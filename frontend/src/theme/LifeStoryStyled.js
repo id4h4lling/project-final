@@ -11,26 +11,30 @@ export const ContentLife = styled.div`
   flex-direction: column;
   width: 80%;
   margin: auto;
-  padding: 120px 0 120px 0;
-  font-family: "WremenaRegular";
+  padding: 90px 0 60px 0;
+  font-family: "WremenaLight";
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+    margin: auto;
+    padding: 80px 50px 200px 0px;
+  }
 
   @media ${devices.desktop} {
     flex-direction: row;
-    justify-content: space-around;
-
     margin: auto;
-    padding: 180px 50 200px 0;
+    padding: 140px 50px 200px 50px;
   }
 
   .text {
     color: #edbe44;
-    font-size: 1.125rem;
+    font-size: 16px;
     line-height: 33px;
     text-align: left;
     white-space: pre-wrap;
 
     @media ${devices.tablet} {
-      font-size: 20px;
+      font-size: 18px;
       text-align: left;
       width: 90%;
       margin: auto;
@@ -44,29 +48,33 @@ export const ContentLife = styled.div`
   }
 
   .text-container {
-    width: 100%;
+    width: 80%;
 
     @media ${devices.desktop} {
-      width: 80%;
+      width: 30%;
+    }
+    @media ${devices.desktop} {
+      width: 60%;
     }
   }
 
   .image-container {
-    width: 80%;
-    margin-top: 70px;
+    width: 70%;
+    margin-top: 60px;
 
     @media ${devices.tablet} {
-      width: 50%;
-      margin-left: 5%;
+      width: 60%;
+      margin: 0;
+      margin-top: 60px;
     }
 
     @media ${devices.desktop} {
-      width: 30%;
+      width: 40%;
       margin: 0;
     }
   }
 
-  .lifestory-image {
-    width: 100%;
+  .picture-LifeStory {
+    width: 80%;
   }
 `;

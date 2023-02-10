@@ -24,7 +24,6 @@ export const BackgroundCtaPage = styled.div`
 
 export const ButtonCtaPage = styled.div`
   button {
-    margin: 2px 20px 40px;
     background-color: #24384a;
     color: inherit;
     border: none;
@@ -45,9 +44,9 @@ export const ButtonCtaPage = styled.div`
     h1 {
       font-family: "WremenaRegular";
       color: #edbe44;
-      font-size: 24px;
+      font-size: 20px;
       letter-spacing: 3px;
-      padding: 20px;
+      padding: 10px;
 
       @media ${devices.tablet} {
         font-size: 40px;

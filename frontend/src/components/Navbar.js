@@ -38,7 +38,9 @@ export const Navbar = () => {
             </ScrollIntoView>
 
             <ScrollIntoView selector="#technique">
-              <NavbarButton onClick={closeSideBar}>Tekniken</NavbarButton>
+              <NavbarButton onClick={closeSideBar}>
+                Tekniken - Smyckestillverkning
+              </NavbarButton>
             </ScrollIntoView>
 
             <ScrollIntoView selector="#video">

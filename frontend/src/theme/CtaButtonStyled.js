@@ -8,10 +8,10 @@ export const devices = {
 
 export const ButtonCta = styled.button`
   position: fixed;
-  top: 85%;
-  right: 30px;
+  top: 80%;
+  right: 40px;
   align-items: right;
-  z-index: 2;
+  z-index: 1;
 
   @media ${devices.tablet} {
     width: 90px;

@@ -11,8 +11,9 @@ export const ContentAuthor = styled.div`
   flex-direction: column;
   width: 80%;
   margin: auto;
-  padding: 90px 0 10px 0;
+  padding: 80px 0 10px 0;
   font-family: "WremenaRegular";
+  z-index: 2;
 
   @media ${devices.tablet} {
     flex-direction: column;
@@ -55,7 +56,7 @@ export const ContentAuthor = styled.div`
   }
 
   .text-container {
-    width: 80%;
+    width: 90%;
 
     @media ${devices.desktop} {
       width: 30%;
@@ -66,7 +67,7 @@ export const ContentAuthor = styled.div`
   }
 
   .image-container {
-    width: 80%;
+    width: 90%;
 
     @media ${devices.tablet} {
       width: 60%;

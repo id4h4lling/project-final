@@ -11,8 +11,9 @@ export const ContentTravel = styled.div`
   flex-direction: column;
   width: 90%;
   margin: auto;
-  padding: 90px 0 60px 0;
+  padding: 80px 0 50px 0;
   font-family: "WremenaLight";
+  z-index: 2;
 
   @media ${devices.tablet} {
     flex-direction: column;
@@ -46,7 +47,7 @@ export const ContentTravel = styled.div`
   }
 
   .text-container {
-    width: 70%;
+    width: 90%;
 
     @media ${devices.desktop} {
       width: 30%;
@@ -58,7 +59,7 @@ export const ContentTravel = styled.div`
 
   .image-container {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 50px;
     @media ${devices.tablet} {
       width: 100%;
       margin-top: 60px;

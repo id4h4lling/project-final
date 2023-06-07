@@ -28,7 +28,7 @@ export const ButtonCtaPage = styled.div`
     color: inherit;
     border: none;
     font: inherit;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     outline: inherit;
     transition: 0.5s;
@@ -46,7 +46,7 @@ export const ButtonCtaPage = styled.div`
       color: #edbe44;
       font-size: 18px;
       letter-spacing: 3px;
-      padding: 10px;
+      padding: 5px;
 
       @media ${devices.tablet} {
         font-size: 35px;

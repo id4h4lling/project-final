@@ -57,8 +57,7 @@ export const FormStyled = styled.div`
 `;
 
 export const DeleteButton = styled.button`
-  position: absolute;
-  height: 80px;
+  position: relative;
   top: 10px;
   right: 10px;
   background: none;

@@ -44,15 +44,15 @@ export const ButtonCtaPage = styled.div`
     h1 {
       font-family: "WremenaRegular";
       color: #edbe44;
-      font-size: 20px;
+      font-size: 18px;
       letter-spacing: 3px;
       padding: 10px;
 
       @media ${devices.tablet} {
-        font-size: 40px;
+        font-size: 35px;
       }
       @media ${devices.desktop} {
-        font-size: 50px;
+        font-size: 45px;
         padding: 30px;
       }
     }

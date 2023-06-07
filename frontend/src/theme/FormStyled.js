@@ -58,7 +58,7 @@ export const FormStyled = styled.div`
 
 export const DeleteButton = styled.button`
   position: absolute;
-  height: 10px;
+  height: 80px;
   top: 10px;
   right: 10px;
   background: none;
@@ -158,7 +158,7 @@ export const SubmitButton = styled.button`
   font-size: 14px;
   cursor: pointer;
 
-  &:hover {
+  &&:hover {
     background-color: #ffdb5c;
   }
   @media ${devices.desktop} {

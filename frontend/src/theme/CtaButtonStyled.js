@@ -9,7 +9,7 @@ export const devices = {
 export const ButtonCta = styled.button`
   position: fixed;
   top: 80%;
-  right: 40px;
+  right: 35px;
   align-items: right;
   z-index: 1;
 

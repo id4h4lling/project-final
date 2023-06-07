@@ -13,7 +13,7 @@ export const ContentAuthor = styled.div`
   margin: auto;
   padding: 80px 0 10px 0;
   font-family: "WremenaRegular";
-  z-index: 2;
+  z-index: 8;
 
   @media ${devices.tablet} {
     flex-direction: column;

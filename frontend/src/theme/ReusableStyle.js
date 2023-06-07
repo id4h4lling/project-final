@@ -235,7 +235,7 @@ export const Gallery = styled.div`
     overflow-x: scroll;
     scroll-snap-type: x proximity;
     scroll-behavior: smooth;
-    scroll-padding-left: 90px;
+    scroll-padding-left: 20px;
     scrollbar-width: none; /* Firefox */
     ::-webkit-scrollbar {
       display: none;

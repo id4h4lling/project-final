@@ -7,13 +7,13 @@ export const devices = {
 };
 
 export const ContentLife = styled.div`
+  z-index: 3;
   display: flex;
   flex-direction: column;
   width: 80%;
   margin: auto;
-  padding: 80px 0 50px 0;
+  padding: 80px 0 30px 0;
   font-family: "WremenaLight";
-  z-index: 3;
 
   @media ${devices.tablet} {
     flex-direction: column;

@@ -49,7 +49,12 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
               <StyledNavLink>Se vår integritetspolicy här.</StyledNavLink>
             </Link>
           </p>
-          <SubmitButton type="submit">Skicka in</SubmitButton>
+          <SubmitButton
+            type="submit"
+            title="Knappen måste bara vakna till lite, tryck igen du!"
+          >
+            Skicka in
+          </SubmitButton>
           <p>
             Ibland kan de gå lite långsamt innan knappen svarar, <br />
             tack för att du väntar!

@@ -41,7 +41,7 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
             value={useremail}
             onChange={(e) => setUserEmail(e.target.value)}
           />
-          <p>
+          <p className="policy">
             Genom att fylla i din mail godkänner du att vi använder din
             information för att kontakta dig om boken.
             <br />

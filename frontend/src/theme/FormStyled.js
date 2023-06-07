@@ -11,7 +11,7 @@ export const FormStyled = styled.div`
     position: fixed;
     top: 50px;
     left: -700px;
-    width: 250px;
+    width: 300px;
     height: 60%;
     background-color: #24384a;
     transition: left 700ms ease-out;
@@ -21,12 +21,6 @@ export const FormStyled = styled.div`
     align-items: center;
     padding: 20px;
     justify-content: center;
-
-    @media ${devices.tablet} {
-      width: 500px;
-      height: 60%;
-      top: 100px;
-    }
   }
   .sidebar.active {
     left: 0;
@@ -56,17 +50,6 @@ export const FormStyled = styled.div`
   }
 `;
 
-export const DeleteButton = styled.button`
-  position: relative;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #edbe44;
-  font-size: 20px;
-  font-weight: bold;
-`;
 export const StyledOverlay = styled.div`
   .overlay {
     position: fixed;
@@ -88,8 +71,8 @@ export const StyledForm = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 20px;
-  justify-content: space-evenly;
-  height: 350px;
+  justify-content: center;
+  height: 400px;
   width: 90%;
 
   h1 {
@@ -97,6 +80,7 @@ export const StyledForm = styled.div`
     font-family: "WremenaLight";
     font-size: 24px;
     text-align: left;
+    padding-bottom: 20px;
     @media ${devices.desktop} {
       font-size: 30px;
     }
@@ -110,11 +94,16 @@ export const StyledForm = styled.div`
     text-align: left;
   }
 
+  /* .policy {
+    margin-bottom: -5px;
+  } */
+
   p {
     color: #edbe44;
     font-family: "WremenaLight";
     font-size: 12px;
     width: 70%;
+    margin-top: 10px;
   }
 
   a {
@@ -153,6 +142,7 @@ export const SubmitButton = styled.button`
   background-color: #edbe44;
   font-family: "WremenaRegular";
   color: #263541;
+  margin-top: 25px;
   padding: 6px;
   font-size: 14px;
   cursor: pointer;

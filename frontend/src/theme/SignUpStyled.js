@@ -11,7 +11,7 @@ export const FormStyled = styled.div`
     position: fixed;
     top: 50px;
     left: -700px;
-    width: 250px;
+    width: 300px;
     height: 60%;
     background-color: #24384a;
     transition: left 700ms ease-out;
@@ -24,7 +24,7 @@ export const FormStyled = styled.div`
 
     @media ${devices.tablet} {
       width: 500px;
-      height: 60%;
+      height: 50%;
       top: 100px;
     }
   }
@@ -58,7 +58,6 @@ export const FormStyled = styled.div`
 
 export const DeleteButton = styled.button`
   position: absolute;
-  height: 10px;
   top: 10px;
   right: 10px;
   background: none;

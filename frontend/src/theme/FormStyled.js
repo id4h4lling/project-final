@@ -90,7 +90,7 @@ export const StyledForm = styled.div`
     color: #edbe44;
     font-family: "WremenaLight";
     font-size: 20px;
-    padding: 0px 10px 0px 0px;
+    padding: 0px 10px 10px 0px;
     text-align: left;
   }
 

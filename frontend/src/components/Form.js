@@ -32,8 +32,15 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
     <form onSubmit={onFormSubmit}>
       {!showThankYou && (
         <StyledForm>
-          <h1>Kontakta mig när boken släpps!</h1>
-
+          <h1>
+            <a href=" https://arenabok.se/butik/harresande-vamhuskullornas-harsmycken-och-vandringar/">
+              Här kan du handla boken!
+            </a>{" "}
+          </h1>
+          <h2>
+            Skriv upp dig om du vill ha information om utställningar och
+            föreläsningar!
+          </h2>
           <Input
             type="text"
             placeholder="Epostadress"
@@ -67,7 +74,7 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
           <h3>
             {" "}
             Vad kul att du vill veta mer, <br />
-            du kommer få ett mail när boken släpps.
+            vi hör av oss om föreläsningar och annat kul.
           </h3>
         </StyledThankYou>
       )}

@@ -72,7 +72,7 @@ export const StyledForm = styled.div`
   align-items: flex-start;
   padding: 20px;
   justify-content: center;
-  height: 600px;
+  height: 800px;
   width: 90%;
 
   h1 {

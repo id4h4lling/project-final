@@ -17,6 +17,25 @@ export const HeroSection = styled.div`
     position: relative;
   }
 
+  button {
+    background: none;
+    border: none;
+    padding: 10px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-family: "WremenaLight";
+    color: #edbe44;
+    &:hover {
+      color: #fff0bb;
+      cursor: pointer;
+    }
+
+    &&:hover {
+      background-color: #ffdb5c;
+    }
+  }
+
   .title-section {
     display: flex;
     flex-direction: column;

@@ -1,6 +1,7 @@
 import React from "react";
 import { HeroSection } from "theme/HeroPageStyled";
 import { Arrow } from "components/Arrow";
+// import { BackButtonStyled } from "theme/BackButtonStyled";
 
 export const HeroPage = ({ hero }) => {
   return (
@@ -12,6 +13,12 @@ export const HeroPage = ({ hero }) => {
             backgroundImage: ` url(${hero.heroimage.url})`,
           }}
         >
+          <div className="back-button">
+            {" "}
+            <a href="https://www.idahalling.com/idahalling">
+              <button className="button">Tillbaka till idahalling.com</button>
+            </a>
+          </div>
           <div className="title-section">
             <h4>{hero.topheading}</h4>
             <h1>{hero.mainHeader}</h1>

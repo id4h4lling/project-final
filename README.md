@@ -15,7 +15,7 @@ To start the project: frontend - npm start | backend - npm run dev
 ## View it live
 
 Deployed site:
-https://harboken.netlify.app/
+https://harboken.idahalling.com/
 
 All content by Ida Halling
 

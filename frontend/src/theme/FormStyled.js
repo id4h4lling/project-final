@@ -114,6 +114,11 @@ export const StyledForm = styled.div`
       cursor: pointer;
     }
   }
+
+  u {
+    text-decoration-thickness: 10%;
+    text-decoration-line: underline;
+  }
 `;
 
 export const Input = styled.input`

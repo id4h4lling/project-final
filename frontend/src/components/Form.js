@@ -34,7 +34,7 @@ export const Form = ({ showThankYou, setShowThankYou }) => {
         <StyledForm>
           <h1>
             <a href=" https://arenabok.se/butik/harresande-vamhuskullornas-harsmycken-och-vandringar/">
-              Här kan du handla boken!
+              Här kan du <u>handla boken!</u>
             </a>{" "}
           </h1>
           <h2>

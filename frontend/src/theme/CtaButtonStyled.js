@@ -10,7 +10,7 @@ export const ButtonCta = styled.button`
   position: fixed;
   top: 80%;
   right: 35px;
-  align-items: right;
+  align-items: left;
   z-index: 1;
 
   @media ${devices.tablet} {

@@ -51,7 +51,7 @@ export const HeroSection = styled.div`
 
     @media ${devices.desktop} {
       margin-left: 0;
-      padding-top: 70px;
+      padding-top: 40px;
     }
   }
 

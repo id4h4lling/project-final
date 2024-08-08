@@ -11,10 +11,13 @@ export const Cta = ({ cta, showSidebar }) => {
             backgroundImage: ` url(${cta.picture.url})`,
           }}
         >
-          <ButtonCtaPage onClick={showSidebar}>
-            <button type="button">
-              <h1>{cta.cta}</h1>
-            </button>
+          <ButtonCtaPage>
+            {/* <ButtonCtaPage onClick={showSidebar}> */}
+            <a href="https://arenabok.se/butik/harresande-vamhuskullornas-harsmycken-och-vandringar/">
+              <button type="button">
+                <h1>{cta.cta}</h1>
+              </button>
+            </a>
           </ButtonCtaPage>
         </div>
       </BackgroundCtaPage>

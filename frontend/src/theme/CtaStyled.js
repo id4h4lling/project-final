@@ -17,8 +17,11 @@ export const BackgroundCtaPage = styled.div`
     background-size: cover;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: left;
+    align-items: top;
+  }
+
+  @media ${devices.tablet} {
+    align-items: left;
   }
 `;
 
@@ -36,9 +39,12 @@ export const ButtonCtaPage = styled.div`
       background-color: #2c465e;
       cursor: pointer;
     }
+    padding: 10px;
+    margin: 5vh;
+
     @media ${devices.tablet} {
       padding: 10px;
-      margin: 0;
+      margin: 200px;
     }
 
     h1 {

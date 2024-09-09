@@ -72,8 +72,11 @@ export const StyledForm = styled.div`
   align-items: flex-start;
   padding: 20px;
   justify-content: center;
-  height: 800px;
+  height: 900px;
   width: 90%;
+  @media ${devices.desktop} {
+    height: 800px;
+  }
 
   h1 {
     color: #edbe44;

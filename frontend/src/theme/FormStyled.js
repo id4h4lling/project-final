@@ -9,10 +9,10 @@ const devices = {
 export const FormStyled = styled.div`
   .sidebar {
     position: fixed;
-    top: 50px;
+    /* top: 50px; */
     left: -700px;
     width: 300px;
-    height: 60%;
+    height: 80%;
     background-color: #24384a;
     transition: left 700ms ease-out;
     border: solid 2px #e3b921;
